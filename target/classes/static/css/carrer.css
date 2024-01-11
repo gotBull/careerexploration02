@@ -1,0 +1,164 @@
+body{font-family: Lora, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 1.25rem;
+  line-height: 2;
+}
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 800;
+  line-height: 1.2;
+}
+.theNavContainer
+{
+    display: flex;
+    width: 100%;
+}
+/* 標誌 */
+#theName, #theNavLink, #JobMenu
+{
+    margin-right: 4%;
+}
+.imgLink
+{
+  width: 6%;
+}
+#LOGO{
+  position: relative;
+    width:75%;
+    order: 1;
+}
+/* 品牌名稱 */
+#theName{
+  position: relative;
+  bottom: 0;
+    color: #2b8ccc;
+    order: 2;
+    text-wrap: nowrap;
+    text-decoration: none;
+    margin-top: 6px;
+}
+#theNavLink
+{
+    font-size: 1.2rem;
+    order: 3;
+    text-wrap: nowrap;
+}
+#JobMenu 
+{
+    order: 4;
+}
+.JobItem
+{
+    font-size: 1.5rem;
+    color: #f7fafc;
+    background-color: #2b2825;
+}
+#theNavItemRegister
+{
+    border: 1px #000 solid;
+    order: 6;
+    margin: auto 1% auto auto;
+}
+.theCollapse
+{
+    position: absolute;
+    right: 0;
+}
+span
+{
+  box-sizing: border-box;
+}
+.theLinkItem:hover
+{
+  color: #f7fafc;
+  background-color: #000;
+  border-radius: 10px;
+}
+@media (max-width: 1200px) {
+  .navbar-expand-size1 #LOGO{
+    width: 5%;
+  }
+  .navbar-expand-size1 #theName{
+      display: none;
+  }
+  .navbar-expand-size1 #theNavLink
+  {
+    width: 10%;
+    align-items: center;
+  }
+  .navbar-expand-size1 #JobMenu{
+    position: absolute;
+    top: 5%;
+    left: 15%;
+  }
+  .navbar-expand-size1 #theNavItemRegister{
+    position: absolute;
+    top: 50%;
+    left: 32%;
+  }
+  p{
+    font-size: 1rem;
+  }
+}
+
+header.masthead {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-top: calc(8rem + 57px);
+  padding-bottom: 8rem;
+  background: no-repeat center center;
+  background-color: #6c757d;
+  background-size: cover;
+  background-attachment: scroll;
+}
+header.masthead .page-heading,
+header.masthead .post-heading,
+header.masthead .site-heading {
+  color: #fff;
+}
+header.masthead .post-heading h1{
+  font-size: 3.25rem;
+}
+header.masthead .post-heading .meta,
+header.masthead .post-heading .subheading {
+  line-height: 1.1;
+  display: block;
+}
+header.masthead .post-heading .subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.75rem 0 2rem;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead .post-heading .meta {
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+header.masthead .post-heading .meta a {
+  color: #fff;
+}
+.section-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 3.75rem;
+}
+.blockquote {
+  font-style: italic;
+  color: #6c757d;
+}
+.imgComment{
+  font-size: 0.8rem;
+  margin: auto 10%;
+}
+.theIcon{
+  margin-top: 2.5rem;
+}
+.iconColor{
+  color: #4a4952;
+}
+.theCopy{
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Success</title>
+</head>
+<body>
+        <p><span th:text="${ logSuess }"> test msg </span></p>
+        <p>userName: <span th:text="${ showUserName }"> test msg</span></p>
+<!--        <p>2.accountnum: <span th:text="${ accountnum }"> test msg</span></p>-->
+<!--        <p>3.passwd: <span th:text="${ passwd }"> test msg</span></p>-->
+        <p>4.session:<span th:text="${ session }"> test msg</span></p>
+
+        <p>Redirecting to homepage in:<span id="countdown"> 3</span> second</p>
+
+        <script>
+            var countdown = 3; // 3 秒
+            setInterval(timeCount, 1000);
+            function timeCount()
+            {
+                countdown--; // 每秒減少倒數計時
+                document.getElementById("countdown").innerHTML = countdown; // 顯示倒數秒數
+                if (countdown<=0) // 倒數計時為 0 時執行跳轉
+                {
+                    transToLogin();
+                }
+            }
+            function transToLogin()
+            {
+                location.href = "/homepage"; // 轉到 index.html 頁面
+            }
+        </script>
+</body>
+</html>
