@@ -16,5 +16,11 @@ public class WebController
     public String police(){
         return "Octn_PoliceOfficer";
     }
+    @GetMapping("/about")
+    public String about(){
+        return "aboutUs";
+    }
 }
+
+
 
