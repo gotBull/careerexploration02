@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -69,7 +69,8 @@
                   <div class="btn-group" id="theNavItemRegister">
                     <a href="/user_register" class="btn btn-light" aria-current="page">Register</a>
                     <a class="btn btn-light">|</a>
-                    <a href="/login" class="btn btn-light">Login</a>
+                      <div th:unless="${session.logInAcc}"><a href="/login" class="btn btn-light">Login</a></div>
+                      <div th:if="${session.logInAcc}"><a href="/logout" class="btn btn-light">Logout</a></div>
                   </div>
         
               </div>
@@ -125,16 +126,20 @@
                         <p>(二)中央警察大學：25歲以下、高中職以上)</p>
                         <p>(三)一般警察特考：(1)二等考試：18-42歲、碩士學位以上學歷。(2)三等考試：18-37歲、學士學位以上學歷。(3)四等考試：18-37歲、高中以上)</p>
 
+
                         <h2 class="section-heading">技能要求</h2>
-                        <p>1.在壓力下能夠保持冷靜，迅速且有效地應對危急狀況，保障自己和他人的安全。</p>
-                        <p>2.具備戰術思維，能夠快速判斷局勢，採取適當的應對措施。</p>
-                        <p>3.良好的溝通技巧，能夠與同事、上級、民眾和其他機構有效溝通，建立良好的關係。</p>
-                        <p>4.能夠協調不同執法機構、部門以及社區資源，共同應對複雜的治安問題。</p>
-                        <p>5.精通執法相關法規，在執法過程中保證合法性，遵守法律程序。</p>
-                        <p>6.具備高度的專業操守，遵守職業道德和標準，確保執法行動的公正性和正當性。</p>
-                        <p>7.能夠有效搜集情報，包括從各種資源中獲取關鍵訊息，進行分析，以協助犯罪調查和預防工作。</p>
-                        <p>8.領導能力佳，領導和指揮小組，協調執法行動，保障隊伍的效率和安全。</p>
-                        <a href="#!"><img class="img-fluid" src="assets/img/call110.jpg" alt="..." /></a>
+                        <div th:unless="${session.logInAcc}"><img src="/img/RegisterLoginToUnlock.png"> </div>
+                        <div th:if="${session.logInAcc}">    <!-- 測試登入與否，接收LoginController的session設定true -->
+                            <p>1.在壓力下能夠保持冷靜，迅速且有效地應對危急狀況，保障自己和他人的安全。</p>
+                            <p>2.具備戰術思維，能夠快速判斷局勢，採取適當的應對措施。</p>
+                            <p>3.良好的溝通技巧，能夠與同事、上級、民眾和其他機構有效溝通，建立良好的關係。</p>
+                            <p>4.能夠協調不同執法機構、部門以及社區資源，共同應對複雜的治安問題。</p>
+                            <p>5.精通執法相關法規，在執法過程中保證合法性，遵守法律程序。</p>
+                            <p>6.具備高度的專業操守，遵守職業道德和標準，確保執法行動的公正性和正當性。</p>
+                            <p>7.能夠有效搜集情報，包括從各種資源中獲取關鍵訊息，進行分析，以協助犯罪調查和預防工作。</p>
+                            <p>8.領導能力佳，領導和指揮小組，協調執法行動，保障隊伍的效率和安全。</p>
+                        </div><br>
+                            <a href="#!"><img class="img-fluid" src="/img/call110.jpg" alt="..." /></a>
                         <span class="caption text-muted imgComment">
                             我們是人民的守護神，讓人民快樂的生活，隨時為守護您的安全。
                         </span>
