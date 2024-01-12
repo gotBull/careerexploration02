@@ -21,4 +21,12 @@ public class LogoutController
         // 如果有Referrer，則重定向到Referrer；否則重定向到首頁
         return "redirect:" + (referrer != null ? referrer : "EnglishProject20240110");
     }
+
+    @GetMapping("/backReferrer")      //登入或註冊後可以回到原始頁面功能；可做回到上一頁
+    public String logOrReg()
+    {
+        String referrer = request.getHeader("Referer"); // 獲取Referrer
+        // 如果有Referrer，則重定向到Referrer；否則重定向到首頁
+        return "redirect:" + (referrer != null ? referrer : "EnglishProject20240110");
+    }
 }

@@ -63,7 +63,9 @@
               <div class="btn-group" id="theNavItemRegister">
                 <a href="user_register" class="btn btn-light" aria-current="page">Register</a>
                 <a class="btn btn-light">|</a>
-                <a href="login" id="loginButton" class="btn btn-light">Login</a>
+                <a href="login" th:unless="${session.logInAcc}" id="loginButton" class="btn btn-light" >Login</a>
+                  <a href="logout" th:if="${session.logInAcc}" id="logoutButton" class="btn btn-light" >Logout</a>
+
               </div>
 
           </div>
