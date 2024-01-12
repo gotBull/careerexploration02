@@ -25,9 +25,19 @@ public class LoginController
     Logger logger = LoggerFactory.getLogger(LoginController.class);  //SpringBoot除錯訊息註解
 
     @GetMapping("/login")
-    public String loginPage()
+    public String loginPageAndOverLogin(HttpSession session, Model model)
     {
-        return "login";
+//        UserLogModel02 loggedUser = new UserLogModel02();    //防止重複登入功能(建立中)
+//        boolean loginResult = userLoginService.loginTest(loggedUser);
+//        if (loginResult)
+//        {
+//            session.setAttribute("logged",false);
+//            return "EnglishProject20240110";
+//        }
+//        else
+//        {
+            return "login";
+//        }
     }
 
     @PostMapping("/login")
@@ -43,18 +53,16 @@ public class LoginController
         boolean loginResult = userLoginService.loginTest(model01);
         if(loginResult)
         {
-            session.setAttribute("logInAcc",accountnum);  // 登入成功，設定 session 屬性
+            session.setAttribute("logInAcc",true);  // 登入成功，設定session屬性是true
             model.addAttribute("logSuess","Welcome back, you have successfully logged in.");
             model.addAttribute("showUserName", showUserName.getUsername()); //先判別帳密一致後，印出與帳號對應的使用者名稱
-            logger.warn("執行後可以先看到userName內容");   //SpringBoot除錯訊息註解
-            logger.warn("執行後可以後看到userName內容"+accountnum);
+            logger.warn("執行後可以先看到userName內容"+accountnum);   //SpringBoot除錯訊息註解
             return "loginsuss";
         }
         else
         {
-            model.addAttribute("logFail","帳號或密碼輸入錯誤，三秒後返回登入頁面");
-//            model.addAttribute("accountnum",accountnum);
-//            model.addAttribute("passwd",passwd);
+            //帳號或密碼輸入錯誤，三秒後返回登入頁面
+            model.addAttribute("logFail","Incorrect username or password. Returning to the login page in three seconds.");
             return "loginFail";
         }
     }
@@ -73,8 +81,9 @@ public class LoginController
 //            return "login";
 //        }
 //    }
+// 在Spring Boot中的Controller中處理登出
 
-    @GetMapping("/restricted-api")   //沒有登入的話，做出功能限制
+    @GetMapping("/restricted-api")   //沒有登入與否，做出顯示訊息的測試API
     @ResponseBody
     public String restrictedApi(HttpSession session)
     {
@@ -83,8 +92,7 @@ public class LoginController
         {
             return "You are not logged in. Access denied.";
         }
-        // 如果已經登入，可以在這裡實現 API 的邏輯
+        // 如果已經登入，顯示此句話
         return "This is a restricted API endpoint. You have access!";
-
     }
 }
