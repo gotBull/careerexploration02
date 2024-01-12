@@ -29,7 +29,7 @@
 <!-- 連結 -->
             <ul class="navbar-nav" id="theNavLink">
               <li>
-                <a class="nav-link theLinkItem" aria-current="page" href="#">About Us</a>
+                <a class="nav-link theLinkItem" aria-current="page" href="aboutus">About Us</a>
               </li>
 
               <li class="nav-item">
@@ -63,23 +63,25 @@
               <div class="btn-group" id="theNavItemRegister">
                 <a href="user_register" class="btn btn-light" aria-current="page">Register</a>
                 <a class="btn btn-light">|</a>
-                <a href="login" th:unless="${session.logInAcc}" id="loginButton" class="btn btn-light" >Login</a>
-                  <a href="logout" th:if="${session.logInAcc}" id="logoutButton" class="btn btn-light" >Logout</a>
-
+                <a href="login" id="loginButton" class="btn btn-light">Login</a>
               </div>
 
           </div>
         </div>
       </nav>
-<!-- 全螢幕按鈕 -->
-      <button class="FullScreenB" onclick="toggleFullScreen()">FullScreen</button>
+
+  <!-- 全螢幕按鈕 -->
+  <button class="FullScreenB" onclick="toggleFullScreen()">FullScreen</button>
+  <!-- 退出全螢幕按鈕 -->
+  <button class="ExitFullScreenB" onclick="exitFullScreen()">ExitFullScreen</button>
+
 <!-- 圖片區 -->
 
 <!-- 會進入全螢幕的內容 -->
   <div class="content">
     
     <!-- 背景圖 -->
-<img class="theMap"  src="/img/地圖20240108.webp" >
+<img class="theMap"  src="/img/地圖20240108.webp">  <!-- 測試登入與否，接收LoginController的session設定true -->
 
 <!-- 教堂 -->
       <div class="Icontainer image-container1">
@@ -147,29 +149,38 @@
           <a target="_blank" href="https://zh.wikipedia.org/zh-tw/%E5%8C%BB%E7%94%9F" role="button"><button class="link">Rrporter</button></a>
         </div>
       </div>
-      <button class="FullScreenE" onclick="toggleExitFullScreen()">FullScreen</button>
 </div>
 
- <script>
-    const content = document.querySelector('.content');
-    let fullscreenCheck=false;
-    function toggleFullScreen() {
-      if (!document.fullscreenElement) {
-        if (content.requestFullscreen) {
-          try{
-          content.requestFullscreen();
-           fullscreenCheck=true;
+  <script>
+      function toggleFullScreen() {
+          if (!document.fullscreenElement) {
+              document.documentElement.requestFullscreen();
           }
-          catch(Exception){
-            console.error(`無法進入全螢幕模式： ${err}`);
-          };
-        }
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
       }
-    }
+
+      function exitFullScreen() {
+          if (document.exitFullscreen) {
+              document.exitFullscreen();
+          }
+      }
+
+      // 添加事件監聽器以檢測全螢幕變化
+      document.addEventListener("fullscreenchange", function () {
+          updateButtonVisibility();
+      });
+
+      function updateButtonVisibility() {
+          const fullScreenButton = document.querySelector('.FullScreenB');
+          const exitFullScreenButton = document.querySelector('.ExitFullScreenB');
+
+          if (document.fullscreenElement) {
+              fullScreenButton.style.display = 'none';
+              exitFullScreenButton.style.display = 'inline-block';
+          } else {
+              fullScreenButton.style.display = 'inline-block';
+              exitFullScreenButton.style.display = 'none';
+          }
+      }
   </script>
 </body>
 
