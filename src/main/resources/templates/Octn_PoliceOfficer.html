@@ -108,27 +108,57 @@
                         <hr>
                         <p>治安人員</p>
                         <h2 class="section-heading">職業描述</h2>
+<!--未登入會出現的連結-->
+                        <div th:unless="${session.logInAcc}"class="altContent">
+                            <a href="/login">
+                                <h2>
+                                    <i class='fas fa-lock-open' style='font-size:48px;color:#fcba03'></i>
+                                    點我登入查看詳細資訊
+                                </h2>
+                            </a>
+                        </div>
+<!--登入後會出現的內容-->
+                        <div th:if="${session.logInAcc}">
                         <hr>
-                        <p>1.日常巡邏，並能迅速應對突發事件，保護人民安全。</p>
-                        <p>2.參與犯罪調查，搜集證據、訊問嫌疑人，協助檢察官起訴。</p>
-                        <p>3.與其他執法機構、政府機構和社區組織合作，共同應對複雜的治安問題。</p>
-                        <p>4.管理和指導部屬，確保執法行動的協調性和效率。</p>
-                        <p>5.參與培訓新進警員，並持續自我提升，以應對新的挑戰和技術變革。</p>
-                        <p>6.確保執法行動符合法律規定，遵從人權和憲法原則。</p>
-                        <p>7.熟悉並遵從執法程序，以合法、公正、有效的方式執法行動。</p>
-                        <p>8.協助處理重大事故、災害或緊急狀況，保障公共安全。</p>
-                        <p>9.參與制定和實施預防犯罪計劃，提高社區的安全性。</p>
- 
+                            <p>1.日常巡邏，並能迅速應對突發事件，保護人民安全。</p>
+                            <p>2.參與犯罪調查，搜集證據、訊問嫌疑人，協助檢察官起訴。</p>
+                            <p>3.與其他執法機構、政府機構和社區組織合作，共同應對複雜的治安問題。</p>
+                            <p>4.管理和指導部屬，確保執法行動的協調性和效率。</p>
+                            <p>5.參與培訓新進警員，並持續自我提升，以應對新的挑戰和技術變革。</p>
+                            <p>6.確保執法行動符合法律規定，遵從人權和憲法原則。</p>
+                            <p>7.熟悉並遵從執法程序，以合法、公正、有效的方式執法行動。</p>
+                            <p>8.協助處理重大事故、災害或緊急狀況，保障公共安全。</p>
+                            <p>9.參與制定和實施預防犯罪計劃，提高社區的安全性。</p>
+                        </div>
+
                         <h2 class="section-heading">學歷要求</h2>
+<!--未登入會出現的連結-->
+                    <div th:unless="${session.logInAcc}"class="altContent">
+                            <a href="/login">
+                                <h2>
+                                    <i class='fas fa-lock-open' style='font-size:48px;color:#fcba03'></i>
+                                    點我登入查看詳細資訊
+                                </h2>
+                            </a>
+                    </div>
+<!--登入後會出現的內容-->
+                    <div th:if="${session.logInAcc}">
                         <hr>
                         <blockquote class="blockquote">警察考試報考資格</blockquote>
                         <p>(一)警察專科學校：25歲以下、高中職以上)</p>
                         <p>(二)中央警察大學：25歲以下、高中職以上)</p>
                         <p>(三)一般警察特考：(1)二等考試：18-42歲、碩士學位以上學歷。(2)三等考試：18-37歲、學士學位以上學歷。(3)四等考試：18-37歲、高中以上)</p>
-
-
+                    </div>
                         <h2 class="section-heading">技能要求</h2>
-                        <div th:unless="${session.logInAcc}"><img src="/img/RegisterLoginToUnlock.png"> </div>
+<!--未登入會出現的連結-->
+                        <div th:unless="${session.logInAcc}"class="altContent">
+                            <a href="/login">
+                                <h2>
+                                    <i class='fas fa-lock-open' style='font-size:48px;color:#fcba03'></i>
+                                    點我登入查看詳細資訊
+                                </h2>
+                            </a></div>
+<!--登入後會出現的內容-->
                         <div th:if="${session.logInAcc}">    <!-- 測試登入與否，接收LoginController的session設定true -->
                             <p>1.在壓力下能夠保持冷靜，迅速且有效地應對危急狀況，保障自己和他人的安全。</p>
                             <p>2.具備戰術思維，能夠快速判斷局勢，採取適當的應對措施。</p>
@@ -138,7 +168,7 @@
                             <p>6.具備高度的專業操守，遵守職業道德和標準，確保執法行動的公正性和正當性。</p>
                             <p>7.能夠有效搜集情報，包括從各種資源中獲取關鍵訊息，進行分析，以協助犯罪調查和預防工作。</p>
                             <p>8.領導能力佳，領導和指揮小組，協調執法行動，保障隊伍的效率和安全。</p>
-                        </div><br>
+                        <br>
                             <a href="#!"><img class="img-fluid" src="/img/call110.jpg" alt="..." /></a>
                         <span class="caption text-muted imgComment">
                             我們是人民的守護神，讓人民快樂的生活，隨時為守護您的安全。
@@ -151,6 +181,7 @@
                             &middot; Images by
                             <a target="_blank" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.pexels.com/zh-tw/">Pexels</a>
                         </p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -158,6 +158,20 @@ header.masthead .post-heading .meta a {
   font-size: 0.8rem;
   margin: auto 10%;
 }
+.altContent{
+ background-color: #6c757d;
+  color: #ffffff;
+  width: 100%;
+  height: 5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.altContent a
+{
+  text-decoration: none;
+  color: #ffffff;
+}
 .theIcon{
   margin-top: 2.5rem;
 }

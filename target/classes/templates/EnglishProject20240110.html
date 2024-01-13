@@ -29,18 +29,18 @@
 <!-- 連結 -->
             <ul class="navbar-nav" id="theNavLink">
               <li>
-                <a class="nav-link theLinkItem" aria-current="page" href="aboutus">About Us</a>
+                <a class="nav-link theLinkItem" id="item1" aria-current="page" href="aboutus">About Us</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link theLinkItem" href="#">Link</a>
+                <a class="nav-link theLinkItem" href="#">Cooperation</a>
               </li>
             </ul>
 
 <!-- 職業選擇條 -->
             <div class="dropdown" id="JobMenu">
               <a class="btn btn-secondary dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                What kind of job do you want to know?
+                  What kind of job do you want to know?
               </a>
             
               <ul class="dropdown-menu">
@@ -59,11 +59,17 @@
               </ul>
             </div>
 
+              <ul class="navbar-nav" id="theNavLink2">
+                  <li>
+                      <a class="nav-link theLinkItem" aria-current="page" href="aboutus">Customer Service</a>
+                  </li>
+              </ul>
 <!-- 登入和註冊 -->
               <div class="btn-group" id="theNavItemRegister">
-                <a href="user_register" class="btn btn-light" aria-current="page">Register</a>
-                <a class="btn btn-light">|</a>
-                <a href="login" id="loginButton" class="btn btn-light">Login</a>
+                <a href="user_register" class="btn btn-light" aria-current="page"><p>Register</p></a>
+                <a>|</a>
+                  <a th:unless="${session.logInAcc}" href="/login" class="btn btn-light"><p>Login</p></a>
+                  <a th:if="${session.logInAcc}" href="/logout" class="btn btn-light"><p>Logout</p></a>
               </div>
 
           </div>
@@ -95,6 +101,7 @@
         <img src="/img/學校.webp" alt="學校" class="zoomable-image">
         <div class="links links2">
           <a target="_blank" href="https://zh.wikipedia.org/zh-tw/%E5%8C%BB%E7%94%9F" role="button"><button class="link">Teacher</button></a>
+            <a target="_blank" href="https://zh.wikipedia.org/zh-tw/%E5%8C%BB%E7%94%9F" role="button"><button class="link">Counselor</button></a>
         </div>
       </div>
 <!-- 醫院 -->
@@ -102,7 +109,6 @@
         <img src="/img/醫院.webp" alt="醫院" class="zoomable-image">
         <div class="links links3">
           <a target="_blank" href="https://zh.wikipedia.org/zh-tw/%E5%8C%BB%E7%94%9F" role="button"><button class="link">Doctor</button></a>
-            <a target="_blank" href="https://zh.wikipedia.org/zh-tw/%E5%8C%BB%E7%94%9F" role="button"><button class="link">Counselor</button></a>
               <a target="_blank" href="https://zh.wikipedia.org/zh-tw/%E5%8C%BB%E7%94%9F" role="button"><button class="link">Dentist</button></a>
         </div>
       </div>
@@ -146,7 +152,7 @@
       <div class="Icontainer image-container9">
         <img src="/img/電視台.webp" alt="電視台" class="zoomable-image">
         <div class="links links9">
-          <a target="_blank" href="https://zh.wikipedia.org/zh-tw/%E5%8C%BB%E7%94%9F" role="button"><button class="link">Rrporter</button></a>
+          <a target="_blank" href="https://zh.wikipedia.org/zh-tw/%E5%8C%BB%E7%94%9F" role="button"><button class="link">Reporter</button></a>
         </div>
       </div>
 </div>
@@ -181,6 +187,9 @@
               exitFullScreenButton.style.display = 'none';
           }
       }
+      document.querySelector('.dropdown-menu').addEventListener('shown.bs.dropdown', function () {
+          this.style.maxHeight = this.scrollHeight + 'px';
+      });
   </script>
 </body>
 
