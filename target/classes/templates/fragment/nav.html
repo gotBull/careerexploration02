@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/EnglishProject20240110.css" >
+</head>
+<body>
+    <div th:fragment="nav">
+        <nav class="navbar navbar-expand-xl navbar-expand-size1 bg-body-tertiary fixed-top theNAV">
+            <div class="container-fluid theNavContainer ">
+
+                <!-- 縮小後變成選單 -->
+                <button class="navbar-toggler theCollapse" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- 選單的列表 -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <a class="imgLink" href="/homepage"><img id="LOGO" src="/img/隊徽.webp"></a>
+                    <a id="theName" href="/homepage"><h2 >Career-Oriented Alliance</h2></a>
+
+                    <!-- 連結 -->
+                    <ul class="navbar-nav" id="theNavLink">
+                        <li>
+                            <a class="nav-link theLinkItem" id="item1" aria-current="page" href="aboutus">About Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link theLinkItem" href="#">Cooperation</a>
+                        </li>
+                    </ul>
+
+                    <!-- 職業選擇條 -->
+                    <div class="dropdown" id="JobMenu">
+                        <a class="btn btn-secondary dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            What kind of job do you want to know?
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item JobItem" href="/job/police">Police Officer</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">News Reporter</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">Actor or Actress</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">Teacher</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">Counselor</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">Tour Guide</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">Wedding Planner</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">Youtuber</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">Fashion Designer</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">Dentist</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">Chef</a></li>
+                            <li><a class="dropdown-item JobItem" href="#">Doctor</a></li>
+                        </ul>
+                    </div>
+
+                    <ul class="navbar-nav" id="theNavLink2">
+                        <li>
+                            <a class="nav-link theLinkItem" aria-current="page" href="aboutus">Customer Service</a>
+                        </li>
+                    </ul>
+                    <!-- 登入和註冊 -->
+                    <div class="btn-group" id="theNavItemRegister">
+                        <a href="user_register" class="btn btn-light" aria-current="page"><p>Register</p></a>
+                        <a>|</a>
+                        <a th:unless="${session.logInAcc}" href="/login" class="btn btn-light"><p>Login</p></a>
+                        <a th:if="${session.logInAcc}" href="/logout" class="btn btn-light"><p>Logout</p></a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>
