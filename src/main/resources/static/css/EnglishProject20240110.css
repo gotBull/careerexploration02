@@ -73,7 +73,9 @@ span
   background-color: #000;
   border-radius: 10px;
 }
-.FullScreenB
+
+/*全螢幕按鈕判斷*/
+.FullScreenB , .ExitFullScreenB
 {
   order: 5;
   border-radius: 15px;
@@ -81,12 +83,31 @@ span
   position: absolute;
   bottom: 5%;
   right: 1%;
+  cursor: pointer;
 }
-.FullScreenB:hover
+.ExitFullScreenB{
+  display: none; /* 隱藏退出全螢幕按鈕 */
+}
+.FullScreenB:hover , .ExitFullScreenB:hover
 {
   color: #f7fafc;
   background-color: #000;
 }
+/* 全螢幕模式下的樣式 */
+:fullscreen .FullScreenB {
+  display: none; /* 隱藏全螢幕按鈕 */
+}
+:fullscreen .ExitFullScreenB {
+  display: inline-block; /* 顯示退出全螢幕按鈕 */
+}
+/* 非全螢幕模式下的樣式 */
+:not(:fullscreen) .ExitFullScreenB {
+  display: none; /* 隱藏退出全螢幕按鈕 */
+}
+:not(:fullscreen) .FullScreenB {
+  display: inline-block; /* 顯示全螢幕按鈕 */
+}
+
 .theMap
 {
   position: absolute;
