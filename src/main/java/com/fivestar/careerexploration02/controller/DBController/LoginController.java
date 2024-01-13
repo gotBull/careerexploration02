@@ -57,10 +57,10 @@ public class LoginController
         if(loginResult)
         {
             session.setAttribute("logInAcc",true);  // 登入成功，設定session屬性是true
-            model.addAttribute("logSuess","You have successfully logged in.");
+            model.addAttribute("logSuess","Logged in success!");
             model.addAttribute("showUserName", showUserName.getUsername()); //先判別帳密一致後，印出與帳號對應的使用者名稱
             logger.warn("執行後可以先看到userName內容"+accountnum);   //SpringBoot除錯訊息註解
-            return "loginsuss";
+            return "login";
         }
         else
         {
