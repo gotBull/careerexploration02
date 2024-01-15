@@ -1,0 +1,70 @@
+.main{
+    margin: auto 6.5%;
+}
+#banner
+{
+    width: 100%;
+}
+.paySection{
+    background-color:#e1f5e4;
+}
+.plan-content {
+    display: none;
+    width: 100%;
+}
+#plan1 {
+    display: block; /* 將方案1的內容預設設為可見 */
+}
+.plans {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom:0;
+}
+.payment{
+    display: flex;
+    justify-content:space-evenly;
+}
+.plans>button{
+    padding: 10px;
+    width: 25%;
+    margin: 2% 2% 0 2%;
+    border: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.selected {
+    background-color: #e1f5e4;
+    color: #070707;
+}
+.plan-item{
+    padding: 10px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 0.4rem solid #ffffff;
+    border-radius: 8px;
+    font-size: 2rem;
+    margin: 2%;
+}
+.paymentBtn{
+    text-decoration: none;
+    padding: 5px 2rem;
+    background-color: #81afcb;
+    color: #070707;
+    border: #2b8ccc 0.3rem solid;
+    border-radius: 1rem;
+
+}
+.paymentBtn:hover{
+    background-color: #67e17b;
+    color: #d2fff2;
+}
+#accordionBlock
+{
+    margin: auto 6.5%;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>付費專案</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/css/CustomerService.css">
+    <link href="/css/carrer.css" rel="stylesheet" />
+</head>
+<body>
+<!-- Navigation-->
+<div th:replace="fragment/job_nav.html :: jobNav"></div>
+    <!-- banner圖片 -->
+    <img src="/img/banner.jpg" alt="banner" id="banner">
+    <!-- 選擇課程 -->
+    <div class="main">
+        <section class="plans">
+            <button onclick="showPlan('plan1', 'button1')" id="button1">地圖無限觀看</button>
+            <button onclick="showPlan('plan2', 'button2')" id="button2">一對一家教</button>
+            <button onclick="showPlan('plan3', 'button3')" id="button3">吃到飽方案</button>
+        </section>
+        <!-- 選擇付費方案 -->
+        <section class="paySection">
+            <div id="plan1" class="plan-content">
+                <div class="payment">
+                    <div class="plan-item">
+                        <h2>月繳方案</h2>
+                        <hr>
+                        <h4>100元</h4>
+                        <a href="#" type="btn" class="paymentBtn">100元/月</a>
+                    </div>
+                    <div class="plan-item">
+                        <h2>預繳半年</h2>
+                        <hr>
+                        <h4>450元</h4>
+                        <a href="#" type="btn" class="paymentBtn">72元/月</a>
+                    </div>
+                    <div class="plan-item">
+                        <h2>預繳一年</h2>
+                        <hr>
+                        <h4>720元</h4>
+                        <a href="#" type="btn" class="paymentBtn">60元/月</a>
+                    </div>
+                </div>
+            </div>
+            <div id="plan2" class="plan-content">
+                <div class="payment">
+                    <div class="plan-item">
+                        <h2>月繳方案</h2>
+                        <hr>
+                        <h4>250元</h4>
+                        <a href="#" type="btn" class="paymentBtn">250元/月</a>
+                    </div>
+                    <div class="plan-item">
+                        <h2>預繳半年</h2>
+                        <hr>
+                        <h4>1122元</h4>
+                        <a href="#" type="btn" class="paymentBtn">187元/月</a>
+                    </div>
+                    <div class="plan-item">
+                        <h2>預繳一年</h2>
+                        <hr>
+                        <h4>1800元</h4>
+                        <a href="#"  type="btn" class="paymentBtn">150元/月</a>
+                    </div>
+                </div>
+            </div>
+            <div id="plan3" class="plan-content">
+                <div class="payment">
+                    <div class="plan-item">
+                        <h2>月繳方案</h2>
+                        <hr>
+                        <h4>300元</h4>
+                        <a href="#" type="btn" class="paymentBtn">300元/月</a>
+                    </div>
+                    <div class="plan-item">
+                        <h2>預繳半年</h2>
+                        <hr>
+                        <h4>1350元</h4>
+                        <a href="#" type="btn" class="paymentBtn">225元/月</a>
+                    </div>
+                    <div class="plan-item">
+                        <h2>預繳一年</h2>
+                        <hr>
+                        <h4>2160元</h4>
+                        <a href="#" type="btn" class="paymentBtn">180元/月</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<!-- 付費說明欄 -->
+    <div class="accordion" id="accordionBlock">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingZero">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZero" aria-expanded="false" aria-controls="collapseZero">
+                    報名試聽
+                </button>
+            </h2>
+            <div id="collapseZero" class="accordion-collapse collapse show" aria-labelledby="headingZero" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">姓名</label>
+                            <input type="text" class="form-control" id="inputName">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">手機</label>
+                            <input type="tel" id="phone" class="form-control" name="phone" placeholder="0912-345-678" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required>
+                        </div>
+                        <div class="col-md-9">
+                            <label for="inputEmail4" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="arrangment" class="form-label">預約課程時間</label>
+                            <input type="datetime-local" class="form-control" id="arrangment" name="arrangment">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">地址</label>
+                            <input type="text" class="form-control" id="inputAddress">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    我已詳細閱讀並接受個資保護聲明
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">報名送出</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    課程說明
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul>
+                        <li>免費會員僅能觀看3部教學影片，無限觀看會員則沒有限制次數。</li>
+                        <li>1對1家教可以選擇台灣專業講師或是外國講師，一堂課以25分鐘計算。一個月為30天，上課日由購買當天開始起算。</li>
+                        <li>吃到飽會員除了上述兩者外每月還加送1堂免費線上主題課</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    付費方式說明
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul>
+                        <li>僅提供WorldPay線上付款，使用信用卡或者刷卡金融卡(需開通海外線上交易)，目前尚未提供其他繳款方式。</li>
+                        <li>WorldPay是一種安全性高的第三方支付方式，只要您有VISA卡或Master卡，就可以在Engoo付費頁中經由WorldPay並進行付款。</li>
+                        <li>使用WorldPay付款時，課程費用繳款對象為境外公司，因此多數銀行會向使用者收取「國外交易手續費」(約1.5%)，每家銀行收取的比例不同，詳細資訊請向您的發卡銀行詢問。</li>
+                        <li>若您在付款時遇到任何問題，請您直接與我們的客服人員聯繫。 請不要在Engoo之外的的網站、系統進行付款。只有透過Engoo網站付費才能夠有效保證您成功購買我們的課程。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    退費規定
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ol>
+                        <li>購買課程當天起算，7日內未使用任何服務即終止契約，全額返還已繳納之課程費用。</li>
+                        <li>購買課程當天起算，總課程期間及已預約之課程未逾三分之一，始終止契約，返還已繳納課程費用全額之百分之五十。如經本公司證明契約終止係可歸責於消費者之事由所致者，本公司並得自返還之金額中扣除百分之三十之違約金。</li>
+                        <li>購買課程當天起算，總課程期間或已預約之課程超過三分之一，始終止契約，已繳納課程費用全額不予退還。</li>
+                        <li>為避免購物糾紛，使用者保證在購買前已詳閱各項規則及常見問題。</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function showPlan(planId, buttonId) {
+        // 先將所有方案隱藏
+        var allPlans = document.querySelectorAll('.plan-content');
+        allPlans.forEach(function(plan) {
+            plan.style.display = 'none';
+        });
+
+        // 將選中的方案顯示
+        var selectedPlan = document.getElementById(planId);
+        if (selectedPlan) {
+            selectedPlan.style.display = 'block';
+        }
+
+        // 將所有按鈕邊框樣式重置
+        var allButtons = document.querySelectorAll('.plans button');
+        allButtons.forEach(function(button) {
+            button.classList.remove('selected');
+        });
+
+        // 將選中的按鈕添加樣式
+        var selectedButton = document.getElementById(buttonId);
+        if (selectedButton) {
+            selectedButton.classList.add('selected');
+        }
+    }
+
+    // 在所有元素載入後預設顯示方案1
+    document.addEventListener('DOMContentLoaded', function() {
+        showPlan('plan1', 'button1');
+    });
+
+
+</script>
+</html>

@@ -47,92 +47,18 @@
 </head>
 
 <body>
-<!-- navbar-expand-xxl -->
-
-<nav class="navbar navbar-expand-xl navbar-expand-size1 bg-body-tertiary fixed-top theNAV">
-    <div class="container-fluid theNavContainer ">
-
-        <!-- 縮小後變成選單 -->
-        <button class="navbar-toggler theCollapse" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- 選單的列表 -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <a class="imgLink" href="/homepage"><img id="LOGO" src="/img/隊徽.webp"></a>
-            <a id="theName" href="/homepage"><h2 >Career-Oriented Alliance</h2></a>
-
-            <!-- 連結 -->
-            <ul class="navbar-nav" id="theNavLink">
-                <li>
-                    <a class="nav-link theLinkItem" aria-current="page" href="aboutUs">About Us</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link theLinkItem" href="#">Link</a>
-                </li>
+    <div class="container-fluid d-flex justify-content-center align-items-center position-relative">
+        <div class="mapImg">
+            <img src="/img/地圖20240108.webp" alt="地圖20240108" class="img-fluid">
+        </div>
+        <div class="aboutUs_content w-50">
+            <ul class="list-group">本團隊擅長開發"語言學習平台"，除了"外語"的領域之外，在"程式語言"的領域，未來也將規劃開發「程式語言好好玩系列」:
+                <li>Java好好玩</li>
+                <li>Python好好玩</li>
+                <li>C/C++/C#好好玩</li>
             </ul>
-
-            <!-- 職業選擇條 -->
-            <div class="dropdown" id="JobMenu">
-                <a class="btn btn-secondary dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    What kind of job do you want to know?
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item JobItem" href="/job/police">Police Officer</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">News Reporter</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">Actor or Actress</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">Teacher</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">Counselor</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">Tour Guide</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">Wedding Planner</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">Youtuber</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">Fashion Designer</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">Dentist</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">Chef</a></li>
-                    <li><a class="dropdown-item JobItem" href="#">Doctor</a></li>
-                </ul>
-            </div>
-
-            <!-- 登入和註冊 -->
-            <div class="btn-group" id="theNavItemRegister">
-                <a href="user_register" class="btn btn-light" aria-current="page">Register</a>
-                <a class="btn btn-light">|</a>
-                <a href="login" id="loginButton" class="btn btn-light">Login</a>
-            </div>
-
         </div>
     </div>
-</nav>
-<div class="container-fluid d-flex justify-content-center align-items-center w-100 position-relative">
-<!--    <h2 class="aboutTit">About Us</h2>-->
-    <div class="mapImg">
-        <img src="/img/地圖20240108.webp" alt="地圖20240108" class="img-fluid">
-    </div>
-    <div class="aboutUs_content w-50 shadow">
-        <ol>我們除了深耕"語言學習平臺"的專業開發，也規劃將觸角延伸，與外語補習班、…等機構合作發展客製、趣味化的授課模式：
-            <li>一對一教學：
-                <ul>
-                    <li>學生和老師之間進行一對一的教學，可以更精準地滿足學生的需求。</li>
-                    <li>有助於個別化的進度安排和教學內容。</li>
-                </ul>
-            </li>
-            <li>線上學習平台教學：
-                <ul>
-                    <li>透過視訊會議、教學平台或應用程式進行遠距教學。</li>
-                    <li>學生可以在家中透過電腦或平板參與課程，彈性度高。</li>
-                </ul>
-            </li>
-            <li>混合式教學：
-                <ul>
-                    <li>同時結合面授課程和線上教學，提供更多學習選擇。</li>
-                    <li>學生可以根據自己的需求選擇參與實體課程或線上課程。</li>
-                </ul>
-            </li>
-        </ol>
-    </div>
-</div>
 </body>
 
 </html>
