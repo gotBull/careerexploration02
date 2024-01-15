@@ -18,6 +18,12 @@ public class WebController
         return "aboutUs";
     }
 
+    @GetMapping("/CustomerService")
+    String CustomerService()
+    {
+        return "CustomerService";
+    }
+
     @GetMapping("/job/police")
     public String police(){
         return "Octn_PoliceOfficer";
