@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
@@ -78,6 +78,7 @@
         </div>
         <div class="theCongrate" th:if="${session.logInAcc}">
             <h1><span th:text="${ logSuess }"> test msg </span></h1>
+            <!--  顯示會員名字  -->
             <p>Welcome <span id="username" th:text="${ showUserName }"> test msg</span> back!</p>
             <p>Back to homepage in <span id="countdown"> 3</span> s</p>
         </div>

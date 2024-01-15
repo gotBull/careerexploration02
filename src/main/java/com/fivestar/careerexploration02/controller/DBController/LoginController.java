@@ -50,6 +50,7 @@ public class LoginController
         UserLogModel02 model01 = new UserLogModel02();
         UserLogModel02 showUserName = userLoginService.transUserName(accountnum);   //從DAO簡單寫從帳號對應的使用者名稱，給Service傳
         UserLogModel02 setUserIdAtSession = userLoginService.transMemberID(memberid);  //登入後，設定會員ID在session上
+        logger.warn("執行後可以先看到memberid內容"+memberid);   //SpringBoot除錯訊息註解
         model01.setAccountnum(accountnum);
         model01.setPasswd(passwd);
 
@@ -58,6 +59,7 @@ public class LoginController
         {
             session.setAttribute("logInAcc",true);  // 登入成功，設定session屬性是true
             session.setAttribute("memberid", setUserIdAtSession);
+            logger.warn("執行後可以後看到memberid內容"+memberid);
             model.addAttribute("logSuess","Logged in success!");
             model.addAttribute("showUserName", showUserName.getUsername()); //先判別帳密一致後，印出與帳號對應的使用者名稱
             logger.warn("執行後可以先看到userName內容"+accountnum);   //SpringBoot除錯訊息註解

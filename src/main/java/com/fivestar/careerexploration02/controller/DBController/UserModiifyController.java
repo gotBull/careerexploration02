@@ -46,4 +46,10 @@ public class UserModiifyController
         return "redirect:/member/Modify?memberid=" + userModifyModel.getMemberid();
     }
 
+    @GetMapping("/Member-Profile")
+    public String ShowMemberAll()
+    {
+        return "/member/showMemberInfo";
+    }
+
 }
