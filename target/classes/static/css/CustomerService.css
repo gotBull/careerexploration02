@@ -1,6 +1,13 @@
 .main{
     margin: auto 6.5%;
 }
+#banner
+{
+    width: 100%;
+}
+.paySection{
+    background-color:#e1f5e4;
+}
 .plan-content {
     display: none;
     width: 100%;
@@ -11,38 +18,38 @@
 .plans {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin-bottom:0;
 }
 .payment{
     display: flex;
     justify-content:space-evenly;
 }
-.plans>button , .plan-item{
+.plans>button{
     padding: 10px;
     width: 25%;
-    margin: 2%;
-    border-top: 0.5rem solid #ffffff;
-    border-right: 0.5rem solid #ffffff;
-    border-left: 0.5rem solid #ffffff;
-    border-radius: 20px;
+    margin: 2% 2% 0 2%;
+    border: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     cursor: pointer;
     font-size: 2rem;
     font-weight: 600;
 }
-.plans>button:hover{
-    border: 0.3rem solid #fdcb10;
-}
+
 .selected {
-    border-bottom: 0.4rem solid #fdcb10; /* 變色的下邊框 */
     background-color: #e1f5e4;
     color: #070707;
 }
 .plan-item{
+    padding: 10px;
+    width: 25%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 0.4rem solid #000000;
+    border: 0.4rem solid #ffffff;
     border-radius: 8px;
+    font-size: 2rem;
+    margin: 2%;
 }
 .paymentBtn{
     text-decoration: none;

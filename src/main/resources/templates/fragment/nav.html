@@ -60,7 +60,7 @@
                     </ul>
                     <!-- 登入和註冊 -->
                     <div class="btn-group" id="theNavItemRegister">
-                        <a href="user_register" class="btn btn-light" aria-current="page"><p>Register</p></a>
+                        <a href="/user_register" class="btn btn-light" aria-current="page"><p>Register</p></a>
                         <a>|</a>
                         <a th:unless="${session.logInAcc}" href="/login" class="btn btn-light"><p>Login</p></a>
                         <a th:if="${session.logInAcc}" href="/logout" class="btn btn-light"><p>Logout</p></a>
