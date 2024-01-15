@@ -28,4 +28,9 @@ public class UserLoginService
         return userLoginDao.getUserNameAtDao(accountnum);
     }
 
+    public UserLogModel02 transMemberID(Integer memberid)  //做一個登入時可記載會員ID
+    {
+        return userLoginDao.getUserIdAtDao(memberid);
+    }
+
 }

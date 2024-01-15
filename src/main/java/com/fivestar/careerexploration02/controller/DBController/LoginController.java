@@ -4,7 +4,6 @@ import com.fivestar.careerexploration02.model.userModel.UserLogModel02;
 import com.fivestar.careerexploration02.service.UserLoginService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,17 +38,18 @@ public class LoginController
         }
         else
         {
-            return "login";
+            return "/member/login";
         }
     }
 
     @PostMapping("/login")
     public String loginsussPage(@RequestParam("accountnum") String accountnum,
-                                @RequestParam("passwd") String passwd,
+                                @RequestParam("passwd") String passwd, Integer memberid,
                                 HttpSession session, Model model)
     {
         UserLogModel02 model01 = new UserLogModel02();
         UserLogModel02 showUserName = userLoginService.transUserName(accountnum);   //從DAO簡單寫從帳號對應的使用者名稱，給Service傳
+        UserLogModel02 setUserIdAtSession = userLoginService.transMemberID(memberid);  //登入後，設定會員ID在session上
         model01.setAccountnum(accountnum);
         model01.setPasswd(passwd);
 
@@ -57,16 +57,17 @@ public class LoginController
         if(loginResult)
         {
             session.setAttribute("logInAcc",true);  // 登入成功，設定session屬性是true
+            session.setAttribute("memberid", setUserIdAtSession);
             model.addAttribute("logSuess","Logged in success!");
             model.addAttribute("showUserName", showUserName.getUsername()); //先判別帳密一致後，印出與帳號對應的使用者名稱
             logger.warn("執行後可以先看到userName內容"+accountnum);   //SpringBoot除錯訊息註解
-            return "login";
+            return "/member/login";
         }
         else
         {
             //帳號或密碼輸入錯誤，三秒後返回登入頁面
             model.addAttribute("logFail","Incorrect username or password. Returning to the login page in three seconds.");
-            return "loginFail";
+            return "/member/loginFail";
         }
     }
 

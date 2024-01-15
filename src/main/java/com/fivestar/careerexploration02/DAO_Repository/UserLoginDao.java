@@ -49,4 +49,17 @@ public class UserLoginDao
             return null;  // 沒有找到相應的會員資料
         }
     }
+
+    public UserLogModel02 getUserIdAtDao(Integer memberid)
+    {
+        String sql03= "SELECT * FROM userdata WHERE accountnum = ?";
+        try
+        {
+            return jdbcTemplate.queryForObject(sql03, new Object[]{memberid}, new UserLoginMapper());
+        }
+        catch (EmptyResultDataAccessException e)
+        {
+            return null;  // 沒有找到相應的會員資料
+        }
+    }
 }
