@@ -12,9 +12,12 @@
         .mapImg {
             opacity: .5;
         }
-        .aboutUs_content ul li{
+        .aboutUs_content ol li ul li{
             color: #f2dc8a;
             list-style-type: square;
+        }
+        .aboutUs_content ol li{
+            color: #bbeef2;
         }
         .aboutUs_content {
             position: absolute;
@@ -28,7 +31,7 @@
             font-size: 56px;
             /*color: rgb(40, 164, 189);*/
             position: absolute;
-            top:26%;
+            top:10%;
             left: 30%;
             z-index: 2;
             -webkit-text-stroke: 1px black;
@@ -103,19 +106,31 @@
     </div>
 </nav>
 <div class="container-fluid d-flex justify-content-center align-items-center w-100 position-relative">
-    <h2 class="aboutTit">About Us</h2>
+<!--    <h2 class="aboutTit">About Us</h2>-->
     <div class="mapImg">
         <img src="/img/地圖20240108.webp" alt="地圖20240108" class="img-fluid">
     </div>
     <div class="aboutUs_content w-50 shadow">
-        <ul>我們是"語言學習平臺"專業開發團隊,
-            除了"外語學習"的領域之外,<br/>
-            在"程式語言學習"的領域,未來也將
-            規劃開發「程式語言好好玩系列」:
-            <li>Java好好玩</li>
-            <li>Python好好玩</li>
-            <li>C/C++/C#好好玩</li>
-        </ul>
+        <ol>我們除了深耕"語言學習平臺"的專業開發，也規劃將觸角延伸，與外語補習班、…等機構合作發展客製、趣味化的授課模式：
+            <li>一對一教學：
+                <ul>
+                    <li>學生和老師之間進行一對一的教學，可以更精準地滿足學生的需求。</li>
+                    <li>有助於個別化的進度安排和教學內容。</li>
+                </ul>
+            </li>
+            <li>線上學習平台教學：
+                <ul>
+                    <li>透過視訊會議、教學平台或應用程式進行遠距教學。</li>
+                    <li>學生可以在家中透過電腦或平板參與課程，彈性度高。</li>
+                </ul>
+            </li>
+            <li>混合式教學：
+                <ul>
+                    <li>同時結合面授課程和線上教學，提供更多學習選擇。</li>
+                    <li>學生可以根據自己的需求選擇參與實體課程或線上課程。</li>
+                </ul>
+            </li>
+        </ol>
     </div>
 </div>
 </body>

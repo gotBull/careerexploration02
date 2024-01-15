@@ -20,6 +20,10 @@ public class WebController
     public String about(){
         return "aboutUs";
     }
+    @GetMapping("/cooperation")
+    public String cooperation(){
+        return "cooperation";
+    }
 }
 
 
