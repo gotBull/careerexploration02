@@ -12,12 +12,6 @@ public class WebController
         return "EnglishProject20240110";
     }
 
-    @GetMapping("/aboutus")
-    String aboutUs()
-    {
-        return "aboutUs";
-    }
-
     @GetMapping("/CustomerService")
     String CustomerService()
     {
@@ -28,5 +22,15 @@ public class WebController
     public String police(){
         return "Octn_PoliceOfficer";
     }
+    @GetMapping("/about")
+    public String about(){
+        return "aboutUs";
+    }
+    @GetMapping("/cooperation")
+    public String cooperation(){
+        return "cooperation";
+    }
 }
+
+
 
