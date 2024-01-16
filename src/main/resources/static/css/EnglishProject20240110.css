@@ -15,7 +15,7 @@ body{font-family: Lora, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hel
     width: 100%;
 }
 /* 標誌 */
-#theName, #theNavLink, #JobMenu
+#theName, #theNavLink, .JobMenu
 {
     margin-right: 2.5vw;
 }
@@ -58,7 +58,7 @@ body{font-family: Lora, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hel
   order: 3;
   width: 17%;}
 #theNavLink2{order: 5;}
-#JobMenu 
+.JobMenu
 {
     order: 4;
 }

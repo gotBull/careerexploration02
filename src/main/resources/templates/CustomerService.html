@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>付費專案</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/CustomerService.css">
     <link href="/css/carrer.css" rel="stylesheet" />
 </head>
@@ -16,80 +18,84 @@
     <img src="/img/banner.jpg" alt="banner" id="banner">
     <!-- 選擇課程 -->
     <div class="main">
-        <section class="plans">
-            <button onclick="showPlan('plan1', 'button1')" id="button1">地圖無限觀看</button>
-            <button onclick="showPlan('plan2', 'button2')" id="button2">一對一家教</button>
-            <button onclick="showPlan('plan3', 'button3')" id="button3">吃到飽方案</button>
-        </section>
-        <!-- 選擇付費方案 -->
-        <section class="paySection">
-            <div id="plan1" class="plan-content">
-                <div class="payment">
-                    <div class="plan-item">
-                        <h2>月繳方案</h2>
-                        <hr>
-                        <h4>100元</h4>
-                        <a href="#" type="btn" class="paymentBtn">100元/月</a>
-                    </div>
-                    <div class="plan-item">
-                        <h2>預繳半年</h2>
-                        <hr>
-                        <h4>450元</h4>
-                        <a href="#" type="btn" class="paymentBtn">72元/月</a>
-                    </div>
-                    <div class="plan-item">
-                        <h2>預繳一年</h2>
-                        <hr>
-                        <h4>720元</h4>
-                        <a href="#" type="btn" class="paymentBtn">60元/月</a>
-                    </div>
-                </div>
-            </div>
-            <div id="plan2" class="plan-content">
-                <div class="payment">
-                    <div class="plan-item">
-                        <h2>月繳方案</h2>
-                        <hr>
-                        <h4>250元</h4>
-                        <a href="#" type="btn" class="paymentBtn">250元/月</a>
-                    </div>
-                    <div class="plan-item">
-                        <h2>預繳半年</h2>
-                        <hr>
-                        <h4>1122元</h4>
-                        <a href="#" type="btn" class="paymentBtn">187元/月</a>
-                    </div>
-                    <div class="plan-item">
-                        <h2>預繳一年</h2>
-                        <hr>
-                        <h4>1800元</h4>
-                        <a href="#"  type="btn" class="paymentBtn">150元/月</a>
+
+        <div id="app">
+            <section class="plans">
+                <button v-on:click="showPlan('plan1', 'button1')" :class="{ selected: selectedButton === 'button1' }" id="button1">地圖無限觀看</button>
+                <button v-on:click="showPlan('plan2', 'button2')" :class="{ selected: selectedButton === 'button2' }" id="button2">一對一家教</button>
+                <button v-on:click="showPlan('plan3', 'button3')" :class="{ selected: selectedButton === 'button3' }" id="button3">吃到飽方案</button>
+            </section>
+            <!-- 選擇付費方案 -->
+            <section class="paySection">
+                <div  v-if="selectedPlan === 'plan1'" id="plan1" class="plan-content active">
+                    <div class="payment">
+                        <div class="plan-item">
+                            <h2>月繳方案</h2>
+                            <hr>
+                            <h4>100元</h4>
+                            <a href="#" type="btn" class="paymentBtn">100元/月</a>
+                        </div>
+                        <div class="plan-item">
+                            <h2>預繳半年</h2>
+                            <hr>
+                            <h4>450元</h4>
+                            <a href="#" type="btn" class="paymentBtn">72元/月</a>
+                        </div>
+                        <div class="plan-item">
+                            <h2>預繳一年</h2>
+                            <hr>
+                            <h4>720元</h4>
+                            <a href="#" type="btn" class="paymentBtn">60元/月</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="plan3" class="plan-content">
-                <div class="payment">
-                    <div class="plan-item">
-                        <h2>月繳方案</h2>
-                        <hr>
-                        <h4>300元</h4>
-                        <a href="#" type="btn" class="paymentBtn">300元/月</a>
-                    </div>
-                    <div class="plan-item">
-                        <h2>預繳半年</h2>
-                        <hr>
-                        <h4>1350元</h4>
-                        <a href="#" type="btn" class="paymentBtn">225元/月</a>
-                    </div>
-                    <div class="plan-item">
-                        <h2>預繳一年</h2>
-                        <hr>
-                        <h4>2160元</h4>
-                        <a href="#" type="btn" class="paymentBtn">180元/月</a>
+                <div v-if="selectedPlan === 'plan2'" id="plan2" class="plan-content">
+                    <div class="payment">
+                        <div class="plan-item">
+                            <h2>月繳方案</h2>
+                            <hr>
+                            <h4>250元</h4>
+                            <a href="#" type="btn" class="paymentBtn">250元/月</a>
+                        </div>
+                        <div class="plan-item">
+                            <h2>預繳半年</h2>
+                            <hr>
+                            <h4>1122元</h4>
+                            <a href="#" type="btn" class="paymentBtn">187元/月</a>
+                        </div>
+                        <div class="plan-item">
+                            <h2>預繳一年</h2>
+                            <hr>
+                            <h4>1800元</h4>
+                            <a href="#"  type="btn" class="paymentBtn">150元/月</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+                <div v-if="selectedPlan === 'plan3'" id="plan3" class="plan-content">
+                    <div class="payment">
+                        <div class="plan-item">
+                            <h2>月繳方案</h2>
+                            <hr>
+                            <h4>300元</h4>
+                            <a href="#" type="btn" class="paymentBtn">300元/月</a>
+                        </div>
+                        <div class="plan-item">
+                            <h2>預繳半年</h2>
+                            <hr>
+                            <h4>1350元</h4>
+                            <a href="#" type="btn" class="paymentBtn">225元/月</a>
+                        </div>
+                        <div class="plan-item">
+                            <h2>預繳一年</h2>
+                            <hr>
+                            <h4>2160元</h4>
+                            <a href="#" type="btn" class="paymentBtn">180元/月</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </div>
 
 <!-- 付費說明欄 -->
@@ -192,37 +198,37 @@
     </div>
 </body>
 <script>
-    function showPlan(planId, buttonId) {
-        // 先將所有方案隱藏
-        var allPlans = document.querySelectorAll('.plan-content');
-        allPlans.forEach(function(plan) {
-            plan.style.display = 'none';
-        });
+    // 創建一個 Vue 實例
+    const app = Vue.createApp({
+        data() {
+            return {
+                selectedButton: 'button1',
+                selectedPlan: 'plan1'
+            };
+        },
+        methods: {
+            showPlan(planId, buttonId) {
+                // 更新選中的方案和按鈕
+                this.selectedButton = buttonId;
+                this.selectedPlan = planId;
 
-        // 將選中的方案顯示
-        var selectedPlan = document.getElementById(planId);
-        if (selectedPlan) {
-            selectedPlan.style.display = 'block';
-        }
+                // 使用 this.$nextTick() 來確保更新發生在 DOM 渲染之後
+                this.$nextTick(() => {
+                    const allPlans = document.querySelectorAll('.plan-content');
+                    allPlans.forEach(plan => {
+                        plan.style.display = 'none';
+                    });
 
-        // 將所有按鈕邊框樣式重置
-        var allButtons = document.querySelectorAll('.plans button');
-        allButtons.forEach(function(button) {
-            button.classList.remove('selected');
-        });
-
-        // 將選中的按鈕添加樣式
-        var selectedButton = document.getElementById(buttonId);
-        if (selectedButton) {
-            selectedButton.classList.add('selected');
-        }
-    }
-
-    // 在所有元素載入後預設顯示方案1
-    document.addEventListener('DOMContentLoaded', function() {
-        showPlan('plan1', 'button1');
+                    const selectedPlan = document.getElementById(planId);
+                    if (selectedPlan) {
+                        selectedPlan.style.display = 'block';
+                    }
+                });
+            }
+        },
     });
 
-
+    // 掛載 Vue 實例到 HTML 元素
+    app.mount('#app');
 </script>
 </html>

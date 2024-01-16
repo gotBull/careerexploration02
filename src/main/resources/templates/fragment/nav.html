@@ -5,6 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="/css/EnglishProject20240110.css" >
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <div th:fragment="nav">
@@ -36,24 +37,15 @@
                     </ul>
 
                     <!-- 職業選擇條 -->
-                    <div class="dropdown" id="JobMenu">
-                        <a class="btn btn-secondary dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div id="app" class="dropdown JobMenu">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" @click="toggleDropdown">
                             What kind of job do you want to know?
                         </a>
 
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item JobItem" href="/job/police">Police Officer</a></li>
-                            <li><a class="dropdown-item JobItem" href="#">News Reporter</a></li>
-                            <li><a class="dropdown-item JobItem" href="/job/Actor">Actor or Actress</a></li>
-                            <li><a class="dropdown-item JobItem" href="#">Teacher</a></li>
-                            <li><a class="dropdown-item JobItem" href="#">Counselor</a></li>
-                            <li><a class="dropdown-item JobItem" href="#">Tour Guide</a></li>
-                            <li><a class="dropdown-item JobItem" href="#">Wedding Planner</a></li>
-                            <li><a class="dropdown-item JobItem" href="#">Youtuber</a></li>
-                            <li><a class="dropdown-item JobItem" href="/job/FashionDesigner">Fashion Designer</a></li>
-                            <li><a class="dropdown-item JobItem" href="/job/Dentist">Dentist</a></li>
-                            <li><a class="dropdown-item JobItem" href="/job/Chef">Chef</a></li>
-                            <li><a class="dropdown-item JobItem" href="/job/Doctor">Doctor</a></li>
+                        <ul :id="dropdownId" class="dropdown-menu" ref="dropdownMenu" @shown.bs.dropdown="adjustDropdownHeight">
+                            <li v-for="job in jobs" :key="job.id">
+                                <a class="dropdown-item JobItem" :href="`/job/${job.slug}`">{{ job.title }}</a>
+                            </li>
                         </ul>
                     </div>
 

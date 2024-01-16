@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="/css/EnglishProject20240110.css" >
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
@@ -129,9 +130,38 @@
               exitFullScreenButton.style.display = 'none';
           }
       }
-      document.querySelector('.dropdown-menu').addEventListener('shown.bs.dropdown', function () {
-          this.style.maxHeight = this.scrollHeight + 'px';
+      const app = Vue.createApp({
+          data() {
+              return {
+                  dropdownId: 'myDropdown',
+                  jobs: [
+                      { id: 1, title: 'Police Officer', slug: 'police' },
+                      { id: 2, title: 'News Reporter', slug: 'news-reporter' },
+                      { id: 3, title: 'Actor or Actress', slug: 'ActorOrActress' },
+                      { id: 4, title: 'Teacher', slug: 'Teacher' },
+                      { id: 5, title: 'Counselor', slug: 'Counselor' },
+                      { id: 6, title: 'Tour Guide', slug: 'TourGuide' },
+                      { id: 7, title: 'Wedding Planner', slug: 'WeddingPlanner' },
+                      { id: 8, title: 'Youtuber', slug: 'Youtuber' },
+                      { id: 9, title: 'Fashion Designer', slug: 'FashionDesigner' },
+                      { id: 10, title: 'Dentist', slug: 'Dentist' },
+                      { id: 11, title: 'Chef', slug: 'Chef' },
+                      { id: 12, title: 'Doctor', slug: 'Doctor' },
+                  ],
+              };
+          },
+          methods: {
+              toggleDropdown() {
+                  // 切換下拉選單的顯示狀態
+                  $(`#${this.dropdownId}`).toggleClass('show');
+              },
+              adjustDropdownHeight() {
+                  // 調整下拉選單的最大高度
+                  this.$refs.dropdownMenu.style.maxHeight = this.$refs.dropdownMenu.scrollHeight + 'px';
+              },
+          },
       });
+      app.mount('#app');
   </script>
 </body>
 

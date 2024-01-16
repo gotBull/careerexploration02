@@ -12,6 +12,9 @@
     display: none;
     width: 100%;
 }
+.plan-content.show {
+    display: block;
+}
 #plan1 {
     display: block; /* 將方案1的內容預設設為可見 */
 }
