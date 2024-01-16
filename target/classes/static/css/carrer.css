@@ -24,14 +24,18 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 {
     margin-right: 1vw;
 }
-.imgLink
-{
-  width: 6%;
+
+.imgLink {
+  display: flex;
+    padding:0.8rem;
+    text-decoration: none;
+    flex: 0 0 auto;
+    width: 28%;
 }
 #LOGO{
   position: relative;
-    width:60%;
-    order: 1;
+    width:11%;
+    height:11%;
 }
 /* 品牌名稱 */
 #theName{
@@ -40,15 +44,17 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
     color: #2b8ccc;
     order: 2;
     text-wrap: nowrap;
-    text-decoration: none;
-    margin-top: 6px;
+    margin: 6px;
 }
-#theNavLink
+#theNavLink,#theNavLink2
 {
-    font-size: 1.2rem;
+    flex: 0 0 auto;
+    font-size: 1rem;
     text-wrap: nowrap;
 }
-#theNavLink{order: 3;}
+#theNavLink{
+    order: 3;
+    width: 17%;}
 #theNavLink2{order: 5;}
 #JobMenu 
 {
@@ -57,6 +63,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .dropdown-menu {
     max-height: 45vh; /* 根據需要設定合適的最大高度 */
     overflow-y: auto;  /* 啟用滾動條 */
+    width: 100%;
 }
 .JobItem
 {
@@ -75,6 +82,9 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 {
     display: inline-flex;
     align-items: center;
+}
+.Llink{
+    border-right: black 2px solid;
 }
 .theCollapse
 {
