@@ -11,7 +11,14 @@ public class WebController
     {
         return "EnglishProject20240110";
     }
-
+    @GetMapping("/about")
+    public String about(){
+        return "aboutUs";
+    }
+    @GetMapping("/cooperation")
+    public String cooperation(){
+        return "cooperation";
+    }
     @GetMapping("/CustomerService")
     String CustomerService()
     {
@@ -22,14 +29,27 @@ public class WebController
     public String police(){
         return "Octn_PoliceOfficer";
     }
-    @GetMapping("/about")
-    public String about(){
-        return "aboutUs";
+    @GetMapping("/job/Actor")
+    public String Actor(){
+        return "Octn_Actor";
     }
-    @GetMapping("/cooperation")
-    public String cooperation(){
-        return "cooperation";
+    @GetMapping("/job/Chef")
+    public String Chef(){
+        return "Octn_Chef";
     }
+    @GetMapping("/job/FashionDesigner")
+    public String FashionDesigner(){
+        return "Octn_FashionDesigner";
+    }
+    @GetMapping("/job/Doctor")
+    public String Doctor(){
+        return "Octn_Doctor";
+    }
+    @GetMapping("/job/Dentist")
+    public String Dentist(){
+        return "Octn_Dentist";
+    }
+
 }
 
 
