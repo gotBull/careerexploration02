@@ -5,19 +5,32 @@ import com.fivestar.careerexploration02.model.userModel.UserModifyModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @Service
 public class UserModifyService
 {
     @Autowired
     private UserModifyDao userModifyDao;
 
-    public UserModifyModel getMemberById(Integer memberid)
+    //回傳給Repository，找出session中帳號做呈現會員資料
+    public UserModifyModel getMemberAll02(String accountnum, String passwd, String username, String email, String mobile, String address, String landline, String paymentStatus, Date paymentDate)
     {
-        return userModifyDao.getMemberById(memberid);   //回傳Id給Repository，做呈現會員資料
+        try
+        {
+            return userModifyDao.getMemberAll01(accountnum,passwd,username,email,mobile,address,landline,paymentStatus,paymentDate);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+            return null;
+        }
     }
 
+    //回傳Id給Repository，做修改會員資料
     public void updateMember(UserModifyModel userModifyModel)
     {
-        userModifyDao.updateMember(userModifyModel);    //回傳Id給Repository，做修改會員資料
+        userModifyDao.updateMember(userModifyModel);
     }
+
 }

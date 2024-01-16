@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 
 public class UserLoginMapper implements RowMapper<UserLogModel02> //把DB會員資料裝進陣列口袋
@@ -20,6 +21,10 @@ public class UserLoginMapper implements RowMapper<UserLogModel02> //把DB會員�
        uLModel.setEmail(rs.getNString("email"));
        uLModel.setMobile(rs.getNString("mobile"));
        uLModel.setRegdate(rs.getDate("regdate"));
+       uLModel.setAddress(rs.getNString("address"));    //新加入欄位
+       uLModel.setLandline(rs.getNString("landline"));
+       uLModel.setPaymentStatus(rs.getNString("paymentStatus"));
+       uLModel.setPaymentDate(rs.getDate("paymentDate"));
        return uLModel;
     }
 }

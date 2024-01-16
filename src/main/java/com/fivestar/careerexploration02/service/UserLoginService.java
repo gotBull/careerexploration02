@@ -23,7 +23,7 @@ public class UserLoginService
         return true;
     }
 
-    public UserLogModel02 transUserName(String accountnum)  //做一個登入時可同步顯示使用者名稱
+    public UserLogModel02 transUserName(String accountnum)  //做一個登入時可同步顯示使用者名稱或其他資料
     {
         return userLoginDao.getUserNameAtDao(accountnum);
     }
