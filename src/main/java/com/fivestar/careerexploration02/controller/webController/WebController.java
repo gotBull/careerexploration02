@@ -28,12 +28,12 @@ public class WebController
         return "cooperation";
     }
 
-    @GetMapping("/job/police")
+    @GetMapping("/job/policeofficer")
     public String police(){
         return "Octn_PoliceOfficer";
     }
 
-    @GetMapping("/job/police_en")
+    @GetMapping("/job/policeofficer_en")
     public String police_en() { return "Octn_PoliceOfficer_en"; }
 
     @GetMapping("/job/actor")

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -32,8 +32,12 @@
                             <div class="ratio ratio-16x9">
                                 <iframe width="930" height="523" src="https://www.youtube.com/embed/_GzXU_xT_fQ" title="YoutubeJobsVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
+<!-- 新增中英文切換按鈕 -->
+                            <!-- <h4 id="greeting">下方按鈕可選擇語言版本</h4> -->
+                            <!-- 切換語言的按鈕 -->
+                            <a href="http://localhost:8324/job/police.en"><button>英文版說明</button></a>
                             <h1>警察 Police Officer</h1>
-                            <!-- <h2 class="subheading">沒事請不要打110，我不想接，不爽請至下方署長信箱投訴</2> -->
+                            <!-- <h2 class="subheading">如需申訴，請至下方署長信箱投訴</2> -->
                             <span class="meta">
                                 考選部 考試快訊
                                 <a target="_blank" title="您即將離開本站" href="https://wwwc.moex.gov.tw/main/home/wfrmTextSearch.aspx?q=%e8%ad%a6%e5%af%9f" >  - 「警察」報考資訊請點我 - </a>
@@ -65,17 +69,35 @@
 <!--登入後會出現的內容-->
                         <div th:if="${session.logInAcc}">
                         <hr>
-                            <p>1.日常巡邏，並能迅速應對突發事件，保護人民安全。</p>
-                            <p>2.參與犯罪調查，搜集證據、訊問嫌疑人，協助檢察官起訴。</p>
-                            <p>3.與其他執法機構、政府機構和社區組織合作，共同應對複雜的治安問題。</p>
-                            <p>4.管理和指導部屬，確保執法行動的協調性和效率。</p>
-                            <p>5.參與培訓新進警員，並持續自我提升，以應對新的挑戰和技術變革。</p>
-                            <p>6.確保執法行動符合法律規定，遵從人權和憲法原則。</p>
-                            <p>7.熟悉並遵從執法程序，以合法、公正、有效的方式執法行動。</p>
-                            <p>8.協助處理重大事故、災害或緊急狀況，保障公共安全。</p>
-                            <p>9.參與制定和實施預防犯罪計劃，提高社區的安全性。</p>
-                        </div>
+<!--                            <button onclick="changeLanguage()">轉換語言</button>-->
+                            <div id="article">
+                                <p>1.日常巡邏，並能迅速應對突發事件，保護人民安全。</p>
+                                <p>2.參與犯罪調查，搜集證據、訊問嫌疑人，協助檢察官起訴。</p>
+                                <p>3.與其他執法機構、政府機構和社區組織合作，共同應對複雜的治安問題。</p>
+                                <p>4.管理和指導部屬，確保執法行動的協調性和效率。</p>
+                                <p>5.參與培訓新進警員，並持續自我提升，以應對新的挑戰和技術變革。</p>
+                                <p>6.確保執法行動符合法律規定，遵從人權和憲法原則。</p>
+                                <p>7.熟悉並遵從執法程序，以合法、公正、有效的方式執法行動。</p>
+                                <p>8.協助處理重大事故、災害或緊急狀況，保障公共安全。</p>
+                                <p>9.參與制定和實施預防犯罪計劃，提高社區的安全性。</p>
+                            </div>
 
+                        </div>
+                        <h2 class="section-heading">證照/執照要求</h2>
+<!--未登入會出現的連結-->
+                    <div th:unless="${session.logInAcc}"class="altContent">
+                            <a href="/login">
+                                <h2>
+                                    <i class='fas fa-lock-open' style='font-size:48px;color:#fcba03'></i>
+                                    點我登入查看詳細資訊
+                                </h2>
+                            </a>
+                    </div>
+<!--登入後會出現的內容-->
+                    <div th:if="${session.logInAcc}">
+                            <hr>
+                            <p>經警察人員考試合格者</p>
+                    </div>
                         <h2 class="section-heading">學歷要求</h2>
 <!--未登入會出現的連結-->
                     <div th:unless="${session.logInAcc}"class="altContent">
