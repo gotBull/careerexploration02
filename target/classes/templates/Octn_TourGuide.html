@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>主廚 Chef 職業說明</title>
+        <title>導遊 Tour Guide 職業說明</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -24,24 +24,24 @@
         <!-- YouTube video 包含背景底色 -->
 
         <!-- Page Header 首頁大圖片+配字+影片(此行可刪除) -->
-        <header class="masthead" style="background-image: url('/img/Chef.webp');">
+        <header class="masthead" style="background-image: url('/img/tourguide.webp');">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
                             <div class="ratio ratio-16x9">
-                                <iframe width="930" height="523" src="https://www.youtube.com/embed/mmD_lI3YO84" title="YoutubeJobsVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe width="930" height="523" src="https://www.youtube.com/embed/tMqwCUc1ptY" title="YoutubeJobsVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
 <!-- 新增中英文切換按鈕 -->
                             <!-- <h4 id="greeting">下方按鈕可選擇語言版本</h4> -->
                             <!-- 切換語言的按鈕 -->
-                            <h1>主廚 Chef</h1>
+                            <h1>導遊 Tour Guide</h1>
                             <a href="#"><button>英文版說明</button></a>
                             <!-- <h2 class="subheading">如需申訴，請至下方署長信箱投訴</2> -->
                             <span class="meta">
                                 104人力銀行快訊
-                                <a target="_blank" href="https://www.104.com.tw/jobs/search/?ro=0&keyword=%E4%B8%BB%E5%BB%9A&expansionType=area%2Cspec%2Ccom%2Cjob%2Cwf%2Cwktm&order=1&asc=0&page=1&mode=s&jobsource=index_s&langFlag=0&langStatus=0&recommendJob=1&hotJob=1" >  - 「主廚」職缺請點我 - </a>
-                                on January 11, 2024
+                                <a target="_blank" href="https://www.104.com.tw/jobs/search/?jobsource=index_s&keyword=%E5%B0%8E%E9%81%8A&mode=s&page=1" >  - 「導遊」職缺請點我 - </a>
+                                on January 16, 2024
                             </span>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <h2 class="section-heading">職業分類</h2>
                         <hr>
-                        <p>餐飲業</p>
+                        <p>旅遊業</p>
                         <h2 class="section-heading">職業描述</h2>
 <!--未登入會出現的連結-->
                         <div th:unless="${session.logInAcc}"class="altContent">
@@ -71,17 +71,12 @@
                         <hr>
 <!--                            <button onclick="changeLanguage()">轉換語言</button>-->
                             <div id="article">
-                                <p>1.提供正規菜色料理，包括餐前菜、主菜、湯品、餐後甜品及飲品等。</p>
-                                <p>2.準備於營業時間內的點菜或餐廳所需菜餚。</p>
-                                <p>3.協助主廚設計所負責各自類別的菜單。</p>
-                                <p>4.確保所負責類別的食品均符合衛生管理的規定。</p>
-                                <p>5.維持與確保冷凍庫及其他地區的衛生及清潔標準。</p>
-                                <p>6.保持烹飪材料的適當存量。</p>
-                                <p>7.控制出菜量以維持食品成本。</p>
-                                <p>8.配合餐廳外場的菜餚需要和出菜時間。</p>
-                                <p>9.保持高度整潔。</p>
-                                <p>10.執行安全與衛生的檢查。</p>
-                                <p>11.參加定期或不定期的職業訓練。</p>
+                                <p>1.在旅遊目的地中深入講解當地景點文化、自然生態、歷史，讓旅客全面地了解當地特色。</p>
+                                <p>2.協調旅客的需求，策劃和安排旅遊行程，讓行程順暢並充分利用時間。</p>
+                                <p>3.靈活應對可能發生的變化，如天氣、交通等，讓旅行的順利進行。</p>
+                                <p>4.在發生突發事件時，迅速而有效地採取措施，保障遊客的安全和福祉。</p>
+                                <p>5.提供高品質的旅遊服務，安排飯店訂房、餐廳、交通工具提供..等。</p>
+                                <p>6.告知旅客注意事項以及該準備的證件文件。</p>
                             </div>
 
                         </div>
@@ -97,10 +92,8 @@
                     </div>
 <!--登入後會出現的內容-->
                     <div th:if="${session.logInAcc}">
-                            <hr>
-                            <p>1.烹飪相關技術證書 (非強制需要)</p>
-                            <p>2.HACCP 危害分析重要管制點制度證書 (非強制需要)</p>
-                            <p>3.ServSafe食品安全管理證書 (非強制需要)</p>
+                        <hr>
+                        <p>導遊人員執業證</p>
                     </div>
                         <h2 class="section-heading">學歷要求</h2>
 <!--未登入會出現的連結-->
@@ -115,8 +108,8 @@
 <!--登入後會出現的內容-->
                     <div th:if="${session.logInAcc}">
                         <hr>
-                        <blockquote class="blockquote">無需參加國家考試</blockquote>
-                        <p>無特別限制 (經常性需求 餐飲相關科系)</p>
+                        <blockquote class="blockquote">導遊人員考試報考/申請資格</blockquote>
+                        <p>高中(職)以上學歷，並高等或普通檢定考試及格才能獲得申請導遊人員執業證資格</p>
                     </div>
                         <h2 class="section-heading">技能要求</h2>
 <!--未登入會出現的連結-->
@@ -129,23 +122,18 @@
                             </a></div>
 <!--登入後會出現的內容-->
                         <div th:if="${session.logInAcc}">    <!-- 測試登入與否，接收LoginController的session設定true -->
-                            <p>1.精通各種烹飪技巧和烹飪風格，能夠創造出美味且視覺上吸引人的菜餚。</p>
-                            <p>2.具有創造性的思維，能夠開發新的菜單，結合不同的食材和烹飪方法。</p>
-                            <p>3.對食材的品質、季節性和來源有敏銳的認識，能夠選擇最適合的食材。</p>
-                            <p>4.具備時間管理和組織能力，有效地組織廚房工作流程，在壓力下交付高質量的菜品。</p>
-                            <p>5.良好的領導技能，能夠指導廚房團隊，確保整個廚房運作順暢。</p>
-                            <p>6.了解並滿足顧客的需求，並對顧客提供卓越的用餐體驗。</p>
-                            <p>7.具備管理食材成本和維護廚房經營成本，以確保經濟效益。</p>
-                        <br>
-                            <a href="#!"><img class="img-fluid" src="/img/Chef(2).webp" alt="..." /></a>
-                        <span class="caption text-muted imgComment">
-                            熟練廚藝，創造獨特滋味，每一道菜都是故事，每一位饕客都是共同演繹的主角。
-                        </span>
+                            <p>1.口語表達能夠清晰、生動地表達各種主題，使導覽更引人入勝。</p>
+                            <p>2.能夠與各種文化背景的旅客建立良好的關係，提供友好的服務。</p>
+                            <p>3.語言能力強，且須對旅遊當地語言、地理、歷史、文化的深入了解。</p>
+                            <p>4.應變能力高，在不同的情況下靈活應對，解決可能出現的問題。</p>
+                            <p>5.有效引導旅客，使他們充分參與，同時保持行程的順利進行。</p>
+                            <p>6.具備急救常識(包含一般外傷、CPR、傳染病預防..等)。</p>
+                            <p>7.熟悉航空票務、機票特性、行李規定。</p>
+                            <br>
+                            <a href="#!"><img class="img-fluid" src="/img/tourguide(2).webp " alt="..." /></a>
+                        <span class="caption text-muted imgComment">每一次旅行都是心靈的冒險，請細心品味每一刻，讓這趟旅程成為您生命中最美好的章節。</span>
 
-                        <p>餐廳不僅是一個餐廳，更是我們用心烹調、呈現美味的廚房，
-                            每一道菜背後都是我們對食材的堅持與對烹飪的熱情，
-                            滿足客人味蕾是我們最大的榮耀，期望每一口都能帶給顧客愉悅的體驗，
-                            我們不僅追求口感的完美，更注重食物背後的故事，細細品味生活中的美好滋味。  </p>
+                        <p>每個景點都是獨一無二的故事，讓我們一同展開這趟難忘的冒險，請用心感受當地文化、品味美食，與當地人互動，旅行是拓展視野的機會，請放慢腳步，沉浸在美麗的風景中，無論是古老的歷史遺址還是現代的繁華都市，都是您獨特的旅程，讓我們一同創造難以忘懷的回憶！</p>
                         <p>
                             The source of the article is from
                             <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://chat.openai.com/">AI智慧好夥伴</a>
