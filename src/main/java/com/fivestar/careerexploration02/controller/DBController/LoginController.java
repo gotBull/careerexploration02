@@ -95,10 +95,10 @@ public class LoginController
         }
         else
         {
-            //帳號或密碼輸入錯誤，三秒後返回登入頁面
-            model.addAttribute("logFail","Incorrect username or password. " +
-                    "Returning to the login page in three seconds.");
-            return "/member/loginFail";
+            //帳號或密碼輸入錯誤，顯示錯誤提示訊息
+            model.addAttribute("logFail","Incorrect username or password, please re-enter.");
+//            return "/member/loginFail";  //帳號或密碼輸入錯誤，三秒後返回登入頁面
+            return "/member/login";
         }
     }
 
