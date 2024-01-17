@@ -24,4 +24,5 @@ public class UserModifyModel
     private String landline;         //室內電話
     private String paymentStatus;    //會員付費等級
     private Date paymentDate;        //會員付費時間
+    private String randomCode;       //忘記密碼的暫存隨機碼
 }

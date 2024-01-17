@@ -71,8 +71,9 @@
                 <p> Your Account: <input type="text" name="accountnum"></p>
                 <p> Your Password: <input type="text" name="passwd"></p>
                 <div>
-                    <button class="btn" type="submit">submit</button>
+                    <button class="btn" type="submit" >submit</button>
                     <button class="btn" type="reset">reset</button>
+                    <a type="button" class="btn" href="/forget_password">forget password?</a>
                 </div>
             </form>
         </div>
@@ -86,6 +87,7 @@
 </body>
 <script>
     var countdown = 3; // 3 秒
+
     setInterval(timeCount, 1000);
     function timeCount()
     {
@@ -96,9 +98,11 @@
             transToLogin();
         }
     }
+
     function transToLogin()
     {
-        location.href = "/homepage"; // 轉到 index.html 頁面
+        location.href = "/homepage"; // 轉回到 login.html 頁面
     }
+
 </script>
 </html>

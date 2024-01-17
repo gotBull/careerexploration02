@@ -36,7 +36,16 @@
         <script>
             function goBackPage()   //回前一頁功能
             {
-                window.history.go(-1);
+                if (document.referrer)
+                {
+                    // 如果有上一個頁面，返回上一頁
+                    location.href = document.referrer;
+                }
+                else
+                {
+                    // 如果沒有上一個頁面，可以導向首頁
+                    location.href = "/homepage";
+                }
             }
         </script>
     </body>

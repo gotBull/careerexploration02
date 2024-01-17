@@ -23,6 +23,7 @@ public class UserModifyMapper implements RowMapper<UserModifyModel>  //把DB會�
         userModifyModel.setLandline(rs.getNString("landline"));
         userModifyModel.setPaymentStatus(rs.getNString("paymentStatus")); //把付費時改變先放在這邊
         userModifyModel.setPaymentDate(rs.getDate("paymentDate"));
+        userModifyModel.setRandomCode(rs.getNString("randomCode"));
         return userModifyModel;
     }
 }

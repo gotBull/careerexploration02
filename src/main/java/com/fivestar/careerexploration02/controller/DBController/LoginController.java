@@ -30,27 +30,28 @@ public class LoginController
 
     Logger logger = LoggerFactory.getLogger(LoginController.class);  //SpringBoot除錯訊息註解
 
-    @GetMapping("/login")
-    public String loginPageAndOverLogin(HttpServletRequest request)  //防止重複登入功能(改用th:if)
+    @GetMapping("/login")   //GET進入登入頁面
+    public String loginPage( /* HttpServletRequest request */)
     {
-        UserLogModel02 loggedUser = new UserLogModel02();
-        boolean loginResult = userLoginService.loginTest(loggedUser);
-        if (loginResult != false)
-        {
-            String referrer = request.getHeader("Referer"); // 獲取Referrer
-            // 如果有Referrer，則重定向到Referrer；否則重定向到首頁
-            return "redirect:" + (referrer != null ? referrer : "EnglishProject20240110");
-        }
-        else
-        {
+//        UserLogModel02 loggedUser = new UserLogModel02(); //防止重複登入功能(改用th:if)
+//        boolean loginResult = userLoginService.loginTest(loggedUser);
+//        if (loginResult != false)
+//        {
+//            String referrer = request.getHeader("Referer"); // 獲取Referrer
+//            // 如果有Referrer，則重定向到Referrer；否則重定向到首頁
+//            return "redirect:" + referrer;
+//        }
+//        else
+//        {
             return "/member/login";
-        }
+//        }
     }
 
-    @PostMapping("/login")
+    @PostMapping("/login")  //POST登入頁面中按下submit觸發
     public String loginsussPage(@RequestParam("accountnum") String accountnum,
                                 @RequestParam("passwd") String passwd,
                                 HttpSession session, Model model,
+                                HttpServletRequest request01,
                                 String username, String email,
                                 String mobile, String address,
                                 String landline, String paymentStatus, Date paymentDate)
@@ -86,12 +87,17 @@ public class LoginController
             model.addAttribute("logSuess","Logged in success!");
             model.addAttribute("showUserName", showUserName.getUsername()); //先判別帳密一致後，印出與帳號對應的使用者名稱
             logger.warn("Login執行後可以看到帳號內容"+accountnum);   //SpringBoot除錯訊息註解
+
+            String referrer = request01.getHeader("Referer"); // 獲取Referrer
+            session.setAttribute("comeFrom", request01.getHeader("Referer"));
+//            return "redirect:" + session.getAttribute("comeFrom");  // 如果有Referrer，則重定向到Referrer；否則重定向到首頁
             return "/member/login";
         }
         else
         {
             //帳號或密碼輸入錯誤，三秒後返回登入頁面
-            model.addAttribute("logFail","Incorrect username or password. Returning to the login page in three seconds.");
+            model.addAttribute("logFail","Incorrect username or password. " +
+                    "Returning to the login page in three seconds.");
             return "/member/loginFail";
         }
     }
@@ -105,11 +111,11 @@ public class LoginController
         {
             return "You are not logged in. Access denied.";
         }
-
         // 如果已經登入，顯示此句話 + session 中的 Account
         else
         {
-            return "This is a restricted API endpoint. You have access!"+ session.getAttribute("accountnum");
+            return "This is a restricted API endpoint. You have access!"
+                    + session.getAttribute("accountnum")+ session.getAttribute("comeFrom");
         }
     }
 }
