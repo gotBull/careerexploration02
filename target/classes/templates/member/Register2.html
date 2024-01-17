@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .theForm
+        {
+            position: absolute;
+            z-index: 2;
+            color: aliceblue;
+            background-color: #5c5a54;
+            border-radius: 30px;
+            border: #dde1eb 0.5rem solid;
+            padding: 1.5rem;
+        }
+        .formItem, .title
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn
+        {
+            background-color: #f2dc8a;
+            color: #000;
+            margin:auto 1rem;
+            border: #dde1eb 2px solid;
+            font-weight: 600;
+        }
+        .btn:hover
+        {
+            background-color: #dde1eb;
+            color: #000;
+            border: #000 2px solid;
+        }
+        input{
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <img class="image" src="/img/地圖登入頁面.webp">
+    <div class="theForm">
+        <h2 class="title">Register member</h2>
+        <form method="post" class="formItem" th:object="${userRegForm}" action="/user_register" onsubmit="return passwordCheck()">
+    
+            <p> Your Account: <input type="text" th:field="*{accountnum}" name="accountnum"></p>
+            <p> Your Password: <input type="password" id="password" th:field="*{passwd}" name="passwd"></p>
+            <p> Confirm password: <input type="password" id="confirmPassword" oninput="checkPasswordMatch()">
+            <div a id="passwordWarning" style="color: #e16969;"></div>
+            <p> Your Name: <input type="text" th:field="*{username}" name="username"></p>
+            <p> Your Phone Number: <input type="text" th:field="*{mobile}" name="mobile"></p>
+            <p> Your E-mail: <input type="email" th:field="*{email}" name="email"></p>
+            <div>
+                <button class="btn" type="submit" name="sub">Submit</button>
+                <button class="btn" type="reset" name="clear">Clear All</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        function passwordCheck()    //密碼與確認密碼判斷相同，不然註冊表單無法送出
+        {
+            var password=document.getElementById("password").value;
+            var confirmPassword= document.getElementById("confirmPassword").value;
+
+            if(password !== confirmPassword)
+            {
+                document.getElementById("passwordWarning").innerText="Password and Confirm password do not match";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        function checkPasswordMatch()   //密碼與確認密碼判斷相同，不然會出現警告
+        {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var warningElement = document.getElementById("warning");
+
+            if (password === confirmPassword)
+            {
+                return true;
+            }
+            else
+            {
+                warningElement.innerText = "Password and Confirm password do not match";
+                warningElement.style.color = "red";
+                confirmPassword.style.backgroundColor="red";
+            }
+        }
+
+    </script>
+</body>
+</html>
