@@ -61,13 +61,6 @@ public class LoginController
 
         model01.setAccountnum(accountnum);
         model01.setPasswd(passwd);
-        model01.setUsername(username);
-        model01.setEmail(email);
-        model01.setMobile(mobile);
-        model01.setAddress(address);
-        model01.setLandline(landline);
-        model01.setPaymentStatus(paymentStatus);
-        model01.setPaymentDate(paymentDate);
 
         boolean loginResult = userLoginService.loginTest(model01);
         if(loginResult)
@@ -76,13 +69,6 @@ public class LoginController
 
             session.setAttribute("SetAccountNum", accountnum); // 儲存帳號設定在session
             session.setAttribute("SetPasswd", passwd);  // 儲存密碼設定在session
-            session.setAttribute("SetUserName123", username);
-            session.setAttribute("SetEmail", email);
-            session.setAttribute("SetMobile", mobile);
-            session.setAttribute("SetAddress",address);
-            session.setAttribute("SetLandline",landline);
-            session.setAttribute("SetpaymentStatus",paymentStatus);
-            session.setAttribute("SetpaymentDate",paymentDate);
 
             model.addAttribute("logSuess","Logged in success!");
             model.addAttribute("showUserName", showUserName.getUsername()); //先判別帳密一致後，印出與帳號對應的使用者名稱
