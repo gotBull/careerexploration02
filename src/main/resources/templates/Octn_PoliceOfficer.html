@@ -16,6 +16,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         <link href="/css/carrer.css" rel="stylesheet" />
+<!--箭頭的css-->
+<!--        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" integrity="sha384-rzo7X2QzL81rUqRr7M59UO5lPJe9dHlRrFO8YFS5nJSf5CC9Cm3r1IENWKTfE2K0" crossorigin="anonymous">-->
+<!--        <script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/js/all.min.js" integrity="sha384-0I/XLFTtZGKUn9sk7s6aRYN6K1wL6zQJGF8W9y8YZg8w3fVeLxk0UqOD+9WDMfO8" crossorigin="anonymous"></script>-->
 
     </head>
     <body>
@@ -163,6 +166,32 @@
             document.querySelector('.dropdown-menu').addEventListener('shown.bs.dropdown', function () {
             this.style.maxHeight = this.scrollHeight + 'px';
             });
+        </script>
+<!-- 新增按鈕 彈跳到網頁最頂端 -->
+        <button id="scrollToTopBtn" onclick="scrollToTop()">
+            <!-- 在這裡加入你的圖示-->
+            <i class="fa-solid fa-angles-up"></i> <!-- 向上箭頭的 HTML 實體符號 -->
+        </button>
+
+        <script>
+            // JavaScript 函數，用於平滑滾動到頁面頂部
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // 使用平滑滾動動畫
+                });
+            }
+
+            // 根據滾動位置顯示或隱藏按鈕
+            window.onscroll = function() {
+                var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            };
         </script>
     </body>
 </html>
