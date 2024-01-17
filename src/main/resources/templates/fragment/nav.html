@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="/css/EnglishProject20240110.css" >
 </head>
 <body>
@@ -17,17 +18,20 @@
                 <!-- 選單的列表 -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <a class="imgLink" href="/homepage"><img id="LOGO" src="/img/隊徽.webp"></a>
-                    <a id="theName" href="/homepage"><h2 >Career-Oriented Alliance</h2></a>
-
+                    <a class="imgLink" href="/homepage">
+                        <img id="LOGO" src="/img/隊徽.webp">
+                        <h4 id="theName">ProTalks English Academy</h4>
+                    </a>
                     <!-- 連結 -->
                     <ul class="navbar-nav" id="theNavLink">
                         <li>
-                            <a class="nav-link theLinkItem" id="item1" aria-current="page" href="about">About Us</a>
+                            <a class="nav-link theLinkItem" id="item1" aria-current="page" href="/about">
+                                <span><i class="fas fa-team"></i></span>
+                                About Us</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link theLinkItem" href="/cooperation">Cooperation</a>
+                            <a class="nav-link theLinkItem" href="/cooperation"><span><i class="fas fa-handshake"></i></span>Cooperation</a>
                         </li>
                     </ul>
 
@@ -55,15 +59,19 @@
 
                     <ul class="navbar-nav" id="theNavLink2">
                         <li>
-                            <a class="nav-link theLinkItem" aria-current="page" href="CustomerService">Customer Service</a>
+                            <a class="nav-link theLinkItem" aria-current="page" href="CustomerService">
+                                <span><i class="fas fa-store"></i></span>
+                                Customer Service</a>
                         </li>
                     </ul>
                     <!-- 登入和註冊 -->
                     <div class="btn-group" id="theNavItemRegister">
-                        <a href="/user_register" class="btn btn-light" aria-current="page"><p>Register</p></a>
-                        <a>|</a>
-                        <a th:unless="${session.logInAcc}" href="/login" class="btn btn-light"><p>Login</p></a>
-                        <a th:if="${session.logInAcc}" href="/logout" class="btn btn-light"><p>Logout</p></a>
+                        <a href="/user_register" class="btn btn-light Llink" aria-current="page">
+                            <span><i class="fas fa-user-plus"></i></span>&nbsp<p>Register</p></a>
+                        <a th:unless="${session.logInAcc}" href="/login" class="btn btn-light">
+                            <span><i class="fas fa-sign-in-alt"></i></span>&nbsp<p>Login</p></a>
+                        <a th:if="${session.logInAcc}" href="/logout" class="btn btn-light">
+                            <span><i class="fas fa-sign-out-alt"></i></span><p>Logout</p></a>
                     </div>
 
                 </div>
