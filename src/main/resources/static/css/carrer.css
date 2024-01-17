@@ -219,9 +219,9 @@ button {
     padding: 5px; /*設定按鈕內容與邊框之間的內邊距為 5px*/
     font-size: 15px; /*設定按鈕文字的字體大小為 18px。*/
     color: white; /*設定按鈕文字的顏色為白色*/
-    margin:0 auto; /*水平置中按鈕*/
-    margin-top:10px; /*設定按鈕與上方元素之間的外邊距為 10px。*/
-    width:110px; /*設定按鈕的寬度為 110px。*/
+    margin-left: 10px;
+    /*margin-top:10px; !*設定按鈕與上方元素之間的外邊距為 10px。*!*/
+    width:100px; /*設定按鈕的寬度為 110px。*/
 }
 button:link,button:visited,button:active {
     outline:auto;
