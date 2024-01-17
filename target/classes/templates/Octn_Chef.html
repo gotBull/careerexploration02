@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>警察 Police Officer 職業說明</title>
+        <title>主廚 Chef 職業說明</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -24,24 +24,24 @@
         <!-- YouTube video 包含背景底色 -->
 
         <!-- Page Header 首頁大圖片+配字+影片(此行可刪除) -->
-        <header class="masthead" style="background-image: url('/img/police.webp');">
+        <header class="masthead" style="background-image: url('/img/Chef.webp');">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
                             <div class="ratio ratio-16x9">
-                                <iframe width="930" height="523" src="https://www.youtube.com/embed/_GzXU_xT_fQ" title="YoutubeJobsVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe width="930" height="523" src="https://www.youtube.com/embed/mmD_lI3YO84" title="YoutubeJobsVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
 <!-- 新增中英文切換按鈕 -->
                             <!-- <h4 id="greeting">下方按鈕可選擇語言版本</h4> -->
                             <!-- 切換語言的按鈕 -->
                             <a href="http://localhost:8324/job/police.en"><button>英文版說明</button></a>
-                            <h1>警察 Police Officer</h1>
+                            <h1>主廚 Chef</h1>
                             <!-- <h2 class="subheading">如需申訴，請至下方署長信箱投訴</2> -->
                             <span class="meta">
-                                考選部 考試快訊
-                                <a target="_blank" title="您即將離開本站" href="https://wwwc.moex.gov.tw/main/home/wfrmTextSearch.aspx?q=%e8%ad%a6%e5%af%9f" >  - 「警察」報考資訊請點我 - </a>
-                                on January 10, 2024
+                                104人力銀行快訊
+                                <a target="_blank" href="https://www.104.com.tw/jobs/search/?ro=0&keyword=%E4%B8%BB%E5%BB%9A&expansionType=area%2Cspec%2Ccom%2Cjob%2Cwf%2Cwktm&order=1&asc=0&page=1&mode=s&jobsource=index_s&langFlag=0&langStatus=0&recommendJob=1&hotJob=1" >  - 「主廚」職缺請點我 - </a>
+                                on January 11, 2024
                             </span>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <h2 class="section-heading">職業分類</h2>
                         <hr>
-                        <p>治安人員</p>
+                        <p>餐飲業</p>
                         <h2 class="section-heading">職業描述</h2>
 <!--未登入會出現的連結-->
                         <div th:unless="${session.logInAcc}"class="altContent">
@@ -71,15 +71,17 @@
                         <hr>
 <!--                            <button onclick="changeLanguage()">轉換語言</button>-->
                             <div id="article">
-                                <p>1.日常巡邏，並能迅速應對突發事件，保護人民安全。</p>
-                                <p>2.參與犯罪調查，搜集證據、訊問嫌疑人，協助檢察官起訴。</p>
-                                <p>3.與其他執法機構、政府機構和社區組織合作，共同應對複雜的治安問題。</p>
-                                <p>4.管理和指導部屬，確保執法行動的協調性和效率。</p>
-                                <p>5.參與培訓新進警員，並持續自我提升，以應對新的挑戰和技術變革。</p>
-                                <p>6.確保執法行動符合法律規定，遵從人權和憲法原則。</p>
-                                <p>7.熟悉並遵從執法程序，以合法、公正、有效的方式執法行動。</p>
-                                <p>8.協助處理重大事故、災害或緊急狀況，保障公共安全。</p>
-                                <p>9.參與制定和實施預防犯罪計劃，提高社區的安全性。</p>
+                                <p>1.提供正規菜色料理，包括餐前菜、主菜、湯品、餐後甜品及飲品等。</p>
+                                <p>2.準備於營業時間內的點菜或餐廳所需菜餚。</p>
+                                <p>3.協助主廚設計所負責各自類別的菜單。</p>
+                                <p>4.確保所負責類別的食品均符合衛生管理的規定。</p>
+                                <p>5.維持與確保冷凍庫及其他地區的衛生及清潔標準。</p>
+                                <p>6.保持烹飪材料的適當存量。</p>
+                                <p>7.控制出菜量以維持食品成本。</p>
+                                <p>8.配合餐廳外場的菜餚需要和出菜時間。</p>
+                                <p>9.保持高度整潔。</p>
+                                <p>10.執行安全與衛生的檢查。</p>
+                                <p>11.參加定期或不定期的職業訓練。</p>
                             </div>
 
                         </div>
@@ -96,7 +98,9 @@
 <!--登入後會出現的內容-->
                     <div th:if="${session.logInAcc}">
                             <hr>
-                            <p>經警察人員考試合格者</p>
+                            <p>1.烹飪相關技術證書 (非強制需要)</p>
+                            <p>2.HACCP 危害分析重要管制點制度證書 (非強制需要)</p>
+                            <p>3.ServSafe食品安全管理證書 (非強制需要)</p>
                     </div>
                         <h2 class="section-heading">學歷要求</h2>
 <!--未登入會出現的連結-->
@@ -111,10 +115,8 @@
 <!--登入後會出現的內容-->
                     <div th:if="${session.logInAcc}">
                         <hr>
-                        <blockquote class="blockquote">警察考試報考資格</blockquote>
-                        <p>(一)警察專科學校：25歲以下、高中職以上)</p>
-                        <p>(二)中央警察大學：25歲以下、高中職以上)</p>
-                        <p>(三)一般警察特考：(1)二等考試：18-42歲、碩士學位以上學歷。(2)三等考試：18-37歲、學士學位以上學歷。(3)四等考試：18-37歲、高中以上)</p>
+                        <blockquote class="blockquote">無需參加國家考試</blockquote>
+                        <p>無特別限制 (經常性需求 餐飲相關科系)</p>
                     </div>
                         <h2 class="section-heading">技能要求</h2>
 <!--未登入會出現的連結-->
@@ -127,21 +129,23 @@
                             </a></div>
 <!--登入後會出現的內容-->
                         <div th:if="${session.logInAcc}">    <!-- 測試登入與否，接收LoginController的session設定true -->
-                            <p>1.在壓力下能夠保持冷靜，迅速且有效地應對危急狀況，保障自己和他人的安全。</p>
-                            <p>2.具備戰術思維，能夠快速判斷局勢，採取適當的應對措施。</p>
-                            <p>3.良好的溝通技巧，能夠與同事、上級、民眾和其他機構有效溝通，建立良好的關係。</p>
-                            <p>4.能夠協調不同執法機構、部門以及社區資源，共同應對複雜的治安問題。</p>
-                            <p>5.精通執法相關法規，在執法過程中保證合法性，遵守法律程序。</p>
-                            <p>6.具備高度的專業操守，遵守職業道德和標準，確保執法行動的公正性和正當性。</p>
-                            <p>7.能夠有效搜集情報，包括從各種資源中獲取關鍵訊息，進行分析，以協助犯罪調查和預防工作。</p>
-                            <p>8.領導能力佳，領導和指揮小組，協調執法行動，保障隊伍的效率和安全。</p>
+                            <p>1.精通各種烹飪技巧和烹飪風格，能夠創造出美味且視覺上吸引人的菜餚。</p>
+                            <p>2.具有創造性的思維，能夠開發新的菜單，結合不同的食材和烹飪方法。</p>
+                            <p>3.對食材的品質、季節性和來源有敏銳的認識，能夠選擇最適合的食材。</p>
+                            <p>4.具備時間管理和組織能力，有效地組織廚房工作流程，在壓力下交付高質量的菜品。</p>
+                            <p>5.良好的領導技能，能夠指導廚房團隊，確保整個廚房運作順暢。</p>
+                            <p>6.了解並滿足顧客的需求，並對顧客提供卓越的用餐體驗。</p>
+                            <p>7.具備管理食材成本和維護廚房經營成本，以確保經濟效益。</p>
                         <br>
-                            <a href="#!"><img class="img-fluid" src="/img/police(2).webp" alt="..." /></a>
+                            <a href="#!"><img class="img-fluid" src="/img/Chef(2).webp" alt="..." /></a>
                         <span class="caption text-muted imgComment">
-                            我們是人民的守護神，讓人民快樂的生活，隨時為守護您的安全。
+                            熟練廚藝，創造獨特滋味，每一道菜都是故事，每一位饕客都是共同演繹的主角。
                         </span>
 
-                        <p>親愛的市民，我們身為警察，深知我們的職責是保護人民的安全和維護社區的秩序，請信任我們的工作，並且與我們攜手合作，共同建立一個安全、和諧的社會。如有需要，請隨時與我們聯繫，我們將以最大努力為提供服務。</p>
+                        <p>餐廳不僅是一個餐廳，更是我們用心烹調、呈現美味的廚房，
+                            每一道菜背後都是我們對食材的堅持與對烹飪的熱情，
+                            滿足客人味蕾是我們最大的榮耀，期望每一口都能帶給顧客愉悅的體驗，
+                            我們不僅追求口感的完美，更注重食物背後的故事，細細品味生活中的美好滋味。  </p>
                         <p>
                             The source of the article is from
                             <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://chat.openai.com/">AI智慧好夥伴</a>

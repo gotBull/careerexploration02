@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>警察 Police Officer 職業說明</title>
+        <title>記者 Reporter 職業說明</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -24,24 +24,24 @@
         <!-- YouTube video 包含背景底色 -->
 
         <!-- Page Header 首頁大圖片+配字+影片(此行可刪除) -->
-        <header class="masthead" style="background-image: url('/img/police.webp');">
+        <header class="masthead" style="background-image: url('/img/teacher.webp');">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
                             <div class="ratio ratio-16x9">
-                                <iframe width="930" height="523" src="https://www.youtube.com/embed/_GzXU_xT_fQ" title="YoutubeJobsVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe width="930" height="523" src="https://www.youtube.com/embed/xDIrQ7bn9CE" title="YoutubeJobsVideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             </div>
 <!-- 新增中英文切換按鈕 -->
                             <!-- <h4 id="greeting">下方按鈕可選擇語言版本</h4> -->
                             <!-- 切換語言的按鈕 -->
                             <a href="http://localhost:8324/job/police.en"><button>英文版說明</button></a>
-                            <h1>警察 Police Officer</h1>
+                            <h1>教師 Teacher</h1>
                             <!-- <h2 class="subheading">如需申訴，請至下方署長信箱投訴</2> -->
                             <span class="meta">
-                                考選部 考試快訊
-                                <a target="_blank" title="您即將離開本站" href="https://wwwc.moex.gov.tw/main/home/wfrmTextSearch.aspx?q=%e8%ad%a6%e5%af%9f" >  - 「警察」報考資訊請點我 - </a>
-                                on January 10, 2024
+                                教育部 考試快訊
+                                <a target="_blank" href="https://tqa.rcpet.edu.tw/TEA_Exam/" >  - 「老師」報考資訊請點我 - </a>
+                                on January 16, 2024
                             </span>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <h2 class="section-heading">職業分類</h2>
                         <hr>
-                        <p>治安人員</p>
+                        <p>文教機關人員</p>
                         <h2 class="section-heading">職業描述</h2>
 <!--未登入會出現的連結-->
                         <div th:unless="${session.logInAcc}"class="altContent">
@@ -71,15 +71,14 @@
                         <hr>
 <!--                            <button onclick="changeLanguage()">轉換語言</button>-->
                             <div id="article">
-                                <p>1.日常巡邏，並能迅速應對突發事件，保護人民安全。</p>
-                                <p>2.參與犯罪調查，搜集證據、訊問嫌疑人，協助檢察官起訴。</p>
-                                <p>3.與其他執法機構、政府機構和社區組織合作，共同應對複雜的治安問題。</p>
-                                <p>4.管理和指導部屬，確保執法行動的協調性和效率。</p>
-                                <p>5.參與培訓新進警員，並持續自我提升，以應對新的挑戰和技術變革。</p>
-                                <p>6.確保執法行動符合法律規定，遵從人權和憲法原則。</p>
-                                <p>7.熟悉並遵從執法程序，以合法、公正、有效的方式執法行動。</p>
-                                <p>8.協助處理重大事故、災害或緊急狀況，保障公共安全。</p>
-                                <p>9.參與制定和實施預防犯罪計劃，提高社區的安全性。</p>
+                                <p>1.精心設計教學計畫，教學內容須符合學科標準和學生需求。</p>
+                                <p>2.執行高效的教學策略，激發學生學習興趣，提高他們的學科理解和應用能力。</p>
+                                <p>3.觀察學生的學業表現，並提供適當的輔導和鼓勵。</p>
+                                <p>4.協助學生制定生涯規劃，提供有關升學和職業發展的建議。</p>
+                                <p>5.積極參與學校舉辦的各種課外活動，促進與學生的全面發展。</p>
+                                <p>6.與家長建立積極的合作關係，共同促進學生的學業和社會發展。</p>
+                                <p>7.持續參與教育研究項目，不斷提升、貢獻自身的教學技能和教育理念。</p>
+                                <p>8.參與同儕教師間的專業交流，協助制訂學校的教育政策和發展方向。</p>
                             </div>
 
                         </div>
@@ -95,8 +94,8 @@
                     </div>
 <!--登入後會出現的內容-->
                     <div th:if="${session.logInAcc}">
-                            <hr>
-                            <p>經警察人員考試合格者</p>
+                        <hr>
+                        <p>教師檢定合格教師證書(教師證書的取得在高級中等以下學校採檢定制，專科學校則採審定制。通過檢定或審定後，才能參加教師甄選，甄選又可分為地區聯招和學校獨招，通過甄選者由考取學校聘任，成為學校編制內的正式教師。)</p>
                     </div>
                         <h2 class="section-heading">學歷要求</h2>
 <!--未登入會出現的連結-->
@@ -111,10 +110,8 @@
 <!--登入後會出現的內容-->
                     <div th:if="${session.logInAcc}">
                         <hr>
-                        <blockquote class="blockquote">警察考試報考資格</blockquote>
-                        <p>(一)警察專科學校：25歲以下、高中職以上)</p>
-                        <p>(二)中央警察大學：25歲以下、高中職以上)</p>
-                        <p>(三)一般警察特考：(1)二等考試：18-42歲、碩士學位以上學歷。(2)三等考試：18-37歲、學士學位以上學歷。(3)四等考試：18-37歲、高中以上)</p>
+                        <blockquote class="blockquote">教師證書報考資格</blockquote>
+                        <p>大學以上學歷，取得修畢師資職前教育證明者才能獲得教師證書報考資格</p>
                     </div>
                         <h2 class="section-heading">技能要求</h2>
 <!--未登入會出現的連結-->
@@ -127,21 +124,18 @@
                             </a></div>
 <!--登入後會出現的內容-->
                         <div th:if="${session.logInAcc}">    <!-- 測試登入與否，接收LoginController的session設定true -->
-                            <p>1.在壓力下能夠保持冷靜，迅速且有效地應對危急狀況，保障自己和他人的安全。</p>
-                            <p>2.具備戰術思維，能夠快速判斷局勢，採取適當的應對措施。</p>
-                            <p>3.良好的溝通技巧，能夠與同事、上級、民眾和其他機構有效溝通，建立良好的關係。</p>
-                            <p>4.能夠協調不同執法機構、部門以及社區資源，共同應對複雜的治安問題。</p>
-                            <p>5.精通執法相關法規，在執法過程中保證合法性，遵守法律程序。</p>
-                            <p>6.具備高度的專業操守，遵守職業道德和標準，確保執法行動的公正性和正當性。</p>
-                            <p>7.能夠有效搜集情報，包括從各種資源中獲取關鍵訊息，進行分析，以協助犯罪調查和預防工作。</p>
-                            <p>8.領導能力佳，領導和指揮小組，協調執法行動，保障隊伍的效率和安全。</p>
-                        <br>
-                            <a href="#!"><img class="img-fluid" src="/img/police(2).webp" alt="..." /></a>
-                        <span class="caption text-muted imgComment">
-                            我們是人民的守護神，讓人民快樂的生活，隨時為守護您的安全。
-                        </span>
+                            <p>1.具備教學多樣性，能夠靈活運用不同教材教具與教學媒體，使教學內容生動有趣，引起學生的興趣和參與。</p>
+                            <p>2.能夠有效管理課堂秩序，建立正向的學習環境，提升學生的專注力和參與率。</p>
+                            <p>3.具備輔導學生的能力，了解學生的需求，提供情緒支持和教育輔導。</p>
+                            <p>4.良好溝通技巧，能與學生、家長和同事建立良好的互動關係。</p>
+                            <p>5.積極參與專業發展活動，保持對新教學方法和科技的敏感性，提升自身的教學水平。</p>
+                            <p>6.具備進行教育研究的能力，協助學校實施有效的教學和評估策略。</p>
+                            <br>
+                            <a href="#!"><img class="img-fluid" src="/img/teacher(2).webp" alt="..." /></a>
+                        <span class="caption text-muted imgComment">學習不僅是為了考試，更是為了讓自己更好去理解世界、發現興趣、培養品格。</span>
 
-                        <p>親愛的市民，我們身為警察，深知我們的職責是保護人民的安全和維護社區的秩序，請信任我們的工作，並且與我們攜手合作，共同建立一個安全、和諧的社會。如有需要，請隨時與我們聯繫，我們將以最大努力為提供服務。</p>
+                        <p>學習是一場奇妙的冒險，每一刻都是成長的機會，勇敢地迎接挑戰，即使遇到困難也別灰心，因為失敗是成功之母。
+                            堅信自己的能力，發揮潛力，努力突破自己的極限，用心學習，保持好奇心，相信每一步都是通往未來的踏板。</p>
                         <p>
                             The source of the article is from
                             <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://chat.openai.com/">AI智慧好夥伴</a>
