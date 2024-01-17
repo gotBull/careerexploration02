@@ -1,6 +1,7 @@
-body{font-family: Lora, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-size: 1.25rem;
-  line-height: 2;
+body {
+    font-family: Lora, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 1.25rem;
+    line-height: 2;
 }
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
@@ -147,12 +148,15 @@ header.masthead .site-heading {
   color: #fff;
 }
 header.masthead .post-heading h1{
-  font-size: 3.25rem;
+  font-size: 3rem;
+  display: inline-block;
+  border-radius: 10px;
+  text-align: center; /* 讓文字在元素中置中 */
 }
 header.masthead .post-heading .meta,
 header.masthead .post-heading .subheading {
   line-height: 1.1;
-  display: block;
+  display: block; /*設定元素的顯示方式為區塊（block），使得元素每個佔據一個新的行。*/
 }
 header.masthead .post-heading .subheading {
   font-size: 1.5rem;
@@ -161,14 +165,16 @@ header.masthead .post-heading .subheading {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 header.masthead .post-heading .meta {
-  font-size: 1.25rem;
-  font-weight: 300;
-  font-style: italic;
+  font-size: 1.25rem; /*設定文字的字體大小為 1.25 倍*/
+  font-weight: 300; /*設定文字的字體粗細為 300（較輕）*/
+  font-style: italic; /*設定文字的字體風格為斜體。*/
   font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
 header.masthead .post-heading .meta a {
-  color: #fff;
+  color: #fff; /*設定超連結文字的顏色為白色。*/
 }
+
 .section-heading {
   font-size: 2.25rem;
   font-weight: 700;
@@ -204,4 +210,23 @@ header.masthead .post-heading .meta a {
 }
 .theCopy{
   margin-bottom: 2rem;
+}
+
+button {
+    background: rgba(73, 87, 195, 0.62);
+    border: unset; /*移除按鈕的邊框*/
+    border-radius: 9px; /*設定按鈕的圓角半徑為 3px*/
+    padding: 5px; /*設定按鈕內容與邊框之間的內邊距為 5px*/
+    font-size: 15px; /*設定按鈕文字的字體大小為 18px。*/
+    color: white; /*設定按鈕文字的顏色為白色*/
+    margin:0 auto; /*水平置中按鈕*/
+    margin-top:10px; /*設定按鈕與上方元素之間的外邊距為 10px。*/
+    width:110px; /*設定按鈕的寬度為 110px。*/
+}
+button:link,button:visited,button:active {
+    outline:auto;
+}
+::placeholder {
+    color: #fff;
+    text-align:center;
 }
