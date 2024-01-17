@@ -54,12 +54,20 @@
     font-size: 2rem;
     margin: 2%;
 }
+.discount{
+    position: absolute;
+    margin-left: 8rem;
+    font-size: 5rem;
+    font-weight: 900;
+    rotate: 33deg;
+    color: #f30e39;
+}
 .paymentBtn{
     text-decoration: none;
     padding: 5px 2rem;
     background-color: #81afcb;
     color: #070707;
-    border: #2b8ccc 0.3rem solid;
+    border: #ffffff 0.3rem solid;
     border-radius: 1rem;
 
 }
