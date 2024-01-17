@@ -212,7 +212,7 @@ header.masthead .post-heading .meta a {
   margin-bottom: 2rem;
 }
 
-button {
+.button {
     background: rgba(73, 87, 195, 0.62);
     border: unset; /*移除按鈕的邊框*/
     border-radius: 9px; /*設定按鈕的圓角半徑為 3px*/
@@ -222,11 +222,8 @@ button {
     margin-left: 10px;
     /*margin-top:10px; !*設定按鈕與上方元素之間的外邊距為 10px。*!*/
     width:100px; /*設定按鈕的寬度為 110px。*/
+    text-decoration: none;
 }
-button:link,button:visited,button:active {
+.button:link,.button:visited,.button:active {
     outline:auto;
-}
-::placeholder {
-    color: #fff;
-    text-align:center;
 }
