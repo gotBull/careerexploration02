@@ -20,4 +20,8 @@ public class UserLogModel02
     private String email;
     private String mobile;
     private Date regdate;
+    private String address;
+    private String landline;
+    private String paymentStatus;
+    private Date paymentDate;
 }

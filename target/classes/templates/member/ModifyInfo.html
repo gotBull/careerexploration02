@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Profile</title>
+</head>
+    <body>
+        <h2>Member Profile</h2>
+        <!-- 建立一個會員可以先看到自己個人資訊的網頁，然後做修改頁面如Register02.html -->
+            <p>Username: <span type="text" th:text="*{showUsername}"></span></p>
+            <p>Account: <span type="password" th:text="*{showAccountnum}"></span></p>
+            <p>Password: <span type="password" th:text="*{showPasswd}"></span></p>
+            <p>Address: <span type="text" th:text="*{showAddress}"></span></p>
+            <p>Email: <span type="text" th:text="*{showEmail}"></span></p>
+            <p>Mobile: <span type="text" th:text="*{showMobile}"></span></p>
+            <p>Landline: <span type="text" th:text="*{showLandline}"></span></p>
+            <p>Payment Status: <span type="text" th:text="*{showPaymentStatus}"></span></p>
+            <p>Payment Date: <span type="text" th:text="*{showPaymentDate}"></span></p>
+
+            <button class="btn" type="button" name="modify">Modify Member Information</button>
+            <button class="btn" type="button" name="goBack" onclick="goBackPage()">Previous Page</button>
+
+        <!-- Form to update member information -->
+<!--        </form>        <form method="post" th:object="${userModifyModel}" action="/Modify-success" >-->
+<!--            &lt;!&ndash;            <p>Account Number: <span th:text="${    }"></span></p>&ndash;&gt;-->
+<!--            <p>Password: <input type="password" th:field="*{passwd}" /></p>-->
+<!--            <p>Username: <input type="text" th:field="*{username}" /></p>-->
+<!--            <p>Email: <input type="text" th:field="*{email}" /></p>-->
+<!--            <p>Mobile: <input type="text" th:field="*{mobile}" /></p>-->
+<!--            <p>Address: <input type="text" th:field="*{address}" /></p>-->
+<!--            <p>Landline: <input type="text" th:field="*{landline}" /></p>-->
+<!--            <p>Payment Status: <input type="text" th:field="*{PaymentStatus}" /></p>-->
+<!--            <button type="submit">Update Profile</button>-->
+<!--        </form>-->
+
+        <script>
+            function goBackPage()   //回前一頁功能
+            {
+                if (document.referrer)
+                {
+                    // 如果有上一個頁面，返回上一頁
+                    location.href = document.referrer;
+                }
+                else
+                {
+                    // 如果沒有上一個頁面，可以導向首頁
+                    location.href = "/homepage";
+                }
+            }
+        </script>
+    </body>
+</html>
