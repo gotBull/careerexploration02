@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>彈出式視窗範例</title>
+        <style>
+            /* 遮罩層 */
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* 彈出視窗 */
+            .popup {
+                display: none;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                width: 70vw;
+            }
+
+            /* 關閉按鈕樣式 */
+            .close-btn
+            {
+                cursor: pointer;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+            }
+        </style>
+</head>
+
+<body>
+
+<!-- 觸發彈出視窗的按鈕 -->
+<button onclick="openPopup()">開啟彈出視窗</button>
+
+<!-- 遮罩層 -->
+<div class="overlay" id="overlay">
+    <!-- 彈出視窗 -->
+        <div class="popup">
+            <!-- 彈出視窗內容 -->
+            <h2>彈出式視窗</h2>
+            <p>文字放置處</p>
+            <p>沒什麼好可愛想到看到在，都要為的是今天的時候，未成年嗚嗚小時候起來整個，成經同回憶然後一樣越來越，攤就有突然的時間喜歡些什麼，一大好喜。知道會手我家的次有，人的感覺是不事也覺得⋯權材擾該是比較少愛我。
+
+                可以一下這這樣恐怖，三個喜歡被別人，飛時候的從總是你很不斷好好，的話就是直接時候有，我會努會的卡片覺很有機真，這件事有很。還不錯真的是，想子的辦這麼，打的聊歡的，的存還能⋯不想的角色家。響然我⋯上面前一他的攻擊吐槽，段麼感覺旁邊的真人。</p>
+            <!-- 關閉按鈕 -->
+            <button onclick="closePopup()" class="close-btn"> 關閉彈出視窗 </button>
+        </div>
+</div>
+
+<script>
+    // 開啟彈出視窗
+    function openPopup() {
+        document.getElementById('overlay').style.display = 'flex';
+        document.querySelector('.popup').style.display = 'block';
+    }
+
+    // 關閉彈出視窗
+    function closePopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.querySelector('.popup').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
