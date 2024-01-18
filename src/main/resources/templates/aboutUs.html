@@ -71,8 +71,8 @@
                     <li>簡報製作</li>
                 </ol>
             </div>
-            <button id="switch-to-previous"><i class="fas fa-angle-left"></i></button>
-            <button id="switch-to-next"><i class="fas fa-angle-right"></i></button>
+            <p id="switch-to-previous"><i class="fas fa-angle-left"></i></p>
+            <p id="switch-to-next"><i class="fas fa-angle-right"></i></p>
 
         </div>
         <img class="imgG" id="dropG" src="/img/girl.webp" alt="girl">
@@ -82,55 +82,5 @@
         <p>在「Protalk English Academy」，透過我們的用戶友好介面，搭配尖端技術，確保互動豐富而有益。賦予自己做出明智職業選擇和在全球就業市場中優秀的英語溝通能力，即刻啟程。</p>
     </div>
 </body>
-<script>
-    $( function() {
-        // 可拖曳的Home鍵
-        $( "#dragImgH" ).draggable($(".contentW").hide());
-        //放到圖片內改變旁邊的文章內容
-        $("#dropG").droppable({
-            drop: function (event, ui) {
-                // 在這裡你可以根據需要改變文章結構和內容
-                $(".contentV").hide();
-                $(".contentW").show();
-            },
-            out: function (event, ui) {
-                // 在這裡你可以根據需要恢復原本的文章結構和內容
-                $(".contentW").hide();
-                $(".contentV").show();
-            }
-        });
-    });
-    //輪播的內容
-    $(document).ready(function() {
-        var currentIndex = 0;
-        var totalGroups = $(".contentW > div").length;
-
-        $(".contentW > div").hide();
-        $(".contentW > div:first-of-type").show();
-
-        function switchToNextGroup() {
-            $(".contentW > div").hide();
-            currentIndex = (currentIndex + 1) % totalGroups;
-            $(".contentW > div:eq(" + currentIndex + ")").show();
-        }
-
-        function switchToPreviousGroup() {
-            $(".contentW > div").hide();
-            currentIndex = (currentIndex - 1 + totalGroups) % totalGroups;
-            $(".contentW > div:eq(" + currentIndex + ")").show();
-        }
-
-        $("#switch-to-next").click(function() {
-            switchToNextGroup();
-        });
-
-        $("#switch-to-previous").click(function() {
-            switchToPreviousGroup();
-        });
-
-        setInterval(function() {
-            switchToNextGroup();
-        }, 5000);
-    });
-</script>
+<script src="/js/aboutUs.js"></script>
 </html>

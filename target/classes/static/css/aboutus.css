@@ -26,8 +26,19 @@ body{margin: 0;}
     top: 40%;
 }
 .contentV,.contentW{
+    position: relative;
     flex: 0 0 auto;
-    width: 60%;
+    width: 55%;
+}
+.contentW{
+  background-color: #edefea;
+    color: #2b2825;
+    border-radius: 20px;
+    box-shadow:
+            0 0 20px 5px #fffdfb,
+            0 0 40px 15px #fffdfb,
+            0 0 60px 25px #fffdfb,
+            0 0 80px 35px #fffdfb;
 }
 .contentV>p{
     line-height: 3rem;
@@ -43,30 +54,60 @@ body{margin: 0;}
     color: #dde1eb;
     background-color: #53a6e1;
     border-radius: 10px;
+    box-shadow:
+            0 0 20px 5px #fffdfb,
+            0 0 40px 15px #fffdfb,
+            0 0 60px 25px #fffdfb,
+            0 0 80px 35px #fffdfb;
 }
 .contentW li{
     line-height: 3rem;
+    margin: auto 5%;
 }
-.contentW > switch-to-previous{
+.contentW h1{
+    font-weight: 900;
+    margin-left: -1rem;
+    margin-top: -1rem;
+    box-shadow:
+            0 0 20px 5px #fffdfb,
+            0 0 40px 15px #fffdfb;
+}
+.contentW h2{
+    line-height: 4rem;
+    margin: auto 3%;
+}
+/*按鈕設定*/
+.contentW > #switch-to-previous,.contentW > #switch-to-next{
     position: absolute;
-    left: 0;
     top: 50%;
+    border: none;
+    font-size: 3rem;
 }
+.contentW > #switch-to-previous{left:1%;}
+.contentW > #switch-to-next{right: 3%;}
+/*LOGO照片設定*/
 .imgH{
-position: fixed;
+    position: fixed;
     width: 100px;
     height: 100px;
     top: 2vh;
     right: 2vw;
     z-index: 1000;
+    box-shadow:
+            0 0 20px 5px #fffdfb,
+            0 0 40px 15px #fffdfb,
+            0 0 60px 25px #fffdfb,
+            0 0 80px 35px #fffdfb;
+    border-radius: 50%;
 }
+/*咩咩的照片*/
 .imgG{
     padding: 2%;
     flex: 0 0 auto;
-    width: 40%;
+    width: 45%;
     height: 100%;
 }
-
+/*最底下的文字*/
 .expcontent{
     top: 140%;
     position: absolute;
@@ -82,8 +123,14 @@ position: fixed;
     font-weight: 800;
 }
 .expcontent>a>h1:hover{
-    background-color: #eed38f;
+    background-color: #3c4636;
     border-radius: 5px;
+    color: #e5f7fa;
+    box-shadow:
+            0 0 20px 5px #fffdfb,
+            0 0 40px 15px #fffdfb,
+            0 0 60px 25px #fffdfb,
+            0 0 80px 35px #fffdfb;
 }
 .expcontent>p{
     font-size: 1.2rem;
