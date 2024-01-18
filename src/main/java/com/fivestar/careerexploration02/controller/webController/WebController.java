@@ -25,7 +25,7 @@ public class WebController
     }
     @GetMapping("/cooperation")
     public String cooperation(){
-        return "cooperation";
+        return "cooperation_2";
     }
 
     @GetMapping("/job/policeofficer")

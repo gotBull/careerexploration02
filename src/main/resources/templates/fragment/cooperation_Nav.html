@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="/css/carrer.css" rel="stylesheet" />
+</head>
+<body>
+<div th:fragment="cooperationNav">
+    <nav class="navbar navbar-expand-xl navbar-expand-size1 bg-body-tertiary theNAV" id="toggleButton">
+        <div class="container-fluid theNavContainer ">
+            <!-- 縮小後變成選單 -->
+            <button class="navbar-toggler theCollapse" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 選單的列表 -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="imgLink" href="/homepage">
+                    <img id="LOGO" src="/img/隊徽.webp">
+                    <h4 id="theName">ProTalks English Academy</h4>
+                </a>
+                <!-- 連結 -->
+                <ul class="navbar-nav" id="theNavLink">
+                    <li>
+                        <a class="nav-link theLinkItem" aria-current="page" href="/about">
+                            <span><i class="fas fa-team"></i></span>
+                            About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link theLinkItem" href="/cooperation"><span><i class="fas fa-handshake"></i></span>Cooperation</a>
+                    </li>
+                </ul>
+
+                <!-- 職業選擇條 -->
+                <div class="dropdown" id="JobMenu">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        What kind of job do you want to know?
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item JobItem" href="/job/policeofficer">Police Officer</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/reporter">Reporter</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/actor">Actor</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/teacher">Teacher</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/counselor">Counselor</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/tourguide">Tour Guide</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/weddingplanner">Wedding Planner</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/youtuber">Youtuber</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/fashiondesigner">Fashion Designer</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/dentist">Dentist</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/chef">Chef</a></li>
+                        <li><a class="dropdown-item JobItem" href="/job/doctor">Doctor</a></li>
+                    </ul>
+                </div>
+
+                <ul class="navbar-nav" id="theNavLink2">
+                    <li>
+                        <a class="nav-link theLinkItem" aria-current="page" href="/CustomerService">
+                            <span><i class="fas fa-store"></i></span>
+                            Customer Service</a>
+                    </li>
+                </ul>
+                <!-- 登入和註冊 -->
+                <div class="btn-group" id="theNavItemRegister">
+                    <a href="/user_register" class="btn btn-light Llink" th:unless="${session.logInAcc}" aria-current="page">
+                        <span><i class="fas fa-user-plus"></i></span>&nbsp<p>Register</p></a>
+                    <a href="/Member-Profile" class="btn btn-light Llink" th:if="${session.logInAcc}" aria-current="page">
+                        <span><i class="fas fa-user-plus"></i></span>&nbsp<p>Modify</p></a>
+                    <a th:unless="${session.logInAcc}" href="/login" class="btn btn-light">
+                        <span><i class="fas fa-sign-in-alt"></i></span>
+                        <p>Login</p></a>
+                    <a th:if="${session.logInAcc}" href="/logout" class="btn btn-light">
+                        <span><i class="fas fa-sign-out-alt"></i></span>
+                        <p>Logout</p></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+// 假設您的按鈕有一個ID為 toggleButton
+document.getElementById('toggleButton').addEventListener('click', function() {
+$('.collapse').toggleClass('show');
+});
+</script>
+</body>
+</html>

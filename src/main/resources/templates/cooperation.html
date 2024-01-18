@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="/css/carrer.css" >
     <link rel="icon" href="/img/隊徽.ico">
     <style>
-        .container {
+        .container
+        {
             display: grid;
             grid-template-columns: 300px 300px 300px;
             grid-template-rows: 200px 200px 200px;
@@ -53,26 +54,35 @@
 
 <body>
 <div th:replace="fragment/job_nav.html :: jobNav"></div>
+<h2></h2>
 <div class="container">
     <div class="item item1">
         <img src="/img/avc6r-q8cs8.png" alt="">
     </div>
+
     <div class="item item2">
         <img src="/img/cornell_logo.png" alt="">
     </div>
+
     <div class="item item3"></div>
+
     <div class="item item4">
         <img src="/img/floatLogo.png" alt="">
     </div>
+
     <div class="item item5">
         <img src="/img/Historyc.jpg" alt="">
     </div>
+
     <div class="item item6">
         <img src="/img/cornell_logo.png" alt="">
     </div>
+
     <div class="item item7"></div>
+
     <div class="item item8">
         <img src="/img/floatLogo.png" alt="">
+
     </div>
     <div class="item item9"></div>
 </div>
