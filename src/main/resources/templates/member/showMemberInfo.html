@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Profile</title>
+</head>
+<body>
+<h2>Member Profile</h2>     <!-- 建立一個會員可以先看到自己個人資訊的網頁，然後做修改頁面如Register02.html -->
+    <p> Account: <span th:text="${ showAccountNum }"> test msg</span></p>
+    <p> Password: <span th:text="${ showPasswd }"> test msg</span></p>
+    <p> Name: <span th:text="${ showUserName }"> test msg</span></p>
+    <p> E-mail: <span th:text="${ showEmail }"> test msg</span></p>
+    <p> Mobile: <span th:text="${ showMobile }"> test msg</span></p>
+    <p> Birthday: <span th:text="${ showBirthday }"> test msg</span></p>
+    <p> Address: <span th:text="${ showAddress }"> test msg</span></p>
+    <p> Landline: <span th:text="${ showLandline }"> test msg</span></p>
+
+    <button class="btn" type="button" name="modify">Modify Member Information</button>
+    <button class="btn" type="button" name="goBack">Previous Page</button>
+</body>
+</html>

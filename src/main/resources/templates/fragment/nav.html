@@ -56,10 +56,12 @@
                                 Customer Service</a>
                         </li>
                     </ul>
-                    <!-- 登入和註冊 -->
+                    <!-- 登入(/登出)和註冊(/修改會員資料) -->
                     <div class="btn-group" id="theNavItemRegister">
-                        <a href="/user_register" class="btn btn-light Llink" aria-current="page">
+                        <a href="/user_register" class="btn btn-light Llink" th:unless="${session.logInAcc}" aria-current="page">
                             <span><i class="fas fa-user-plus"></i></span>&nbsp<p>Register</p></a>
+                        <a href="/Member-Profile" class="btn btn-light Llink" th:if="${session.logInAcc}" aria-current="page">
+                            <span><i class="fas fa-user-plus"></i></span>&nbsp<p>Modify</p></a>
                         <a th:unless="${session.logInAcc}" href="/login" class="btn btn-light">
                             <span><i class="fas fa-sign-in-alt"></i></span>&nbsp<p>Login</p></a>
                         <a th:if="${session.logInAcc}" href="/logout" class="btn btn-light">

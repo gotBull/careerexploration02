@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Forget Password</title>
+</head>
+<body>
+<h2>忘記密碼</h2>
+<form method="post" class="formItem" action="/forgot-password">
+    <p> Your Account: <input type="text" name="accountnum"></p>
+    <p>將會傳送驗證碼至您帳號之電子郵件，做為臨時密碼...</p>
+
+
+    <div>
+        <button class="btn" type="submit" >submit</button>
+        <button class="btn" type="reset">reset</button>
+    </div><br>
+</form>
+    <hr>
+<h2>驗證隨機碼</h2>
+<!-- 在 form 中加入隱藏的 input 來傳遞 RandomCode 的值 -->
+<input type="hidden" id="hiddenRandomCode" th:value="${RandomCode}" />
+
+    <form method="post" class="formItem" action="#">
+    <p>隨機碼:<span th:text="${RandomCode}"></span></p><br>
+    <p>您的電子郵件信箱:<span th:text="${email}"></span></p>
+    <p> 輸入您信箱中收到的隨機碼: <input type="text" name="getRandomCode" id="getRandomCode"></p>
+    <div>
+        <button class="btn" type="button" id="ranCode" onclick="logfake()">check code</button>
+        <button class="btn" type="reset">reset</button>
+    </div><br>
+</form>
+
+<script>
+    function logfake()
+    {
+        // 取得隱藏的 input 中的 RandomCode 值
+        var randomCodeValue = document.getElementById('hiddenRandomCode').value;
+
+        // 取得使用者輸入的值
+        var inputRandomCodeValue = document.getElementById('getRandomCode').value;
+
+        // 在這裡加入判斷邏輯，比對兩個值是否相等
+        if (randomCodeValue === inputRandomCodeValue)
+        {
+            alert('驗證成功！');
+        } else
+        {
+            alert('驗證失敗！');
+        }
+    }
+
+</script>
+</body>
+</html>

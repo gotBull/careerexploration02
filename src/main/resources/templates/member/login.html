@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
@@ -36,6 +36,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            width: 35vw;
         }
         .btn
         {
@@ -61,6 +62,11 @@
         #countdown, #username{
             font-size: 2.5rem;
         }
+        .error-message
+        {
+            font-size: 1.2rem;
+            color: #ff7690;
+        }
     </style>
 </head>
 <body>
@@ -70,14 +76,21 @@
             <form method="post" class="formItem" action="/login">
                 <p> Your Account: <input type="text" name="accountnum"></p>
                 <p> Your Password: <input type="text" name="passwd"></p>
+                <!-- 登入錯誤後提示訊息 -->
+                <div th:if="${logFail}" class="error-message">
+                    <p th:text="${logFail}"></p>
+                </div>
+
                 <div>
-                    <button class="btn" type="submit">submit</button>
+                    <button class="btn" type="submit" >submit</button>
                     <button class="btn" type="reset">reset</button>
+                    <a type="button" class="btn" href="/forget_password">forget password?</a>
                 </div>
             </form>
         </div>
         <div class="theCongrate" th:if="${session.logInAcc}">
             <h1><span th:text="${ logSuess }"> test msg </span></h1>
+            <!--  顯示會員名字  -->
             <p>Welcome <span id="username" th:text="${ showUserName }"> test msg</span> back!</p>
             <p>Back to homepage in <span id="countdown"> 3</span> s</p>
         </div>
@@ -85,6 +98,7 @@
 </body>
 <script>
     var countdown = 3; // 3 秒
+
     setInterval(timeCount, 1000);
     function timeCount()
     {
@@ -95,9 +109,11 @@
             transToLogin();
         }
     }
+
     function transToLogin()
     {
-        location.href = "/homepage"; // 轉到 index.html 頁面
+        location.href = "/homepage"; // 轉回到 login.html 頁面
     }
+
 </script>
 </html>
