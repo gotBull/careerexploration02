@@ -211,7 +211,10 @@ header.masthead .post-heading .meta a {
   margin-top: 2.5rem;
 }
 .iconColor{
-  color: #4a4952;
+  color: rgba(73, 87, 195);
+}
+.fa-youtube{
+    color:white;
 }
 .theCopy{
   margin-bottom: 2rem;
@@ -236,7 +239,7 @@ header.masthead .post-heading .meta a {
     bottom: 50px;
     right: 50px;
     display: none;
-    background-color: #5facf8;
+    background-color: #5297dc;
     opacity: 1.0; /*背景色透明度*/
     color: white;
     border: none;

@@ -39,9 +39,9 @@
                             <a class="button" href="#">英文版說明</a>
                             <!-- <h2 class="subheading">如需申訴，請至下方署長信箱投訴</2> -->
                             <span class="meta">
-                                104人力銀行快訊
-                                <a target="_blank" href="https://www.104.com.tw/jobs/search/?ro=0&keyword=%E4%B8%BB%E5%BB%9A&expansionType=area%2Cspec%2Ccom%2Cjob%2Cwf%2Cwktm&order=1&asc=0&page=1&mode=s&jobsource=index_s&langFlag=0&langStatus=0&recommendJob=1&hotJob=1" >  - 「主廚」職缺請點我 - </a>
-                                on January 11, 2024
+                                104人力銀行快訊  -
+                                <a target="_blank" href="https://www.104.com.tw/jobs/search/?ro=0&keyword=%E4%B8%BB%E5%BB%9A&expansionType=area%2Cspec%2Ccom%2Cjob%2Cwf%2Cwktm&order=1&asc=0&page=1&mode=s&jobsource=index_s&langFlag=0&langStatus=0&recommendJob=1&hotJob=1" >「主廚」職缺請點我</a>
+                                 - on January 24, 2024
                             </span>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
                             我們不僅追求口感的完美，更注重食物背後的故事，細細品味生活中的美好滋味。  </p>
                         <p>
                             The source of the article is from
-                            <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://chat.openai.com/">AI智慧好夥伴</a>
+                            <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.google.com.tw/?hl=zh_TW">Google</a>
                             &middot; Images by
                             <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.pexels.com/zh-tw/">Pexels</a>
                         </p>
@@ -167,6 +167,32 @@
             document.querySelector('.dropdown-menu').addEventListener('shown.bs.dropdown', function () {
             this.style.maxHeight = this.scrollHeight + 'px';
             });
+        </script>
+<!-- 新增按鈕 彈跳到網頁最頂端 -->
+        <button id="scrollToTopBtn" onclick="scrollToTop()">
+            <!-- 在這裡加入你的圖示-->
+            <i class="fa-solid fa-angles-up"></i> <!-- 向上箭頭的 HTML 實體符號 -->
+        </button>
+
+        <script>
+            // JavaScript 函數，用於平滑滾動到頁面頂部
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // 使用平滑滾動動畫
+                });
+            }
+
+            // 根據滾動位置顯示或隱藏按鈕
+            window.onscroll = function() {
+                var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            };
         </script>
     </body>
 </html>
