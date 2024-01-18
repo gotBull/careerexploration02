@@ -148,9 +148,10 @@ header.masthead .site-heading {
   color: #fff;
 }
 header.masthead .post-heading h1{
-  font-size: 3rem;
+  font-size: 2.75rem;
   display: inline-block;
   border-radius: 10px;
+    margin:10px;
   text-align: center; /* 讓文字在元素中置中 */
 }
 header.masthead .post-heading .meta,
@@ -185,8 +186,12 @@ header.masthead .post-heading .meta a {
   color: #6c757d;
 }
 .imgComment{
-  font-size: 0.8rem;
-  margin: auto 10%;
+  /*font-size: 0.8rem;*/
+  /*margin: auto 10%;*/
+    font-size: 0.9rem;
+    display: flex;
+    text-align:center;
+
 }
 .altContent{
  background-color: #6c757d;
@@ -206,7 +211,10 @@ header.masthead .post-heading .meta a {
   margin-top: 2.5rem;
 }
 .iconColor{
-  color: #4a4952;
+  color: rgba(73, 87, 195);
+}
+.fa-youtube{
+    color:white;
 }
 .theCopy{
   margin-bottom: 2rem;
@@ -224,6 +232,21 @@ header.masthead .post-heading .meta a {
     width:100px; /*設定按鈕的寬度為 110px。*/
     text-decoration: none;
 }
-.button:link,.button:visited,.button:active {
-    outline:auto;
+
+/*新增按鈕可彈跳到網頁最上方*/
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: none;
+    background-color: #5297dc;
+    opacity: 1.0; /*背景色透明度*/
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+#scrollToTopBtn:hover {
+    background-color: #9ec9ff; /* 滑鼠懸停時的背景色變更 */
 }

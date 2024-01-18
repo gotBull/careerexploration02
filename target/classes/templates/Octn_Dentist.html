@@ -36,12 +36,12 @@
                             <!-- <h4 id="greeting">下方按鈕可選擇語言版本</h4> -->
                             <!-- 切換語言的按鈕 -->
                             <h1>牙醫師 Dentist</h1>
-                            <a href="#"><button>英文版說明</button></a>
+                            <a class="button" href="#">英文版說明</a>
                             <!-- <h2 class="subheading">如需申訴，請至下方署長信箱投訴</2> -->
                             <span class="meta">
-                                104人力銀行快訊
-                                <a target="_blank" href="https://www.104.com.tw/jobs/search/?ro=0&kwop=7&keyword=%E7%89%99%E9%86%AB%E5%B8%AB&expansionType=area%2Cspec%2Ccom%2Cjob%2Cwf%2Cwktm&order=15&asc=0&page=3&mode=s&jobsource=index_s&langFlag=0&langStatus=0&recommendJob=1&hotJob=1" >  - 「牙醫」職缺請點我 - </a>
-                                on January 11, 2024
+                                104人力銀行快訊  -
+                                <a target="_blank" href="https://www.104.com.tw/jobs/search/?ro=0&kwop=7&keyword=%E7%89%99%E9%86%AB%E5%B8%AB&expansionType=area%2Cspec%2Ccom%2Cjob%2Cwf%2Cwktm&order=15&asc=0&page=3&mode=s&jobsource=index_s&langFlag=0&langStatus=0&recommendJob=1&hotJob=1" >「牙醫」職缺請點我</a>
+                                - on January 24, 2024
                             </span>
                         </div>
                     </div>
@@ -134,14 +134,14 @@
                             <p>8.具備各種醫藥、醫療保健常識。</p>
                             <p>9.具備分析研究結果及撰寫研究報告書。</p>
                         <br>
-                            <a href="#!"><img class="img-fluid" src="/img/Dentist(3).webp" alt="..." /></a>
+                            <a href="#!"><img class="img-fluid" src="/img/dentist(3).webp" alt="..." /></a>
                         <span class="caption text-muted imgComment">照護患者口腔健康，提供專業治療與細心建議，打造健康笑容，關愛每一位病患。</span>
 
                         <p>我們理解口腔健康對整體健康的重要性，因此我們致力於提供最專業、最全面的治療方案，致力於為您打造一個健康、自信的笑容，
                             無論是日常護理還是治療過程，我們將用心照顧您的每一顆牙齒，期待與您攜手共同維護口腔健康，讓您擁有閃亮的笑容，充滿自信面對生活。</p>
                         <p>
                             The source of the article is from
-                            <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://chat.openai.com/">AI智慧好夥伴</a>
+                            <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.google.com.tw/?hl=zh_TW">Google</a>
                             &middot; Images by
                             <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.pexels.com/zh-tw/">Pexels</a>
                         </p>
@@ -160,6 +160,32 @@
             document.querySelector('.dropdown-menu').addEventListener('shown.bs.dropdown', function () {
             this.style.maxHeight = this.scrollHeight + 'px';
             });
+        </script>
+<!-- 新增按鈕 彈跳到網頁最頂端 -->
+        <button id="scrollToTopBtn" onclick="scrollToTop()">
+            <!-- 在這裡加入你的圖示-->
+            <i class="fa-solid fa-angles-up"></i> <!-- 向上箭頭的 HTML 實體符號 -->
+        </button>
+
+        <script>
+            // JavaScript 函數，用於平滑滾動到頁面頂部
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // 使用平滑滾動動畫
+                });
+            }
+
+            // 根據滾動位置顯示或隱藏按鈕
+            window.onscroll = function() {
+                var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            };
         </script>
     </body>
 </html>

@@ -36,12 +36,12 @@
                             <!-- <h4 id="greeting">下方按鈕可選擇語言版本</h4> -->
                             <!-- 切換語言的按鈕 -->
                             <h1>教師 Teacher</h1>
-                            <a href="#"><button>英文版說明</button></a>
+                            <a class="button" href="#">英文版說明</a>
                             <!-- <h2 class="subheading">如需申訴，請至下方署長信箱投訴</2> -->
                             <span class="meta">
-                                教育部 考試快訊
-                                <a target="_blank" href="https://tqa.rcpet.edu.tw/TEA_Exam/" >  - 「老師」報考資訊請點我 - </a>
-                                on January 16, 2024
+                                教育部 考試快訊  -
+                                <a target="_blank" href="https://tqa.rcpet.edu.tw/TEA_Exam/" >「老師」報考資訊請點我</a>
+                                 - on January 24, 2024
                             </span>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                             堅信自己的能力，發揮潛力，努力突破自己的極限，用心學習，保持好奇心，相信每一步都是通往未來的踏板。</p>
                         <p>
                             The source of the article is from
-                            <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://chat.openai.com/">AI智慧好夥伴</a>
+                            <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.google.com.tw/?hl=zh_TW">Google</a>
                             &middot; Images by
                             <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.pexels.com/zh-tw/">Pexels</a>
                         </p>
@@ -157,6 +157,32 @@
             document.querySelector('.dropdown-menu').addEventListener('shown.bs.dropdown', function () {
             this.style.maxHeight = this.scrollHeight + 'px';
             });
+        </script>
+<!-- 新增按鈕 彈跳到網頁最頂端 -->
+        <button id="scrollToTopBtn" onclick="scrollToTop()">
+            <!-- 在這裡加入你的圖示-->
+            <i class="fa-solid fa-angles-up"></i> <!-- 向上箭頭的 HTML 實體符號 -->
+        </button>
+
+        <script>
+            // JavaScript 函數，用於平滑滾動到頁面頂部
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // 使用平滑滾動動畫
+                });
+            }
+
+            // 根據滾動位置顯示或隱藏按鈕
+            window.onscroll = function() {
+                var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            };
         </script>
     </body>
 </html>

@@ -39,9 +39,9 @@
                             <a class="button" href="#">英文版說明</a>
                             <!-- <h2 class="subheading">如需申訴，請至下方署長信箱投訴</2> -->
                             <span class="meta">
-                                104人力銀行快訊
-                                <a target="_blank" href="https://www.104.com.tw/jobs/search/?jobsource=index_s&keyword=%E8%A8%98%E8%80%85&mode=s&page=1" >  - 「記者」職缺請點我 - </a>
-                                on January 16, 2024
+                                104人力銀行快訊  -
+                                <a target="_blank" href="https://www.104.com.tw/jobs/search/?jobsource=index_s&keyword=%E8%A8%98%E8%80%85&mode=s&page=1" >「記者」職缺請點我</a>
+                                 - on January 24, 2024
                             </span>
                         </div>
                     </div>
@@ -69,7 +69,6 @@
 <!--登入後會出現的內容-->
                         <div th:if="${session.logInAcc}">
                         <hr>
-<!--                            <button onclick="changeLanguage()">轉換語言</button>-->
                             <div id="article">
                                 <p>1.透過訪問、調查、觀察及參與公眾活動等方法，蒐集歷史資料、地方或國際新聞，發掘具有新聞價值及能引發讀者興趣之新聞。</p>
                                 <p>2.蒐集、報導及評論報章、雜誌、廣播、電視或網路傳播之新聞與時事，根據所得到之消息撰寫報導，並提交報社編輯部或新聞部處理後發表。</p>
@@ -134,7 +133,7 @@
                         <p>我們身處瞬息萬變的時代，資訊如潮水湧來，時刻保持質疑與探索的心，不斷學習與進步，在這彷彿喧囂的世界裡，不要忘記關心彼此、珍惜人與人之間的聯繫，我們每一位都是這個大時代中的重要角色，你的聲音和行動都有影響力。讓我們攜手迎接更美好的明天。</p>
                         <p>
                             The source of the article is from
-                            <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://chat.openai.com/">AI智慧好夥伴</a>
+                            <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.google.com.tw/?hl=zh_TW">Google</a>
                             &middot; Images by
                             <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.pexels.com/zh-tw/">Pexels</a>
                         </p>
@@ -153,6 +152,32 @@
             document.querySelector('.dropdown-menu').addEventListener('shown.bs.dropdown', function () {
             this.style.maxHeight = this.scrollHeight + 'px';
             });
+        </script>
+<!-- 新增按鈕 彈跳到網頁最頂端 -->
+        <button id="scrollToTopBtn" onclick="scrollToTop()">
+            <!-- 在這裡加入你的圖示-->
+            <i class="fa-solid fa-angles-up"></i> <!-- 向上箭頭的 HTML 實體符號 -->
+        </button>
+
+        <script>
+            // JavaScript 函數，用於平滑滾動到頁面頂部
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // 使用平滑滾動動畫
+                });
+            }
+
+            // 根據滾動位置顯示或隱藏按鈕
+            window.onscroll = function() {
+                var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            };
         </script>
     </body>
 </html>

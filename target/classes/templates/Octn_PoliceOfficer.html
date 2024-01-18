@@ -16,14 +16,15 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         <link href="/css/carrer.css" rel="stylesheet" />
+<!--箭頭的css-->
+<!--        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" integrity="sha384-rzo7X2QzL81rUqRr7M59UO5lPJe9dHlRrFO8YFS5nJSf5CC9Cm3r1IENWKTfE2K0" crossorigin="anonymous">-->
+        <script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/js/all.min.js" integrity="sha384-0I/XLFTtZGKUn9sk7s6aRYN6K1wL6zQJGF8W9y8YZg8w3fVeLxk0UqOD+9WDMfO8" crossorigin="anonymous"></script>
 
     </head>
     <body>
         <!-- Navigation-->
         <div th:replace="fragment/job_nav.html :: jobNav"></div>
-        <!-- YouTube video 包含背景底色 -->
-
-        <!-- Page Header 首頁大圖片+配字+影片(此行可刪除) -->
+        <!-- Page Header 首頁大圖片+配字+youtube影片 -->
         <header class="masthead" style="background-image: url('/img/police.webp');">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -39,9 +40,9 @@
                             <a class="button" href="http://localhost:8324/job/policeofficer_en">英文版說明</a>
                             <!-- <h2 class="subheading">如需申訴，請至下方署長信箱投訴</2> -->
                             <span class="meta">
-                                考選部 考試快訊
-                                <a target="_blank" title="您即將離開本站" href="https://wwwc.moex.gov.tw/main/home/wfrmTextSearch.aspx?q=%e8%ad%a6%e5%af%9f" >  - 「警察」報考資訊請點我 - </a>
-                                on January 10, 2024
+                                考選部 考試快訊  -
+                                <a target="_blank" title="您即將離開本站" href="https://wwwc.moex.gov.tw/main/home/wfrmTextSearch.aspx?q=%e8%ad%a6%e5%af%9f" >「警察」報考資訊請點我</a>
+                                  - on January 24, 2024
                             </span>
                         </div>
                     </div>
@@ -83,21 +84,23 @@
                             </div>
 
                         </div>
+
                         <h2 class="section-heading">證照/執照要求</h2>
 <!--未登入會出現的連結-->
-                    <div th:unless="${session.logInAcc}"class="altContent">
+                        <div th:unless="${session.logInAcc}"class="altContent">
                             <a href="/login">
                                 <h2>
                                     <i class='fas fa-lock-open' style='font-size:48px;color:#fcba03'></i>
                                     點我登入查看詳細資訊
                                 </h2>
                             </a>
-                    </div>
+                        </div>
 <!--登入後會出現的內容-->
-                    <div th:if="${session.logInAcc}">
+                        <div th:if="${session.logInAcc}">
                             <hr>
                             <p>經警察人員考試合格者</p>
-                    </div>
+                        </div>
+
                         <h2 class="section-heading">學歷要求</h2>
 <!--未登入會出現的連結-->
                     <div th:unless="${session.logInAcc}"class="altContent">
@@ -144,7 +147,7 @@
                         <p>親愛的市民，我們身為警察，深知我們的職責是保護人民的安全和維護社區的秩序，請信任我們的工作，並且與我們攜手合作，共同建立一個安全、和諧的社會。如有需要，請隨時與我們聯繫，我們將以最大努力為提供服務。</p>
                         <p>
                             The source of the article is from
-                            <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://chat.openai.com/">AI智慧好夥伴</a>
+                            <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.google.com.tw/?hl=zh_TW">Google</a>
                             &middot; Images by
                             <a target="_blank" title="您即將離開本站" data-bs-toggle="tooltip" data-bs-original-title="您即將離開本站" href="https://www.pexels.com/zh-tw/">Pexels</a>
                         </p>
@@ -164,5 +167,32 @@
             this.style.maxHeight = this.scrollHeight + 'px';
             });
         </script>
+<!-- 新增按鈕 彈跳到網頁最頂端 -->
+        <button id="scrollToTopBtn" onclick="scrollToTop()">
+            <!-- 在這裡加入你的圖示-->
+            <i class="fa-solid fa-angles-up"></i> <!-- 向上箭頭的 HTML 實體符號 -->
+        </button>
+
+        <script>
+            // JavaScript 函數，用於平滑滾動到頁面頂部
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // 使用平滑滾動動畫
+                });
+            }
+
+            // 根據滾動位置顯示或隱藏按鈕
+            window.onscroll = function() {
+                var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollToTopBtn.style.display = 'block';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            };
+        </script>
+
     </body>
 </html>
