@@ -6,6 +6,8 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/aboutus.css">
 </head>
@@ -24,15 +26,56 @@
         <div class="contentV">
             <h1>關鍵特點</h1>
                 <h3>1. 職業見解</h3>
-                    <p>啟程進入自我發現之旅，我們為您呈現深入研究不同職業的詳細見解。我們的平台與各行各業的專家合作，呈現引人入勝且資訊豐富的影片，深入挖掘不同領域的日常職責、所需技能和成長機會，幫助您對未來做出明智的決策。</p>
+                <p>啟程進入自我發現之旅，我們為您呈現深入研究不同職業的詳細見解。我們的平台與各行各業的專家合作，呈現引人入勝且資訊豐富的影片，深入挖掘不同領域的日常職責、所需技能和成長機會，幫助您對未來做出明智的決策。</p>
                 <h3>2. 英語語言學習</h3>
-                    <p>掌握英語是當今互聯世界中的一項關鍵資產。「Protalk English Academy」提供一系列語言學習資源，包括沉浸式影片、互動課程和實際應用語境。無論您是初學者還是希望精進語言技能，我們的平台提供量身定制的內容，提升您在英語方面的能力，在職業風景中獲得競爭優勢。</p>
-            <h3><a href="/cooperation">3. 與教育提供者的合作</a></h3>
-                    <p>我們與補習行業的領先教育機構和導師合作，提供優質內容。我們的平台與大型觸控顯示器無縫整合，提供沉浸式學習體驗。通過與補習服務的戰略合作，我們旨在使教育資源更加可及、引人入勝且具有實質影響力。</p>
+                <p>掌握英語是當今互聯世界中的一項關鍵資產。「Protalk English Academy」提供一系列語言學習資源，包括沉浸式影片、互動課程和實際應用語境。無論您是初學者還是希望精進語言技能，我們的平台提供量身定制的內容，提升您在英語方面的能力，在職業風景中獲得競爭優勢。</p>
+                <h3><a href="/cooperation">3. 與教育提供者的合作</a></h3>
+                <p>我們與補習行業的領先教育機構和導師合作，提供優質內容。我們的平台與大型觸控顯示器無縫整合，提供沉浸式學習體驗。通過與補習服務的戰略合作，我們旨在使教育資源更加可及、引人入勝且具有實質影響力。</p>
+        </div>
+        <div class="contentW">
+            <h1>關於這網站的製作</h1>
+            <div>
+                <h2>黃國祐(前端&UI):</h2>
+                <ol>
+                    <li>首頁製作</li>
+                    <li>導覽列設計</li>
+                    <li>About us、Customer service頁面製作</li>
+                    <li>GitHub檔案整合</li>
+                </ol>
+            </div>
+            <div>
+                <h2>林宥薷(後端&資料庫):</h2>
+                <ol>
+                    <li>會員資料庫建置</li>
+                    <li>會員註冊功能(讀寫資料庫、判別輸入字是否有SQL保留字、判別是否有相同帳號、密碼再次確認判別)</li>
+                    <li>會員登入功能(讀資料庫、登入成功=設定session、登入失敗=重新登入) 小功能:</li>
+                    <li>忘記密碼依帳號抓資料庫E-mail，將產生的隨機碼寄出並作為臨時密碼</li>
+                    <li>登入與否，做出顯示訊息的測試API</li>
+                    <li>會員登出功能(清除已設定的session)</li>
+                </ol>
+            </div>
+            <div>
+                <h2>林翰翔(前端&資料):</h2>
+                <ol>
+                    <li>職業頁面資料蒐集</li>
+                    <li>職業頁面製作</li>
+                    <li>頁面資料拉連結</li>
+                </ol>
+            </div>
+            <div>
+                <h2>王國華(企劃):</h2>
+                <ol>
+                    <li>專案企劃</li>
+                    <li>會議招集與安排</li>
+                    <li>影片剪輯上字幕</li>
+                    <li>簡報製作</li>
+                </ol>
+            </div>
+            <button id="switch-to-previous"><i class="fas fa-angle-left"></i></button>
+            <button id="switch-to-next"><i class="fas fa-angle-right"></i></button>
 
         </div>
-
-        <img class="imgG" src="/img/girl.webp" alt="girl">
+        <img class="imgG" id="dropG" src="/img/girl.webp" alt="girl">
     </div>
     <div class="expcontent">
         <a href="/CustomerService"><h1>體驗「Protalk English Academy」</h1></a><br>
@@ -41,7 +84,53 @@
 </body>
 <script>
     $( function() {
-        $( "#dragImgH" ).draggable();
-    } );
+        // 可拖曳的Home鍵
+        $( "#dragImgH" ).draggable($(".contentW").hide());
+        //放到圖片內改變旁邊的文章內容
+        $("#dropG").droppable({
+            drop: function (event, ui) {
+                // 在這裡你可以根據需要改變文章結構和內容
+                $(".contentV").hide();
+                $(".contentW").show();
+            },
+            out: function (event, ui) {
+                // 在這裡你可以根據需要恢復原本的文章結構和內容
+                $(".contentW").hide();
+                $(".contentV").show();
+            }
+        });
+    });
+    //輪播的內容
+    $(document).ready(function() {
+        var currentIndex = 0;
+        var totalGroups = $(".contentW > div").length;
+
+        $(".contentW > div").hide();
+        $(".contentW > div:first-of-type").show();
+
+        function switchToNextGroup() {
+            $(".contentW > div").hide();
+            currentIndex = (currentIndex + 1) % totalGroups;
+            $(".contentW > div:eq(" + currentIndex + ")").show();
+        }
+
+        function switchToPreviousGroup() {
+            $(".contentW > div").hide();
+            currentIndex = (currentIndex - 1 + totalGroups) % totalGroups;
+            $(".contentW > div:eq(" + currentIndex + ")").show();
+        }
+
+        $("#switch-to-next").click(function() {
+            switchToNextGroup();
+        });
+
+        $("#switch-to-previous").click(function() {
+            switchToPreviousGroup();
+        });
+
+        setInterval(function() {
+            switchToNextGroup();
+        }, 5000);
+    });
 </script>
 </html>
