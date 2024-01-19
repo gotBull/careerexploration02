@@ -18,7 +18,7 @@ public class UserModifyService
     {
         try
         {
-            return userModifyDao.getMemberAll01(accountnum,passwd,username,email,mobile,address,landline,paymentStatus,paymentDate);
+            return userModifyDao.getMemberAll02(accountnum);
         }
         catch (Exception e)
         {
@@ -26,6 +26,28 @@ public class UserModifyService
             return null;
         }
     }
+
+    //回傳給Repository，找出session中帳號做呈現會員資料，測試第二次
+    public UserModifyModel getAllByAccount03(String accountnum)
+    {
+        try
+        {
+            return userModifyDao.getMemberAll02(accountnum);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+            return null;
+        }
+    }
+
+    //回傳給Repository，找出session中帳號做呈現會員資料，測試第三次
+    public UserModifyModel getAllByAccount04(String accountnum)
+    {
+        return userModifyDao.getMemberAll02(accountnum);
+    }
+
+
 
     //回傳Id給Repository，做修改會員資料
     public void updateMember(UserModifyModel userModifyModel)
