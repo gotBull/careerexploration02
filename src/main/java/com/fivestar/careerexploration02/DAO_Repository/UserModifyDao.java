@@ -31,16 +31,29 @@ public class UserModifyDao
                 userModifyMapper, accountnum, passwd, username, email,
                 mobile, address, landline, paymentStatus, paymentDate);
 
+        return allMemberArray.isEmpty() ? null : allMemberArray.get(0);
+    }
+
+    //第二次測試考慮只以帳號當參數送進來
+    public UserModifyModel getMemberAll02(String accountnum)
+    {
+        UserModifyMapper userModifyMapper=new UserModifyMapper();
+
+        List<UserModifyModel> allMemberArray= jdbcTemplate.query(
+                "SELECT * from userdata where accountnum = ?",
+                userModifyMapper, accountnum);
+
         if (allMemberArray.isEmpty())
         {
-            logger.warn("執行後會員資料 沒 被找到");
+            logger.warn("此DAO執行後會員資料 沒 被找到");
         }
         else
         {
-            logger.warn("執行後會員資料 有 被找到");
+            logger.warn("此DAO執行後會員資料 有 被找到");
         }
         return allMemberArray.isEmpty() ? null : allMemberArray.get(0);
     }
+
 
     // 更新會員資料的邏輯
     public void updateMember(UserModifyModel userModifyModel)

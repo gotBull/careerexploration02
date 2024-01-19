@@ -51,23 +51,20 @@ public class LoginController
     public String loginsussPage(@RequestParam("accountnum") String accountnum,
                                 @RequestParam("passwd") String passwd,
                                 HttpSession session, Model model,
-                                HttpServletRequest request01,
-                                String username, String email,
-                                String mobile, String address,
-                                String landline, String paymentStatus, Date paymentDate)
+                                HttpServletRequest request01)
     {
         UserLogModel02 model01 = new UserLogModel02();
         UserLogModel02 showUserName = userLoginService.transUserName(accountnum);   //從DAO簡單寫從帳號對應的使用者名稱，給Service傳
 
         model01.setAccountnum(accountnum);
         model01.setPasswd(passwd);
-        model01.setUsername(username);
-        model01.setEmail(email);
-        model01.setMobile(mobile);
-        model01.setAddress(address);
-        model01.setLandline(landline);
-        model01.setPaymentStatus(paymentStatus);
-        model01.setPaymentDate(paymentDate);
+//        model01.setUsername(username);
+//        model01.setEmail(email);
+//        model01.setMobile(mobile);
+//        model01.setAddress(address);
+//        model01.setLandline(landline);
+//        model01.setPaymentStatus(paymentStatus);
+//        model01.setPaymentDate(paymentDate);
 
         boolean loginResult = userLoginService.loginTest(model01);
         if(loginResult)
@@ -76,13 +73,13 @@ public class LoginController
 
             session.setAttribute("SetAccountNum", accountnum); // 儲存帳號設定在session
             session.setAttribute("SetPasswd", passwd);  // 儲存密碼設定在session
-            session.setAttribute("SetUserName123", username);
-            session.setAttribute("SetEmail", email);
-            session.setAttribute("SetMobile", mobile);
-            session.setAttribute("SetAddress",address);
-            session.setAttribute("SetLandline",landline);
-            session.setAttribute("SetpaymentStatus",paymentStatus);
-            session.setAttribute("SetpaymentDate",paymentDate);
+//            session.setAttribute("SetUserName123", username);
+//            session.setAttribute("SetEmail", email);
+//            session.setAttribute("SetMobile", mobile);
+//            session.setAttribute("SetAddress",address);
+//            session.setAttribute("SetLandline",landline);
+//            session.setAttribute("SetpaymentStatus",paymentStatus);
+//            session.setAttribute("SetpaymentDate",paymentDate);
 
             model.addAttribute("logSuess","Logged in success!");
             model.addAttribute("showUserName", showUserName.getUsername()); //先判別帳密一致後，印出與帳號對應的使用者名稱
@@ -114,8 +111,9 @@ public class LoginController
         // 如果已經登入，顯示此句話 + session 中的 Account
         else
         {
-            return "This is a restricted API endpoint. You have access!"
-                    + session.getAttribute("accountnum")+ session.getAttribute("comeFrom");
+            return "This is a restricted API endpoint. You have access!"+
+                    " AccountNum in session: "+ session.getAttribute("SetAccountNum")+
+                    "; comeFrom page: "+ session.getAttribute("comeFrom");
         }
     }
 }

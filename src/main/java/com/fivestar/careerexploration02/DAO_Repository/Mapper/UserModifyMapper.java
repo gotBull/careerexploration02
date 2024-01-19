@@ -13,7 +13,7 @@ public class UserModifyMapper implements RowMapper<UserModifyModel>  //把DB會�
     public UserModifyModel mapRow(ResultSet rs, int rowNum) throws SQLException
     {
         UserModifyModel userModifyModel= new UserModifyModel();
-//        userModifyModel.setMemberid(rs.getInt("memberid"));
+        userModifyModel.setMemberid(rs.getInt("memberid"));
         userModifyModel.setAccountnum(rs.getNString("accountnum"));
         userModifyModel.setPasswd(rs.getNString("passwd"));
         userModifyModel.setUsername(rs.getNString("username"));
