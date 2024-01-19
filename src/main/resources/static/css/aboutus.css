@@ -61,7 +61,7 @@ body{margin: 0;}
             0 0 80px 35px #fffdfb;
 }
 .contentW li{
-    line-height: 3rem;
+    line-height: 2rem;
     margin: auto 5%;
 }
 .contentW h1{
@@ -73,7 +73,7 @@ body{margin: 0;}
             0 0 40px 15px #fffdfb;
 }
 .contentW h2{
-    line-height: 4rem;
+    line-height: 3rem;
     margin: auto 3%;
 }
 /*按鈕設定*/
