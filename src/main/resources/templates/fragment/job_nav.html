@@ -67,7 +67,7 @@
                 <div class="btn-group" id="theNavItemRegister">
                     <a href="/user_register" class="btn btn-light Llink" th:unless="${session.logInAcc}" aria-current="page">
                         <span><i class="fas fa-user-plus"></i></span>&nbsp<p>Register</p></a>
-                    <a href="/Member-Profile" class="btn btn-light Llink" th:if="${session.logInAcc}" aria-current="page">
+                    <a href="/Modify" class="btn btn-light Llink" th:if="${session.logInAcc}" aria-current="page">
                         <img id="SetIcon" src="/img/settings.webp">&nbsp<p>Modify</p></a>
                     <a th:unless="${session.logInAcc}" href="/login" class="btn btn-light">
                         <span><i class="fas fa-sign-in-alt"></i></span>
