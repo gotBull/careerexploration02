@@ -43,7 +43,7 @@ public class LoginController
 //        }
 //        else
 //        {
-            return "/member/login";
+            return "member/login";
 //        }
     }
 
@@ -91,14 +91,14 @@ public class LoginController
             String referrer = request01.getHeader("Referer"); // 獲取Referrer
             session.setAttribute("comeFrom", request01.getHeader("Referer"));
 //            return "redirect:" + session.getAttribute("comeFrom");  // 如果有Referrer，則重定向到Referrer；否則重定向到首頁
-            return "/member/login";
+            return "member/login";
         }
         else
         {
             //帳號或密碼輸入錯誤，顯示錯誤提示訊息
             model.addAttribute("logFail","Incorrect username or password, please re-enter.");
 //            return "/member/loginFail";  //帳號或密碼輸入錯誤，三秒後返回登入頁面
-            return "/member/login";
+            return "member/login";
         }
     }
 

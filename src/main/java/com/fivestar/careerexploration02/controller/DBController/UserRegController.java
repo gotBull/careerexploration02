@@ -20,7 +20,7 @@ public class UserRegController
     {
         UserRegModel userRegModel = new UserRegModel();
         model.addAttribute("userRegForm",userRegModel);
-        return "/member/Register2";
+        return "member/Register2";
     }
 
     //@PostMapping+ binding讓使用者把Form送進model裡傳，使用@ModelAttribute+ th:object="${ }"+ th:field="*{ }"
@@ -52,7 +52,7 @@ public class UserRegController
         }
         // 結果通知
         model.addAttribute("msg",msg);
-        return "/member/signin";
+        return "member/signin";
     }
 
 

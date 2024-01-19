@@ -48,7 +48,7 @@ public class UserModifyController
             model.addAttribute("showPaymentDate", showMemberAll.getPaymentDate());
 
             logger.warn("執行後可以先看到目前session狀態"+accountnum+","+passwd+","+address);
-            return "/member/ModifyInfo";
+            return "member/ModifyInfo";
         }
 //        else   // 如果找不到該會員，可以重回到登入頁面
 //        {
@@ -91,7 +91,7 @@ public class UserModifyController
             // 如果showMemberAll為null，可以設置一個默認值或者不設置，根據需求
 
             //把剩下會員資料裝進model傳給ModifyInfo頁面使用th:text
-            return "/member/ModifyInfo";
+            return "member/ModifyInfo";
 //        }
 //        catch (Exception e)
 //        {
