@@ -174,7 +174,7 @@
 
             // 根據滾動位置顯示或隱藏按鈕
             window.onscroll = function() {
-                var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+                const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
                 if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                     scrollToTopBtn.style.display = 'block';
