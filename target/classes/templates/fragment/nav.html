@@ -27,7 +27,7 @@
                     <ul class="navbar-nav" id="theNavLink">
                         <li>
                             <a class="nav-link theLinkItem" id="item1" aria-current="page" href="/about">
-                                <span><i class="fas fa-team"></i></span>
+                                <img id="aboutIcon" src="/img/group.webp">
                                 About Us</a>
                         </li>
 
@@ -61,7 +61,7 @@
                         <a href="/user_register" class="btn btn-light Llink" th:unless="${session.logInAcc}" aria-current="page">
                             <span><i class="fas fa-user-plus"></i></span>&nbsp<p>Register</p></a>
                         <a href="/Member-Profile" class="btn btn-light Llink" th:if="${session.logInAcc}" aria-current="page">
-                            <span><i class="fas fa-user-plus"></i></span>&nbsp<p>Modify</p></a>
+                            <img id="SetIcon" src="/img/settings.webp">&nbsp<p>Modify</p></a>
                         <a th:unless="${session.logInAcc}" href="/login" class="btn btn-light">
                             <span><i class="fas fa-sign-in-alt"></i></span>&nbsp<p>Login</p></a>
                         <a th:if="${session.logInAcc}" href="/logout" class="btn btn-light">
