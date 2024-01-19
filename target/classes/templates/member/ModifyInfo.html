@@ -2,41 +2,56 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <title>Member Profile</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
     .hideInputFirst
     {
         display: none;
     }
+    .UserInfo{
+        display: flex;
+        flex-direction: column;
+    }
+    .formOutside{
+        position: relative;
+        justify-items: center;
+        align-content: center;
+    }
     </style>
-    <title>Member Profile</title>
 </head>
     <body>
+    <!-- 建立一個會員可以先看到自己個人資訊的網頁，然後做修改頁面如Register02.html -->
+<div class="formOutside">
+    <form class="UserInfo">
         <h2>Member Profile</h2>
-        <!-- 建立一個會員可以先看到自己個人資訊的網頁，然後做修改頁面如Register02.html -->
-            <p>Username: <span type="text" th:text="*{showUsername}"></span></p>
-            <input type="text" class="hideInputFirst" id="UserName" placeholder="Input your name...">
-            <p>Account: <span type="password" th:text="*{showAccountnum}"></span></p>
-            <input type="text" class="hideInputFirst" id="Account" placeholder="Input your account...">
-            <p>Password: <span type="password" th:text="*{showPasswd}"></span></p>
-            <input type="text" class="hideInputFirst" id="PassWord" placeholder="Input your password...">
-            <p>Address: <span type="text" th:text="*{showAddress}"></span></p>
-            <input type="text" class="hideInputFirst" id="Address" placeholder="Input your address...">
-            <p>Email: <span type="text" th:text="*{showEmail}"></span></p>
-            <input type="text" class="hideInputFirst" id="Email" placeholder="Input your E-mail...">
-            <p>Mobile: <span type="text" th:text="*{showMobile}"></span></p>
-            <input type="text" class="hideInputFirst" id="Mobile" placeholder="Input your mobile...">
-            <p>Landline: <span type="text" th:text="*{showLandline}"></span></p>
-            <input type="text" class="hideInputFirst" id="Landline" placeholder="Input your landline...">
-            <p>Payment Status: <span type="text" th:text="*{showPaymentStatus}"></span></p>
-            <p>Payment Date: <span type="text" th:text="*{showPaymentDate}"></span></p>
+        <p>Username: <span type="text" th:text="*{showUsername}"></span>
+            <input type="text" class="hideInputFirst" id="UserName" placeholder="Input your name..."></p>
+        <p>Account: <span type="password" th:text="*{showAccountnum}"></span>
+            <input type="text" class="hideInputFirst" id="Account" placeholder="Input your account..."></p>
+        <p>Password: <span type="password" th:text="*{showPasswd}"></span>
+            <input type="password" class="hideInputFirst" id="PassWord" placeholder="Input your password..."></p>
+        <p>Address: <span type="text" th:text="*{showAddress}"></span>
+            <input type="text" class="hideInputFirst" id="Address" placeholder="Input your address..."></p>
+        <p>Email: <span type="text" th:text="*{showEmail}"></span>
+            <input type="email" class="hideInputFirst" id="Email" placeholder="Input your E-mail..."></p>
+        <p>Mobile: <span type="text" th:text="*{showMobile}"></span>
+            <input type="text" class="hideInputFirst" id="Mobile" placeholder="Input your mobile..."></p>
+        <p>Landline: <span type="text" th:text="*{showLandline}"></span>
+            <input type="text" class="hideInputFirst" id="Landline" placeholder="Input your landline..."></p>
+        <p>Payment Status: <span type="text" th:text="*{showPaymentStatus}"></span></p>
+        <p>Payment Date: <span type="text" th:text="*{showPaymentDate}"></span></p>
 
-            <button class="btn" type="button" name="modifyCheck" id="modifyCheckBTN" onclick="showInputFields()">Modify Member Information</button>
-            <button class="hideInputFirst btn" type="submit" name="modifyConfirm" onclick="hideInputFields()">Confirm modify</button>
-            <button type="reset">Reset</button>
-            <button class="btn" type="button" name="goBack" onclick="goBackPage()">Previous Page</button>
+        <button class="btn" type="button" name="modifyCheck" id="modifyCheckBTN" onclick="showInputFields()">Modify Member Information</button>
+        <button class="hideInputFirst btn" type="submit" name="modifyConfirm" onclick="hideInputFields()">Confirm modify</button>
+        <button type="reset">Reset</button>
+        <button class="btn" type="button" name="goBack" onclick="goBackPage()">Previous Page</button>
+    </form>
+</div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
         <script>
+
             function goBackPage()   //回前一頁功能
             {
                 if (document.referrer)

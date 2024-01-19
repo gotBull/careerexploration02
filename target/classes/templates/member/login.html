@@ -75,7 +75,7 @@
         <div th:unless="${session.logInAcc}">
             <form method="post" class="formItem" action="/login">
                 <p> Your Account: <input type="text" name="accountnum"></p>
-                <p> Your Password: <input type="text" name="passwd"></p>
+                <p> Your Password: <input type="password" name="passwd"></p>
                 <!-- 登入錯誤後提示訊息 -->
                 <div th:if="${logFail}" class="error-message">
                     <p th:text="${logFail}"></p>
