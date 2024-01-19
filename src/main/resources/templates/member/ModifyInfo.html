@@ -31,11 +31,9 @@
             <p>Payment Date: <span type="text" th:text="*{showPaymentDate}"></span></p>
 
             <button class="btn" type="button" name="modifyCheck" id="modifyCheckBTN" onclick="showInputFields()">Modify Member Information</button>
-            <button class="hideInputFirst" type="submit" name="modifyConfirm"  onclick="hideInputFields()">Confirm modify</button>
+            <button class="hideInputFirst btn" type="submit" name="modifyConfirm" onclick="hideInputFields()">Confirm modify</button>
             <button type="reset">Reset</button>
             <button class="btn" type="button" name="goBack" onclick="goBackPage()">Previous Page</button>
-
-
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
@@ -54,22 +52,19 @@
 
             function showInputFields()  //顯示修改欄位
             {
-                onclick(function ()
-                {
-                    $(".hideInputFirst").show();
+                $(function () {
+                    $(".hideInputFirst").show(500);
                     $("#modifyCheckBTN").hide();
-                })
+                });
             }
 
             function hideInputFields()
             {
-                onclick(function ()
-                {
-                    $(".hideInputFirst").hide();
+                $(function () {
+                    $(".hideInputFirst").hide(500);
                     $("#modifyCheckBTN").show();
-                })
+                });
             }
-
         </script>
     </body>
 </html>
