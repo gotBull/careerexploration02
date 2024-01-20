@@ -20,8 +20,7 @@
             height: 100%;
             z-index: 1;
         }
-        .theForm
-        {
+        .theForm {
             position: absolute;
             z-index: 2;
             color: aliceblue;
@@ -30,30 +29,35 @@
             border: #dde1eb 0.2rem solid;
             padding: 1rem;
         }
-        .formItem, .title
-        {
+        .formItem {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 35vw;
         }
-        .btn
-        {
+        .btn {
             background-color: #f2dc8a;
             color: #1f2b35;
             margin:auto 1rem;
             border: #dde1eb 2px solid;
             font-weight: 600;
         }
-        .btn:hover
-        {
+        .btn:hover {
             background-color: #dde1eb;
             color: #000;
             border: #000 2px solid;
+            box-shadow:
+                    0 0 20px 5px #fffdfb,
+                    0 0 40px 15px #fffdfb;
         }
         input{
-            border-radius: 10px;
+            border-radius: 5px;
+        }
+        input:focus{
+            box-shadow:
+                    0 0 20px 5px #fffdfb,
+                    0 0 40px 15px #fffdfb;
         }
         .theCongrate{
             font-size: 1.5rem;
@@ -62,8 +66,7 @@
         #countdown, #username{
             font-size: 2.5rem;
         }
-        .error-message
-        {
+        .error-message {
             font-size: 1.2rem;
             color: #ff7690;
         }
@@ -74,8 +77,8 @@
     <div class="theForm">
         <div th:unless="${session.logInAcc}">
             <form method="post" class="formItem" action="/login">
-                <p> Your Account: <input type="text" name="accountnum"></p>
-                <p> Your Password: <input type="password" name="passwd"></p>
+                <p> Your Account:&nbsp&nbsp<input type="text" name="accountnum"></p>
+                <p> Your Password:&nbsp&nbsp<input type="password" name="passwd"></p>
                 <!-- 登入錯誤後提示訊息 -->
                 <div th:if="${logFail}" class="error-message">
                     <p th:text="${logFail}"></p>
