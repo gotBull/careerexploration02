@@ -5,40 +5,53 @@
     <title>Member Profile</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
+    body{
+        display: flex;
+        justify-content: center;
+    }
     .hideInputFirst
     {
         display: none;
     }
     .UserInfo{
+        position: relative;
         display: flex;
         flex-direction: column;
     }
-    .formOutside{
-        position: relative;
-        justify-items: center;
-        align-content: center;
+    .modifyStuff{
+        display: flex;
+        flex-direction: row;
+    }
+    .show{
+        font-size: 1rem;
     }
     </style>
 </head>
     <body>
     <!-- 建立一個會員可以先看到自己個人資訊的網頁，然後做修改頁面如Register02.html -->
-<div class="formOutside">
+
     <form class="UserInfo">
         <h2>Member Profile</h2>
-        <p>Username: <span type="text" th:text="*{showUsername}"></span>
-            <input type="text" class="hideInputFirst" id="UserName" placeholder="Input your name..."></p>
-        <p>Account: <span type="password" th:text="*{showAccountnum}"></span>
-            <input type="text" class="hideInputFirst" id="Account" placeholder="Input your account..."></p>
-        <p>Password: <span type="password" th:text="*{showPasswd}"></span>
-            <input type="password" class="hideInputFirst" id="PassWord" placeholder="Input your password..."></p>
-        <p>Address: <span type="text" th:text="*{showAddress}"></span>
-            <input type="text" class="hideInputFirst" id="Address" placeholder="Input your address..."></p>
-        <p>Email: <span type="text" th:text="*{showEmail}"></span>
-            <input type="email" class="hideInputFirst" id="Email" placeholder="Input your E-mail..."></p>
-        <p>Mobile: <span type="text" th:text="*{showMobile}"></span>
-            <input type="text" class="hideInputFirst" id="Mobile" placeholder="Input your mobile..."></p>
-        <p>Landline: <span type="text" th:text="*{showLandline}"></span>
-            <input type="text" class="hideInputFirst" id="Landline" placeholder="Input your landline..."></p>
+        <div class="modifyStuff">
+            <div class="show">
+                <p>Username: <span type="text" th:text="*{showUsername}"></span>
+                <p>Account: <span type="password" th:text="*{showAccountnum}"></span>
+                <p>Password: <span type="password" th:text="*{showPasswd}"></span>
+                <p>Address: <span type="text" th:text="*{showAddress}"></span>
+                <p>Email: <span type="text" th:text="*{showEmail}"></span>
+                <p>Mobile: <span type="text" th:text="*{showMobile}"></span>
+                <p>Landline: <span type="text" th:text="*{showLandline}"></span>
+            </div>
+            <div class="typing">
+                <input type="text" class="hideInputFirst" id="UserName" placeholder="Input your name..."></p>
+                <input type="text" class="hideInputFirst" id="Account" placeholder="Input your account..."></p>
+                <input type="password" class="hideInputFirst" id="PassWord" placeholder="Input your password..."></p>
+                <input type="text" class="hideInputFirst" id="Address" placeholder="Input your address..."></p>
+                <input type="email" class="hideInputFirst" id="Email" placeholder="Input your E-mail..."></p>
+                <input type="text" class="hideInputFirst" id="Mobile" placeholder="Input your mobile..."></p>
+                <input type="text" class="hideInputFirst" id="Landline" placeholder="Input your landline..."></p>
+            </div>
+        </div>
         <p>Payment Status: <span type="text" th:text="*{showPaymentStatus}"></span></p>
         <p>Payment Date: <span type="text" th:text="*{showPaymentDate}"></span></p>
 
@@ -47,7 +60,7 @@
         <button type="reset">Reset</button>
         <button class="btn" type="button" name="goBack" onclick="goBackPage()">Previous Page</button>
     </form>
-</div>
+
 
 
         <script>

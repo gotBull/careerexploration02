@@ -84,6 +84,9 @@ body{margin: 0;}
     font-size: 3rem;
 }
 .contentW > #switch-to-previous{left:1%;}
+#switch-to-previous:hover,#switch-to-next:hover{
+    transform: scale(1.2);
+}
 .contentW > #switch-to-next{right: 3%;}
 /*LOGO照片設定*/
 .imgH{

@@ -144,7 +144,11 @@ span
 :not(:fullscreen) .FullScreenB {
   display: inline-block; /* 顯示全螢幕按鈕 */
 }
-
+.content{
+  width: 100vw; /* 100%视口宽度 */
+  height: 100vh; /* 100%视口高度 */
+  overflow: hidden; /* 隐藏超出容器的部分 */
+}
 .theMap
 {
   position: absolute;
