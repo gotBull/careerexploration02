@@ -30,7 +30,7 @@ public class UserModifyController
 
         //LoginController的登入後設定帳號於session屬性之中，取得帳號
         session.getAttribute("SetAccountNum");
-        HttpSession sessionGet = servletRequest.getSession();
+        HttpSession sessionGet = servletRequest.getSession();  //測試session並印出
         Boolean sessionBoolean = (Boolean) session.getAttribute("logInAcc");
         logger.warn("執行後可以先看到會員帳號+是否登入的布林值"+accountnum + sessionBoolean +sessionGet);   //SpringBoot除錯訊息註解
 
@@ -41,7 +41,7 @@ public class UserModifyController
         {
             // 使用 loggedInAccountId 從資料庫中檢索該帳號的會員資料
             String loggedInAccountId = (String) session.getAttribute("SetAccountNum");
-            UserModifyModel showMemberAll = userModifyService.getAllByAccount03(loggedInAccountId);  //使用try catch的Service方法
+            UserModifyModel showMemberAll = userModifyService.getAllByAccount03(loggedInAccountId);  //使用try catch的Service第二次方法
 
             //把會員資料裝進model傳給ModifyInfo頁面使用th:text
             model.addAttribute("showUsername", showMemberAll.getUsername());
@@ -53,6 +53,7 @@ public class UserModifyController
             model.addAttribute("showLandline", showMemberAll.getLandline());
             model.addAttribute("showPaymentStatus", showMemberAll.getPaymentStatus());
             model.addAttribute("showPaymentDate", showMemberAll.getPaymentDate());
+            model.addAttribute("searchID", showMemberAll.getMemberid());
 
             logger.warn("執行後可以先看到目前session狀態"+accountnum);
             return "member/ModifyInfo";
@@ -64,10 +65,41 @@ public class UserModifyController
         }
     }
 
-    @PostMapping("/Modify-success")    //做Modify的會員修改頁面
-    public String modifyUserData(@ModelAttribute UserModifyModel userModifyModel)
+    @PostMapping("/Modify-success")    //會員修改頁面按下Confirm modify後觸發Post
+    public String modifyUserData(HttpSession session, Model model,
+                                 @RequestParam ("username") String username,
+                                 @RequestParam ("passwd") String passwd,
+                                 @RequestParam ("address") String address,
+                                 @RequestParam ("email")  String email,
+                                 @RequestParam ("mobile") String mobile,
+                                 @RequestParam ("landline") String landline)  //接收從input輸入的資料
     {
-        userModifyService.updateMember(userModifyModel);
+        session.getAttribute("SetAccountNum");   //取得於session屬性之帳號
+
+        // 使用 loggedInAccountId 從資料庫中檢索該帳號的會員ID (=PrimaryKey)
+        String loggedInAccountId = (String) session.getAttribute("SetAccountNum");
+        UserModifyModel showMemberAll = userModifyService.getAllByAccount03(loggedInAccountId);
+        try
+        {
+            int getUserID = showMemberAll.getMemberid();  //取得會員ID，往modifyService送
+            UserModifyModel transID = userModifyService.updateMember02(getUserID);
+
+            UserModifyModel userModifyModel = new UserModifyModel();  // 創建一個 UserModifyModel 對象，並設置表單數據
+            userModifyModel.setUsername(username);
+            userModifyModel.setPasswd(passwd);
+            userModifyModel.setAddress(address);
+            userModifyModel.setEmail(email);
+            userModifyModel.setMobile(mobile);
+            userModifyModel.setLandline(landline);
+
+            userModifyService.updateMember(userModifyModel);
+
+            return "member/ModifyInfo" ;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
         return "member/ModifyInfo" ;
     }
 

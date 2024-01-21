@@ -58,14 +58,29 @@ public class UserModifyDao
     // 更新會員資料的邏輯
     public void updateMember(UserModifyModel userModifyModel)
     {
-        String sql02= "UPDATE userdata SET accountnum=?, passwd=?, username=?, email=?, mobile=?, address=?, landline=? WHERE memberid=?";
+        String sql02= "UPDATE userdata SET username=?, passwd=?, address=?, email=?, mobile=?,  landline=? WHERE memberid=?";
         jdbcTemplate.update(sql02,
-                userModifyModel.getAccountnum(),
-                userModifyModel.getPasswd(),
                 userModifyModel.getUsername(),
+                userModifyModel.getPasswd(),
+                userModifyModel.getAddress(),
                 userModifyModel.getEmail(),
                 userModifyModel.getMobile(),
-                userModifyModel.getAddress(),
                 userModifyModel.getLandline());
+                userModifyModel.getMemberid();
+    }
+
+    // 更新會員資料的邏輯 part02
+    public void updateMember02(int memberid)
+    {
+        String sql03= "UPDATE userdata SET username=?, passwd=?, address=?, email=?, mobile=?,  landline=? WHERE memberid=?";
+        UserModifyModel userModifyModel = new UserModifyModel();
+        jdbcTemplate.update(sql03,
+                userModifyModel.getUsername(),
+                userModifyModel.getPasswd(),
+                userModifyModel.getAddress(),
+                userModifyModel.getEmail(),
+                userModifyModel.getMobile(),
+                userModifyModel.getLandline());
+                userModifyModel.getMemberid();
     }
 }

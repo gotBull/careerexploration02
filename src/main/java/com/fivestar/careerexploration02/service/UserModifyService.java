@@ -55,4 +55,10 @@ public class UserModifyService
         userModifyDao.updateMember(userModifyModel);
     }
 
+    //回傳Id給Repository，做修改會員資料02
+    public UserModifyModel updateMember02(int memberid)
+    {
+        userModifyDao.updateMember02(memberid);
+        return null;
+    }
 }
