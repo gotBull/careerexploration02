@@ -1,15 +1,15 @@
 $( function() {
     // 可拖曳的Home鍵
     $( "#dragImgH" ).draggable($(".contentW").hide());
-    //放到圖片內改變旁邊的文章內容
+
     $("#dropG").droppable({
         drop: function (event, ui) {
-            // 在這裡你可以根據需要改變文章結構和內容
+            // 把LOGO放到圖片上會出現隱藏內容
             $(".contentV").hide();
             $(".contentW").show();
         },
         out: function (event, ui) {
-            // 在這裡你可以根據需要恢復原本的文章結構和內容
+            // 把LOGO移出圖片會恢復原狀
             $(".contentW").hide();
             $(".contentV").show();
         }
@@ -30,7 +30,7 @@ $(document).ready(function() {
             'margin-left': containerWidth
         }).show().animate({
             'margin-left': 0
-        }, 250); // 500 是動畫的持續時間，可以根據需要調整
+        }, 250); // 動畫的持續時間
     }
 
     function switchToPreviousGroup() {
@@ -40,7 +40,7 @@ $(document).ready(function() {
             'margin-left': -containerWidth
         }).show().animate({
             'margin-left': 0
-        }, 250); // 500 是動畫的持續時間，可以根據需要調整
+        }, 250); //動畫的持續時間
     }
 
     $("#switch-to-next").click(function() {
