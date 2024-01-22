@@ -55,10 +55,20 @@ public class UserModifyService
         userModifyDao.updateMember(userModifyModel);
     }
 
-    //回傳Id給Repository，做修改會員資料02
-    public UserModifyModel updateMember02(int memberid)
+    public void updateMember03(String accountnum)
     {
-        userModifyDao.updateMember02(memberid);
-        return null;
+        userModifyDao.updateMember02(accountnum);
     }
+//
+//    //回傳Id給Repository，做修改會員資料02
+//    public UserModifyModel updateMember02(String accountnum, String username, String passwd, String address, String email, String mobile, String landline)
+//    {
+//        userModifyDao.updateMember02(username,passwd,address,email,mobile,landline,accountnum);
+//        return null;
+//    }
+//
+//    public UserModifyModel updateMember02(String loggedInAccountId)
+//    {
+//        return null;
+//    }
 }

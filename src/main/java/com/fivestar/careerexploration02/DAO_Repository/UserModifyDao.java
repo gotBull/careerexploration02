@@ -17,7 +17,7 @@ public class UserModifyDao
 {
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     Logger logger = LoggerFactory.getLogger(UserModifyDao.class);  //SpringBoot除錯訊息註解
 
@@ -70,17 +70,9 @@ public class UserModifyDao
     }
 
     // 更新會員資料的邏輯 part02
-    public void updateMember02(int memberid)
+    public void updateMember02(String accountnum)
     {
-        String sql03= "UPDATE userdata SET username=?, passwd=?, address=?, email=?, mobile=?,  landline=? WHERE memberid=?";
-        UserModifyModel userModifyModel = new UserModifyModel();
-        jdbcTemplate.update(sql03,
-                userModifyModel.getUsername(),
-                userModifyModel.getPasswd(),
-                userModifyModel.getAddress(),
-                userModifyModel.getEmail(),
-                userModifyModel.getMobile(),
-                userModifyModel.getLandline());
-                userModifyModel.getMemberid();
+        String sql03= "UPDATE userdata SET username=?, passwd=?, address=?, email=?, mobile=?,  landline=? WHERE accountnum=?";
+        jdbcTemplate.update(sql03,accountnum);
     }
 }

@@ -42,6 +42,7 @@ public class UserModifyController
             // 使用 loggedInAccountId 從資料庫中檢索該帳號的會員資料
             String loggedInAccountId = (String) session.getAttribute("SetAccountNum");
             UserModifyModel showMemberAll = userModifyService.getAllByAccount03(loggedInAccountId);  //使用try catch的Service第二次方法
+            logger.warn("執行後可在if看到會員帳號="+ loggedInAccountId);
 
             //把會員資料裝進model傳給ModifyInfo頁面使用th:text
             model.addAttribute("showUsername", showMemberAll.getUsername());
@@ -54,8 +55,6 @@ public class UserModifyController
             model.addAttribute("showPaymentStatus", showMemberAll.getPaymentStatus());
             model.addAttribute("showPaymentDate", showMemberAll.getPaymentDate());
             model.addAttribute("searchID", showMemberAll.getMemberid());
-
-            logger.warn("執行後可以先看到目前session狀態"+accountnum);
             return "member/ModifyInfo";
         }
         else   // 如果找不到該會員，可以重回到登入頁面，二重保護 if-else看session
@@ -65,42 +64,63 @@ public class UserModifyController
         }
     }
 
-    @PostMapping("/Modify-success")    //會員修改頁面按下Confirm modify後觸發Post
-    public String modifyUserData(HttpSession session, Model model,
-                                 @RequestParam ("username") String username,
-                                 @RequestParam ("passwd") String passwd,
-                                 @RequestParam ("address") String address,
-                                 @RequestParam ("email")  String email,
-                                 @RequestParam ("mobile") String mobile,
-                                 @RequestParam ("landline") String landline)  //接收從input輸入的資料
-    {
-        session.getAttribute("SetAccountNum");   //取得於session屬性之帳號
+//    @PostMapping("/Modify-success")    //會員修改頁面按下Confirm modify後觸發Post
+//    public String modifyUserData(HttpSession session, String accountnum,
+//                                 @RequestParam ("username") String username,
+//                                 @RequestParam ("passwd") String passwd,
+//                                 @RequestParam ("address") String address,
+//                                 @RequestParam ("email")  String email,
+//                                 @RequestParam ("mobile") String mobile,
+//                                 @RequestParam ("landline") String landline)  //接收從input輸入的資料
+//    {
+//        // 使用 loggedInAccountId 改用帳號作為判斷的依據值
+//        String loggedInAccountId = (String) session.getAttribute("SetAccountNum");  //取得於session屬性之帳號
+//        logger.warn("執行後可在POST看到會員帳號="+ loggedInAccountId);
+//
+//        try
+//        {
+////          UserModifyModel userModifyModel = new UserModifyModel();  // 創建一個 UserModifyModel 對象，並設置表單數據
+//            UserModifyModel updateProfile = userModifyService.updateMember02(loggedInAccountId);  //往modifyService送
+//            updateProfile.setUsername(username);
+//            updateProfile.setPasswd(passwd);
+//            updateProfile.setAddress(address);
+//            updateProfile.setEmail(email);
+//            updateProfile.setMobile(mobile);
+//            updateProfile.setLandline(landline);
+//            updateProfile.setAccountnum(loggedInAccountId);
+//            return "member/ModifyInfo" ;
+//        }
+//        catch (Exception e)
+//        {
+//            System.out.println(e);
+//        }
+//        return "member/ModifyInfo" ;
+//    }
+@PostMapping("/Modify-success")
+public String modifyUserData(HttpSession session, Model model, @ModelAttribute UserModifyModel request)
+{
+    UserModifyModel userModifyModel =new UserModifyModel();
+    String loggedInAccountId = (String) session.getAttribute("SetAccountNum");
+    UserModifyModel updateProfile = userModifyService.updateMember03(loggedInAccountId);
 
-        // 使用 loggedInAccountId 從資料庫中檢索該帳號的會員ID (=PrimaryKey)
-        String loggedInAccountId = (String) session.getAttribute("SetAccountNum");
-        UserModifyModel showMemberAll = userModifyService.getAllByAccount03(loggedInAccountId);
-        try
-        {
-            int getUserID = showMemberAll.getMemberid();  //取得會員ID，往modifyService送
-            UserModifyModel transID = userModifyService.updateMember02(getUserID);
+    try {
+        updateProfile.setUsername(request.getUsername());
+        updateProfile.setPasswd(request.getPasswd());
+        updateProfile.setAddress(request.getAddress());
+        updateProfile.setEmail(request.getEmail());
+        updateProfile.setMobile(request.getMobile());
+        updateProfile.setLandline(request.getLandline());
 
-            UserModifyModel userModifyModel = new UserModifyModel();  // 創建一個 UserModifyModel 對象，並設置表單數據
-            userModifyModel.setUsername(username);
-            userModifyModel.setPasswd(passwd);
-            userModifyModel.setAddress(address);
-            userModifyModel.setEmail(email);
-            userModifyModel.setMobile(mobile);
-            userModifyModel.setLandline(landline);
-
-            userModifyService.updateMember(userModifyModel);
-
-            return "member/ModifyInfo" ;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e);
-        }
-        return "member/ModifyInfo" ;
+        userModifyService.updateMember03(accountnum);
+        return "member/ModifyInfo";
     }
+    catch (Exception e)
+    {
+        System.out.println(e);
+    }
+
+    return "member/ModifyInfo";
+}
+
 
 }
