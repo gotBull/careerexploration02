@@ -111,13 +111,13 @@
 </div>
 
   <script>
-      function toggleFullScreen() {
+      function toggleFullScreen() {  //全螢幕功能
           if (!document.fullscreenElement) {
               document.documentElement.requestFullscreen();
           }
       }
 
-      function exitFullScreen() {
+      function exitFullScreen() {   //退出全螢幕
           if (document.exitFullscreen) {
               document.exitFullscreen();
           }
@@ -127,7 +127,7 @@
       document.addEventListener("fullscreenchange", function () {
           updateButtonVisibility();
       });
-
+        //控制全螢幕跟退出全螢幕按鈕根據目前是否為全螢幕狀態顯示
       function updateButtonVisibility() {
           const fullScreenButton = document.querySelector('.FullScreenB');
           const exitFullScreenButton = document.querySelector('.ExitFullScreenB');
@@ -140,7 +140,7 @@
               exitFullScreenButton.style.display = 'none';
           }
       }
-      const app = Vue.createApp({
+      const app = Vue.createApp({   //這邊用Vue帶入每個職業
           data() {
               return {
                   dropdownId: 'myDropdown',
@@ -172,7 +172,7 @@
           },
       });
       app.mount('#app');
-
+    //地圖上所有物件都變成可以拖動
       $( function() {
           $( "#church,#TVstation,#school,#airport,#police,#resturant,#concert,#department,#hospital").draggable();
       } );
