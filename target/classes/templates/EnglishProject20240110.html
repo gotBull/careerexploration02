@@ -25,9 +25,23 @@
         });
     </script>
 </head>
-<body>
+<body onload="loadindex()">
   <!-- navbar-expand-xxl -->
     <div th:replace="fragment/nav.html :: nav"></div>
+<!--    初始的彈出視窗-->
+      <div id="popup">
+          <h1>歡迎使用本英文學習平台!</h1>
+          <ol>
+              <li>使用滑鼠滑到地圖上的建築物後會顯示職業，點擊該職業後就可以看到英文介紹影片，或使用導覽列的下拉式選單也可以選擇想看的職業</li>
+              <li>右下角有全螢幕功能</li>
+              <li>右上角可以登入或註冊，就可以看到影片下方的說明</li>
+              <li>CustomerService可以購買相關課程</li>
+              <li>Cooperation可以看到近期合作的活動</li>
+              <li>About Us則可以更了解我們的團隊</li>
+          </ol>
+          <button id="confirmButton" class="btn btn-primary" onclick="closePopup()">知道了</button>
+      </div>
+  <div class="overlay"></div>
 
   <!-- 全螢幕按鈕 -->
   <img class="FullScreenB" onclick="toggleFullScreen()" src="/img/expand.webp">
@@ -43,14 +57,14 @@
     <img class="theMap"  src="/img/地圖20240108.webp">  <!-- 測試登入與否，接收LoginController的session設定true -->
 
 <!-- 教堂 -->
-      <div id="church" class="Icontainer image-container1">
+      <div id="church" class="Icontainer image-container1" onmouseenter="highlight(this)" onmouseleave="resetOverlay()">
         <img src="/img/教堂.webp" alt="教堂" class="zoomable-image">
         <div class="links links1">
           <a href="/job/weddingplanner" role="button"><button class="link">Wedding Planer</button></a>
         </div>
       </div>
 <!-- 學校 -->
-      <div id="school" class="Icontainer image-container2">
+      <div id="school" class="Icontainer image-container2" onmouseenter="highlight(this)" onmouseleave="resetOverlay()">
         <img src="/img/學校.webp" alt="學校" class="zoomable-image">
         <div class="links links2">
           <a href="/job/teacher" role="button"><button class="link">Teacher</button></a>
@@ -58,7 +72,7 @@
         </div>
       </div>
 <!-- 醫院 -->
-      <div id="hospital" class="Icontainer image-container3">
+      <div id="hospital" class="Icontainer image-container3" onmouseenter="highlight(this)" onmouseleave="resetOverlay()">
         <img src="/img/醫院.webp" alt="醫院" class="zoomable-image">
         <div class="links links3">
           <a href="/job/doctor" role="button"><button class="link">Doctor</button></a>
@@ -66,7 +80,7 @@
         </div>
       </div>
 <!-- 百貨公司 -->
-      <div id="department" class="Icontainer image-container4">
+      <div id="department" class="Icontainer image-container4" onmouseenter="highlight(this)" onmouseleave="resetOverlay()">
         <img src="/img/百貨公司.webp" alt="百貨公司" class="zoomable-image">
         <div class="links links4">
           <a target="_blank" href="/job/fashiondesigner" role="button"><button class="link">Fashion Designer</button></a>
@@ -74,35 +88,35 @@
         </div>
       </div>
 <!-- 音樂廳 -->
-      <div id="concert" class="Icontainer image-container5">
+      <div id="concert" class="Icontainer image-container5" onmouseenter="highlight(this)" onmouseleave="resetOverlay()">
         <img src="/img/音樂廳.webp" alt="音樂廳" class="zoomable-image">
         <div class="links links5">
           <a href="/job/actor" role="button"><button class="link">Actor</button></a>
         </div>
       </div>
 <!-- 餐廳 -->
-      <div id="resturant" class="Icontainer image-container6">
+      <div id="resturant" class="Icontainer image-container6" onmouseenter="highlight(this)" onmouseleave="resetOverlay()">
         <img src="/img/餐廳.webp"  alt="餐廳" class="zoomable-image">
         <div class="links links6">
           <a href="/job/chef" role="button"><button class="link">Chef</button></a>
         </div>
       </div>
 <!-- 警察局 -->
-      <div id="police" class="Icontainer image-container7">
+      <div id="police" class="Icontainer image-container7" onmouseenter="highlight(this)" onmouseleave="resetOverlay()">
         <img src="/img/警察局.webp" alt="警察局" class="zoomable-image">
         <div class="links links7">
           <a href="/job/policeofficer" role="button"><button class="link">Police Officer</button></a>
         </div>
       </div>
 <!-- 機場 -->
-      <div id="airport" class="Icontainer image-container8">
+      <div id="airport" class="Icontainer image-container8" onmouseenter="highlight(this)" onmouseleave="resetOverlay()">
         <img src="/img/機場.webp" alt="機場" class="zoomable-image">
         <div class="links links8">
           <a href="/job/tourguide" role="button"><button class="link">Tour Guide</button></a>
         </div>
       </div>
 <!-- 電視台 -->
-      <div id="TVstation" class="Icontainer image-container9">
+      <div id="TVstation" class="Icontainer image-container9" onmouseenter="highlight(this)" onmouseleave="resetOverlay()">
         <img src="/img/電視台.webp" alt="電視台" class="zoomable-image">
         <div class="links links9">
           <a href="/job/reporter" role="button"><button class="link">Reporter</button></a>
@@ -111,6 +125,32 @@
 </div>
 
   <script>
+    //剛載入首頁背景黑黑
+    function loadindex(){
+        $("#popup").hide().css({opacity: 0}).fadeIn(1000).animate({opacity: 1}, 1000);
+        document.querySelector('.overlay').style.opacity = '0.9';
+    }
+
+    //關閉首頁的顯示說明
+      function closePopup() {
+          $("#popup").slideUp(1000);
+          document.querySelector('.overlay').style.opacity = '0';
+      }
+    //滑鼠掠過建築物會foucs功能
+      function highlight(Icontainer){
+          document.querySelector('.overlay').style.opacity = '0.6';
+          Icontainer.style.filter = 'brightness(150%)';
+      }
+    function resetOverlay() {
+        // 滑鼠移出建築物後亮度恢復
+        document.querySelector('.overlay').style.opacity = '0';
+
+        // Reset the brightness of all thumbnails
+        var thumbnails = document.querySelectorAll('.Icontainer');
+        thumbnails.forEach(function (Icontainer) {
+            Icontainer.style.filter = 'brightness(100%)';
+        });
+    }
       function toggleFullScreen() {  //全螢幕功能
           if (!document.fullscreenElement) {
               document.documentElement.requestFullscreen();

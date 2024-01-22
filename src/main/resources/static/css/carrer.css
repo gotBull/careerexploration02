@@ -110,16 +110,20 @@ span
     .navbar-expand-size1{
     width: 100%;
     }
+    .navbar-expand-size1 .navbar-toggler{
+        position: fixed;
+        top: 1%;
+        right: 1%;
+    }
   .navbar-expand-size1 #LOGO{
-    width: 5%;
+    width: 30%;
   }
   .navbar-expand-size1 #theName{
       display: none;
   }
   .navbar-expand-size1 #theNavLink
   {
-    width: 10%;
-    /*align-items: center;*/
+    align-items: center;
   }
   .navbar-expand-size1 #JobMenu{
     position: absolute;
