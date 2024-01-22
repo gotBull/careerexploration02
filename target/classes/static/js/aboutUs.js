@@ -1,6 +1,9 @@
 $( function() {
     // 可拖曳的Home鍵
-    $( "#dragImgH" ).draggable($(".contentW").hide());
+    $( "#dragImgH" ).draggable(
+        $(".contentW").hide(),
+        $("#dockerW").hide()
+    );
 
     $("#dropG").droppable({
         drop: function (event, ui) {
@@ -14,6 +17,17 @@ $( function() {
             $(".contentV").show();
         }
     });
+    $("#dockerV").droppable({
+        drop: function(event, ui){
+            $("#dockerV").hide();
+            $("#dockerW").show();
+        }});
+    $("#dockerW").droppable({
+        out: function (event, ui){
+            $("#dockerW").hide();
+            $("#dockerV").show();
+        }});
+
 });
 //輪播的內容
 $(document).ready(function() {
