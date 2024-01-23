@@ -11,7 +11,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
 }
 .theNAV {
-  position: fixed;
+  position: static;  /*職業頁面NavBar置頂*/
   top: 0;
   z-index: 100;
 }
@@ -217,7 +217,10 @@ header.masthead .post-heading .meta a {
     color:white;
 }
 .theCopy{
+    color: black;
   margin-bottom: 2rem;
+    font-weight: bold;*/
+
 }
 
 .button {
@@ -246,7 +249,9 @@ header.masthead .post-heading .meta a {
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+
 }
 #scrollToTopBtn:hover {
     background-color: #9ec9ff; /* 滑鼠懸停時的背景色變更 */
+    transition: opacity 0.8s ease-in-out;
 }
