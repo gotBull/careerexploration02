@@ -96,31 +96,35 @@ public class UserModifyController
 //        }
 //        return "member/ModifyInfo" ;
 //    }
-@PostMapping("/Modify-success")
-public String modifyUserData(HttpSession session, Model model, @ModelAttribute UserModifyModel request)
-{
-    UserModifyModel userModifyModel =new UserModifyModel();
-    String loggedInAccountId = (String) session.getAttribute("SetAccountNum");
-    UserModifyModel updateProfile = userModifyService.updateMember03(loggedInAccountId);
+//@PostMapping("/Modify-success")
+//public String modifyUserData(HttpSession session, Model model, @ModelAttribute UserModifyModel request)
+//{
+//    UserModifyModel userModifyModel =new UserModifyModel();
+//    String loggedInAccountId = (String) session.getAttribute("SetAccountNum");
+//    UserModifyModel updateProfile = userModifyService.updateMember03(loggedInAccountId);
+//
+//    try {
+//        updateProfile.setUsername(request.getUsername());
+//        updateProfile.setPasswd(request.getPasswd());
+//        updateProfile.setAddress(request.getAddress());
+//        updateProfile.setEmail(request.getEmail());
+//        updateProfile.setMobile(request.getMobile());
+//        updateProfile.setLandline(request.getLandline());
+//
+//        userModifyService.updateMember03(accountnum);
+//        return "member/ModifyInfo";
+//    }
+//    catch (Exception e)
+//    {
+//        System.out.println(e);
+//    }
+//
+//    return "member/ModifyInfo";
+//}
 
-    try {
-        updateProfile.setUsername(request.getUsername());
-        updateProfile.setPasswd(request.getPasswd());
-        updateProfile.setAddress(request.getAddress());
-        updateProfile.setEmail(request.getEmail());
-        updateProfile.setMobile(request.getMobile());
-        updateProfile.setLandline(request.getLandline());
-
-        userModifyService.updateMember03(accountnum);
-        return "member/ModifyInfo";
-    }
-    catch (Exception e)
-    {
-        System.out.println(e);
-    }
-
-    return "member/ModifyInfo";
-}
+    // 20240123 @RequestParam全傳給Service.updateMember02
+    // 可以較笨的全部一起改或是"做出判斷"，依帳號現有舊資料跟新資料比，
+    // 需要 .set串if字串，有不一樣就會update 、沒有改動=null就不會動
 
 
 }
