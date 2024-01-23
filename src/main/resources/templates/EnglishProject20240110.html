@@ -25,11 +25,11 @@
         });
     </script>
 </head>
-<body onload="loadindex()">
+<body th:attr="onload=${session.logInAcc} ? null : 'loadindex()'">
   <!-- navbar-expand-xxl -->
     <div th:replace="fragment/nav.html :: nav"></div>
 <!--    初始的彈出視窗-->
-      <div id="popup">
+      <div  th:unless="${session.logInAcc}" id="popup">
           <h1>歡迎使用本英文學習平台!</h1>
           <ol>
               <li>使用滑鼠滑到地圖上的建築物後會顯示職業，點擊該職業後就可以看到英文介紹影片，或使用導覽列的下拉式選單也可以選擇想看的職業</li>
