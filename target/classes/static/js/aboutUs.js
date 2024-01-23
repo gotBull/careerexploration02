@@ -1,6 +1,8 @@
 $( function() {
     // 可拖曳的Home鍵
     $( "#dragImgH" ).draggable($(".contentW").hide());
+    //會變字的標題
+    $( "#dropA" ).hide();
 
     $("#dropG").droppable({
         drop: function (event, ui) {
@@ -12,6 +14,20 @@ $( function() {
             // 把LOGO移出圖片會恢復原狀
             $(".contentW").hide();
             $(".contentV").show();
+        }
+    });
+
+    $("#dropB").droppable({
+        drop: function (event, ui) {
+            // 把LOGO放到圖片上會出現隱藏內容
+            $("#dropA").show();
+            $("#dropB").hide();
+        }});
+    $("#dropA").droppable({
+        out: function (event, ui) {
+            // 把LOGO移出圖片會恢復原狀
+            $("#dropB").show();
+            $("#dropA").hide();
         }
     });
 });
