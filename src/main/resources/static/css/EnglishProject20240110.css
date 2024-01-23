@@ -325,15 +325,19 @@ span
 .link{
   text-decoration: none;
   text-wrap: nowrap;
-  color: #f7fafc;
-  background-color: #000000;
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0.45);
   border-radius: 10px;
-  border: 2px #f7fafc solid;
+  /*border: 2px #f7fafc solid;*/
   font-size: 0.8rem;
   font-family: 'Courier New', Courier, monospace;
   font-weight:bold;
+  color: #fceded; /* 設置文字顏色 */
+  text-shadow: 0 0 10px #050b1c, 0 0 30px #0f0, 0 0 40px #f00;
 }
+
 .link:hover{
+  text-shadow: 0 0 10px #00f, 0 0 20px #0f0, 0 0 30px #f00;
   box-shadow:
           0 0 20px 5px #d4f1f1,
           0 0 40px 15px #a6e2f6;
